@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme as default - AfroHeat design rules */
+    --background: 43 58% 95%; /* #faf6ec */
+    --foreground: 0 0% 15%;
+
+    --card: 43 58% 92%; /* slightly darker cream for cards */
+    --card-foreground: 0 0% 15%;
+
+    --popover: 43 58% 94%; /* cream for popovers */
+    --popover-foreground: 0 0% 15%;
+
+    --primary: 320 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 95% 55%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 43 40% 88%; /* muted cream */
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 320 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 43 30% 80%; /* cream border */
+    --input: 43 30% 80%; /* cream input */
+    --ring: 320 70% 45%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark theme as alternative - AfroHeat design rules */
+    --background: 220 15% 8%;
+    --foreground: 210 15% 90%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 210 15% 90%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 210 15% 90%;
+
+    --primary: 320 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 95% 55%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 210 15% 70%;
+
+    --accent: 320 70% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 320 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  .dark {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for women's gym theme */
+.gym-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.card-gradient {
+  background: linear-gradient(135deg, #faf6ec 0%, #f8f2e0 100%); /* AfroHeat cream gradient */
+}
+
+/* Infinite Moving Cards Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) linear infinite var(--animation-direction, forwards);
+}
