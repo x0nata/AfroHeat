@@ -213,6 +213,7 @@ const Events: React.FC = () => {
   ];
  
   const [selectedPastEvent, setSelectedPastEvent] = useState<typeof pastEvents[0] | null>(null);
+  const [isGalleryLoading, setIsGalleryLoading] = useState(true);
 
   const modalContainerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -440,11 +441,11 @@ const Events: React.FC = () => {
           onClick={() => setSelectedPastEvent(null)}
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-card rounded-2xl p-6 max-w-5xl w-full h-[95vh] relative mx-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="bg-card rounded-2xl p-6 max-w-full sm:max-w-4xl md:max-w-5xl w-full h-[95vh] relative mx-auto"
+                        onClick={(e) => e.stopPropagation()}
+                      >
             <button
               onClick={() => setSelectedPastEvent(null)}
               className="absolute top-4 right-4 text-foreground hover:text-primary text-2xl font-bold"
@@ -467,28 +468,38 @@ const Events: React.FC = () => {
             <DraggableCardContainer className="mx-auto max-w-4xl">
               {selectedPastEvent.images.slice(0, 7).map((image, index) => {
                 const positions = [
-                  "absolute top-10 left-[20%] rotate-[-5deg]",
-                  "absolute top-40 left-[25%] rotate-[-7deg]",
-                  "absolute top-5 left-[40%] rotate-[8deg]",
-                  "absolute top-32 left-[55%] rotate-[10deg]",
-                  "absolute top-20 right-[35%] rotate-[2deg]",
-                  "absolute top-24 left-[45%] rotate-[-7deg]",
-                  "absolute top-8 left-[30%] rotate-[4deg]",
-                ];
+                                  "absolute top-5 left-[5%] sm:left-[20%] rotate-[-5deg]",
+                                  "absolute top-20 left-[10%] sm:left-[25%] rotate-[-7deg]",
+                                  "absolute top-2 left-[30%] sm:left-[40%] rotate-[8deg]",
+                                  "absolute top-16 left-[40%] sm:left-[55%] rotate-[10deg]",
+                                  "absolute top-10 right-[10%] sm:right-[35%] rotate-[2deg]",
+                                  "absolute top-12 left-[25%] sm:left-[45%] rotate-[-7deg]",
+                                  "absolute top-4 left-[15%] sm:left-[30%] rotate-[4deg]",
+                                ];
                 const zIndices = [10, 9, 8, 7, 6, 5, 4];
                 return (
-                  <DraggableCardBody
-                    key={index}
-                    className={positions[index % positions.length]}
-                    baseZIndex={zIndices[index % zIndices.length]}
-                  >
-                    <img
-                      src={image}
-                      alt="Event photo"
-                      className="pointer-events-none relative z-10 h-80 w-80 object-cover"
-                    />
-                  </DraggableCardBody>
-                );
+                                  <DraggableCardBody
+                                    key={index}
+                                    className={positions[index % positions.length]}
+                                    baseZIndex={zIndices[index % zIndices.length]}
+                                  >
+                                    <div className="relative h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80">
+                                      {isGalleryLoading && (
+                                        <div className="absolute inset-0 bg-muted animate-pulse rounded-lg" />
+                                      )}
+                                      <img
+                                        src={image}
+                                        alt="Event photo"
+                                        className={`pointer-events-none relative z-10 w-full h-full object-contain bg-muted transition-opacity duration-300 ${
+                                          isGalleryLoading ? 'opacity-0' : 'opacity-100'
+                                        }`}
+                                        loading="eager"
+                                        decoding="async"
+                                        onLoad={() => setIsGalleryLoading(false)}
+                                      />
+                                    </div>
+                                  </DraggableCardBody>
+                                );
               })}
             </DraggableCardContainer>
           </motion.div>

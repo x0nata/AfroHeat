@@ -57,7 +57,7 @@ interface DraggableCardContainerProps {
 
 export function DraggableCardContainer({ children, className }: DraggableCardContainerProps) {
   return (
-    <div className={cn("relative flex min-h-[600px] w-full items-center justify-center overflow-clip", className)}>
+    <div className={cn("relative flex min-h-[400px] sm:min-h-[500px] md:min-h-[600px] w-full items-center justify-center overflow-clip", className)}>
       {children}
     </div>
   );

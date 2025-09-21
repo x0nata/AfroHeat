@@ -67,10 +67,12 @@ const EventCard: React.FC<EventCardProps> = ({ event, className, isPast, onViewD
       <div className="relative w-full aspect-video overflow-hidden">
         {event.image ? (
           <img
-            src={event.image}
-            alt={event.title}
-            className="w-full h-56 object-cover"
-          />
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-56 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
         ) : (
           <div className="w-full h-56 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
             <IconStar className="h-12 w-12 text-primary/30" />

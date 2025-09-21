@@ -128,10 +128,10 @@ const About: React.FC = () => {
             >
               <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                 {/* Circular Founder Image */}
-                <div className="lg:w-2/5 flex-shrink-0 relative group">
+                <div className="w-full lg:w-2/5 h-64 lg:h-auto flex-shrink-0 relative group mb-8 lg:mb-0">
                   {/* Container for square */}
                   <div
-                    className="relative w-full max-w-sm aspect-square max-h-96 mx-auto shadow-lg border-4 border-primary/20 overflow-hidden"
+                    className="relative w-full max-w-sm aspect-square min-h-48 max-h-96 mx-auto shadow-lg border-4 border-primary/20 overflow-hidden"
                   >
                     {/* Blurred pattern background layer */}
                     <div
@@ -149,8 +149,8 @@ const About: React.FC = () => {
                       className="absolute inset-0 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300 flex items-center justify-center"
                     >
                       <div className="w-full h-full rounded-full overflow-hidden">
-                        <img
-                          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop&crop=face"
+                        <OptimizedImage
+                          src="/images/about us/community engagement/IMG_4898.webp"
                           alt="Hamrawit Gizaw, Founder of AfroHeat"
                           className="w-full h-full object-cover"
                         />
