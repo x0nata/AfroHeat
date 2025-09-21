@@ -6,6 +6,7 @@ import path from 'path';
 async function convertImageToWebP(inputPath, outputPath, quality = 80) {
   try {
     await sharp(inputPath)
+      .resize({ width: 1200, withoutEnlargement: true })
       .webp({ quality })
       .toFile(outputPath);
     console.log(`Converted: ${inputPath} -> ${outputPath}`);
@@ -25,8 +26,8 @@ async function processDirectory(directoryPath) {
       
       if (stat.isDirectory()) {
         await processDirectory(filePath);
-      } else if (file.toLowerCase().endsWith('.heif') || file.toLowerCase().endsWith('.heic')) {
-        const outputPath = filePath.replace(/\.(heif|heic)$/i, '.webp');
+      } else if (file.toLowerCase().endsWith('.heif') || file.toLowerCase().endsWith('.heic') || file.toLowerCase().endsWith('.jpg') || file.toLowerCase().endsWith('.jpeg') || file.toLowerCase().endsWith('.png')) {
+        const outputPath = filePath.replace(/\.[^.]*$/, '.webp');
         await convertImageToWebP(filePath, outputPath);
       }
     }
@@ -37,7 +38,7 @@ async function processDirectory(directoryPath) {
 
 // Main function
 async function main() {
-  const imagesDir = path.join(process.cwd(), 'src/images');
+  const imagesDir = path.join(process.cwd(), 'public/images');
   
   if (fs.existsSync(imagesDir)) {
     console.log('Starting image conversion...');
