@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
             <p className="font-poppins text-black-600 mb-2 mt-5 font-bold">
               Stay connected with our fitness community
             </p>
-            <div className="flex space-x-4 mt-5 ml-9">
+            <div className="flex space-x-4 mt-5 ml-13">
               <a href="https://www.instagram.com/afroheatfitness?igsh=NGpsc3F0YnpydjJu" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
                 <IconBrandInstagram className="h-12 w-12 text-[#E1306C]" />
               </a>
