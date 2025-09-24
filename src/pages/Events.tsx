@@ -31,7 +31,7 @@ const Events: React.FC = () => {
       location: "Main Studio, Addis Ababa",
       description: "Join us for an empowering strength training challenge. Test your limits and celebrate your progress!",
       instructor: "Expert Trainer Team",
-      price: "300 ETB",
+      price: "3000 ETB",
       capacity: 15,
       registered: 8,
       category: "Challenge"
@@ -64,12 +64,12 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 25,
       category: "Workshop",
-      image: "/images/about us/event & activities/IMG_2467.JPEG",
+      image: "/images/about us/event & activities/IMG_2467.webp",
       images: [
-        "/images/about us/event & activities/IMG_2467.JPEG",
-        "/images/about us/event & activities/IMG_5760.JPG",
-        "/images/about us/event & activities/IMG_5833.JPG",
-        "/images/about us/event & activities/IMG_5834.JPG"
+        "/images/about us/event & activities/IMG_2467.webp",
+        "/images/about us/event & activities/IMG_5760.webp",
+        "/images/about us/event & activities/IMG_5833.webp",
+        "/images/about us/event & activities/IMG_5834.webp"
       ]
     },
     {
@@ -84,12 +84,12 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 35,
       category: "Festival",
-      image: "/images/about us/event & activities/IMG_5835.JPG",
+      image: "/images/about us/event & activities/IMG_5835.webp",
       images: [
-        "/images/about us/event & activities/IMG_5835.JPG",
-        "/images/about us/event & activities/IMG_5837.JPG",
-        "/images/about us/event & activities/IMG_5838.JPG",
-        "/images/about us/event & activities/IMG_5839.JPG"
+        "/images/about us/event & activities/IMG_5835.webp",
+        "/images/about us/event & activities/IMG_5837.webp",
+        "/images/about us/event & activities/IMG_5838.webp",
+        "/images/about us/event & activities/IMG_5839.webp"
       ]
     },
     {
@@ -104,12 +104,12 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 42,
       category: "Festival",
-      image: "/images/about us/event & activities/IMG_5840.JPG",
+      image: "/images/about us/event & activities/IMG_5840.webp",
       images: [
-        "/images/about us/event & activities/IMG_5840.JPG",
-        "/images/about us/event & activities/IMG_5843.JPG",
-        "/images/about us/event & activities/IMG_6499.JPG",
-        "/images/about us/event & activities/IMG_6570.JPG"
+        "/images/about us/event & activities/IMG_5840.webp",
+        "/images/about us/event & activities/IMG_5843.webp",
+        "/images/about us/event & activities/IMG_6499.webp",
+        "/images/about us/event & activities/IMG_6570.webp"
       ]
     },
     {
@@ -124,12 +124,12 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 28,
       category: "Workshop",
-      image: "/images/about us/event & activities/IMG_6649.JPG",
+      image: "/images/about us/event & activities/IMG_6649.webp",
       images: [
-        "/images/about us/event & activities/IMG_6649.JPG",
-        "/images/about us/event & activities/IMG_7017.JPG",
-        "/images/about us/event & activities/IMG_7019.JPG",
-        "/images/about us/event & activities/IMG_7021.JPG"
+        "/images/about us/event & activities/IMG_6649.webp",
+        "/images/about us/event & activities/IMG_7017.webp",
+        "/images/about us/event & activities/IMG_7019.webp",
+        "/images/about us/event & activities/IMG_7021.webp"
       ]
     },
     {
@@ -144,12 +144,12 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 50,
       category: "Challenge",
-      image: "/images/about us/event & activities/IMG_7022.JPG",
+      image: "/images/about us/event & activities/IMG_7022.webp",
       images: [
-        "/images/about us/event & activities/IMG_7022.JPG",
-        "/images/about us/event & activities/IMG_7023.JPG",
-        "/images/about us/event & activities/IMG_7025.JPG",
-        "/images/about us/event & activities/IMG_7027.JPG"
+        "/images/about us/event & activities/IMG_7022.webp",
+        "/images/about us/event & activities/IMG_7023.webp",
+        "/images/about us/event & activities/IMG_7025.webp",
+        "/images/about us/event & activities/IMG_7027.webp"
       ]
     },
     {
@@ -164,12 +164,12 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 18,
       category: "Conference",
-      image: "/images/about us/event & activities/IMG_7029.JPG",
+      image: "/images/about us/event & activities/IMG_7029.webp",
       images: [
-        "/images/about us/event & activities/IMG_7029.JPG",
-        "/images/about us/event & activities/IMG_7030.JPG",
-        "/images/about us/event & activities/IMG_7031.JPG",
-        "/images/about us/event & activities/IMG_7033.JPG"
+        "/images/about us/event & activities/IMG_7029.webp",
+        "/images/about us/event & activities/IMG_7030.webp",
+        "/images/about us/event & activities/IMG_7031.webp",
+        "/images/about us/event & activities/IMG_7033.webp"
       ]
     },
     {
@@ -184,11 +184,11 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 32,
       category: "Challenge",
-      image: "/images/about us/event & activities/IMG_9497.JPG",
+      image: "/images/about us/event & activities/IMG_9497.webp",
       images: [
-        "/images/about us/event & activities/IMG_9497.JPG",
-        "/images/about us/event & activities/IMG_9498.JPG",
-        "/images/about us/event & activities/IMG_9503.JPG"
+        "/images/about us/event & activities/IMG_9497.webp",
+        "/images/about us/event & activities/IMG_9498.webp",
+        "/images/about us/event & activities/IMG_9503.webp"
       ]
     },
     {
@@ -203,11 +203,11 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 40,
       category: "Workshop",
-      image: "/images/about us/event & activities/IMG_5833.JPG",
+      image: "/images/about us/event & activities/IMG_5833.webp",
       images: [
-        "/images/about us/event & activities/IMG_5833.JPG",
-        "/images/about us/event & activities/IMG_5834.JPG",
-        "/images/about us/event & activities/IMG_5835.JPG"
+        "/images/about us/event & activities/IMG_5833.webp",
+        "/images/about us/event & activities/IMG_5834.webp",
+        "/images/about us/event & activities/IMG_5835.webp"
       ]
     }
   ];
@@ -375,7 +375,7 @@ const Events: React.FC = () => {
                 }
               }}
             >
-              Join the AfroHeat Community
+              AfroHeat Community
             </motion.h2>
             <motion.p
               className="text-base text-muted-foreground mb-6 font-poppins"

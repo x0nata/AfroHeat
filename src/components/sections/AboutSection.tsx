@@ -138,14 +138,14 @@ const AboutSection: React.FC = () => {
   const services = [
     {
       title: "Dance Fitness",
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=400&fit=crop",
+      src: "/images/new/dance.webp",
       description: "High-energy dance workouts inspired by African rhythms. Burn calories while celebrating culture in a fun, supportive environment.",
       ctaText: "Join Dance Class",
       ctaHref: "/services#dance"
     },
     {
       title: "Bootcamp",
-      src: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&h=400&fit=crop",
+      src: "/images/new/boootcamp.webp",
       description: "Intensive 2-month program combining strength, cardio, and mobility. Transform your fitness with expert guidance in a supportive group setting.",
       ctaText: "Start Bootcamp",
       ctaHref: "/services#bootcamp"
@@ -356,10 +356,10 @@ const AboutSection: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
-              '/images/about us/event & activities/IMG_5760.JPG',
-              '/images/about us/event & activities/IMG_5833.JPG',
-              '/images/about us/event & activities/IMG_5837.JPG',
-              '/images/about us/event & activities/IMG_5843.JPG'
+              '/images/about us/event & activities/IMG_7019.webp',
+              '/images/about us/event & activities/IMG_5833.webp',
+              '/images/about us/event & activities/IMG_5837.webp',
+              '/images/about us/event & activities/IMG_5843.webp'
             ].map((src, index) => (
               <motion.a
                 key={index}

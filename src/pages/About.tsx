@@ -18,7 +18,7 @@ const OptimizedImage = React.memo(({
   src,
   alt,
   className,
-  fallbackSrc = "/images/logos/afroheat logo black.png",
+  fallbackSrc = "/images/logos/afroheat logo black.webp",
   ...props
 }: {
   src: string;
@@ -137,7 +137,7 @@ const About: React.FC = () => {
                     <div
                       className="absolute inset-0"
                       style={{
-                        backgroundImage: `url('/images/logos/pattern.jpg')`,
+                        backgroundImage: `url('/images/logos/pattern.webp')`,
                         backgroundSize: '400px 200px',
                         backgroundRepeat: 'repeat',
                         backgroundPosition: 'center',
@@ -150,7 +150,7 @@ const About: React.FC = () => {
                     >
                       <div className="w-full h-full rounded-full overflow-hidden">
                         <OptimizedImage
-                          src="/images/about us/community engagement/IMG_4898.webp"
+                          src="/images/about us/aboutuspic.webp"
                           alt="Hamrawit Gizaw, Founder of AfroHeat"
                           className="w-full h-full object-cover"
                         />
@@ -333,7 +333,7 @@ const About: React.FC = () => {
                 }
               }}
             >
-              Join the AfroHeat Community
+            AfroHeat Community
             </motion.h2>
             <motion.p
               className="text-lg text-muted-foreground mb-6 font-poppins"

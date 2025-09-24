@@ -7,9 +7,9 @@ const SLIDE_DURATION = 6000;
 const HeroSection = () => {
   const slides = useMemo(
     () => [
-      { src: '/images/about us/our space/IMG_4295.JPG', alt: 'Women training at AfroHeat' },
-      { src: '/images/about us/event & activities/IMG_5760.JPG', alt: 'AfroHeat class in action' },
-      { src: '/images/about us/event & activities/IMG_5843.JPG', alt: 'Strong women community' },
+      { src: '/images/about us/our space/IMG_4295.webp', alt: 'Women training at AfroHeat' },
+      { src: '/images/about us/community engagement/IMG_5841.webp', alt: 'AfroHeat class in action' },
+      { src: '/images/about us/event & activities/IMG_6499.webp', alt: 'Strong women community' },
     ],
     []
   );
@@ -28,7 +28,7 @@ const HeroSection = () => {
     <section
       className="relative min-h-screen w-full overflow-hidden bg-black"
       style={{
-        backgroundImage: `url('/images/logos/pattern.jpg')`,
+        backgroundImage: `url('/images/logos/pattern.webp')`,
         backgroundSize: '500px 214px',
         backgroundRepeat: 'repeat',
         backgroundPosition: 'center'

@@ -12,9 +12,8 @@ const Home: React.FC = () => {
         <ConnectedGridSection
           topLeftTitle="Women’s Fitness Bootcamp"
           topLeftDescription="Our women-only fitness classes are designed to help you build a stronger, fitter, and more resilient body in a safe learning environment."
-          topRightImage="/images/about us/our space/IMG_4295.JPG"
+          topRightImage="/images/new/bootcamp.webp"
           bottomLeftImage="/images/about us/event & activities/IMG_5760.JPG"
-          bottomRightTitle="Our Approach"
           bottomRightDescription="We combine functional strength training with cardio and mobility work to improve endurance, power, and overall fitness. Whether you're a beginner or experienced, our expert instructors guide you through safe, effective workouts that challenge you while keeping it fun and supportive."
         />
       </section>
@@ -51,7 +50,7 @@ const Home: React.FC = () => {
                 }
               }}
             >
-              Join the AfroHeat Community
+            AfroHeat Community
             </motion.h2>
             <motion.p
               className="text-base text-muted-foreground mb-6 font-poppins"

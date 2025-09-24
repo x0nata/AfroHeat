@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 
 const Services: React.FC = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent relative">
+      <div className="absolute inset-0 -z-10" style={{ backgroundImage: `url('/images/logos/afroheat-logo-and-pattern-01.webp')`, backgroundRepeat: 'repeat', backgroundSize: '50% auto', opacity: 0.5, border: '4px solid red' }}></div>
       {/* Page Header */}
-      <section className="py-20 bg-background text-foreground">
+      <section className="py-20 text-foreground">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

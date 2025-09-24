@@ -92,7 +92,7 @@ const MembershipSection: React.FC = () => {
   };
 
   return (
-    <section id="membership" className="py-20 bg-background text-foreground">
+    <section id="membership" className="py-20 text-foreground">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -311,7 +311,7 @@ const MembershipSection: React.FC = () => {
                   }
                 }}
               >
-                Join the AfroHeat Community
+               AfroHeat Community
               </motion.h2>
               <motion.p
                 className="text-base text-muted-foreground mb-6 font-poppins"

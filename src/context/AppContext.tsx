@@ -150,6 +150,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
       localStorage.setItem('afroheat-theme', 'light');
     }
   }, [state.isDarkMode]);
+  useEffect(() => {
+    console.log('Theme changed:', state.isDarkMode ? 'dark' : 'light');
+    if (state.isDarkMode) {
+      document.body.classList.add('dark');
+      localStorage.setItem('afroheat-theme', 'dark');
+    } else {
+      document.body.classList.remove('dark');
+      localStorage.setItem('afroheat-theme', 'light');
+    }
+  }, [state.isDarkMode]);
 
   const login = (user: User) => {
     dispatch({ type: 'LOGIN', payload: user });

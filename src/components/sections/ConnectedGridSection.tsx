@@ -6,7 +6,6 @@ interface ConnectedGridSectionProps {
   topLeftDescription: string;
   topRightImage: string;
   bottomLeftImage: string;
-  bottomRightTitle: string;
   bottomRightDescription: string;
 }
 
@@ -15,7 +14,6 @@ const ConnectedGridSection: React.FC<ConnectedGridSectionProps> = ({
   topLeftDescription,
   topRightImage,
   bottomLeftImage,
-  bottomRightTitle,
   bottomRightDescription
 }) => {
   return (
@@ -33,15 +31,15 @@ const ConnectedGridSection: React.FC<ConnectedGridSectionProps> = ({
     
         {/* Top Right - Text Content (switched) */}
         <div className="flex flex-col items-start justify-start p-4 sm:p-8 lg:p-16 bg-background h-[455px] overflow-hidden">
-          <div className="max-w-md w-full">
+          <div className="max-w-md w-full flex flex-col gap-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
               {topLeftTitle}
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-3 leading-relaxed">
               {topLeftDescription}
             </p>
             <motion.button
-              className="bg-primary text-white px-4 sm:px-8 py-2 sm:py-4 rounded-full font-medium hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group text-sm sm:text-base"
+              className="bg-primary text-white px-8 sm:px-8 py-4 sm:py-4 rounded-full font-medium hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -53,20 +51,8 @@ const ConnectedGridSection: React.FC<ConnectedGridSectionProps> = ({
                 transition={{ duration: 0.6 }}
               />
             </motion.button>
-          </div>
-        </div>
-    
-        {/* Bottom Left - Text Content (flipped) */}
-        <div className="flex flex-col items-start justify-start p-4 sm:p-8 lg:p-16 bg-background h-[455px] overflow-hidden">
-          <div className="max-w-md w-full">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
-              {bottomRightTitle}
-            </h2>
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-              {bottomRightDescription}
-            </p>
-            <motion.button
-              className="bg-primary text-white px-4 sm:px-8 py-2 sm:py-4 rounded-full font-medium hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group text-sm sm:text-base"
+              <motion.button
+              className="bg-primary text-white px-8 sm:px-8 py-4 sm:py-4 rounded-full font-medium hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -81,7 +67,22 @@ const ConnectedGridSection: React.FC<ConnectedGridSectionProps> = ({
           </div>
         </div>
     
-        {/* Bottom Right - Image (flipped) */}
+        {/* Bottom Left  */}
+        <div className="flex flex-col items-start justify-start p-4 sm:p-8 lg:p-16 bg-background h-[455px] overflow-hidden">
+          <div className="max-w-md w-full">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-4 mt-10 leading-relaxed">
+              {bottomRightDescription}
+            </p>
+            <div className="mt-6 w-full flex justify-start">
+              <svg className="w-24 h-6" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 0 10 Q 10 2 20 10 Q 30 18 40 10 Q 50 2 60 10 Q 70 18 80 10 L 90 10 M 90 10 L 100 10" stroke="#8c1e81" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <polygon points="95,7 100,10 95,13" fill="#8c1e81"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+    
+        {/* Bottom Right */}
         <div className="relative overflow-hidden group h-[455px]">
           <img
             src={bottomLeftImage}

@@ -14,7 +14,7 @@
     --popover: 43 58% 94%; /* cream for popovers */
     --popover-foreground: 0 0% 15%;
 
-    --primary: 320 70% 45%;
+    --primary: 318 46% 36%; /* 320 70% 45% */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 45 95% 55%;
@@ -47,7 +47,7 @@
     --popover: 220 15% 10%;
     --popover-foreground: 210 15% 90%;
 
-    --primary: 320 70% 60%;
+    --primary: 318 46% 36%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 45 95% 55%;
@@ -106,4 +106,17 @@
 
 .animate-scroll {
   animation: scroll var(--animation-duration, 40s) linear infinite var(--animation-direction, forwards);
+}
+.services-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/logos/afroheat-logo-and-pattern-01.webp');
+  background-repeat: repeat;
+  background-size: 50% auto;
+  opacity: 0.4;
+  z-index: -1;
 }

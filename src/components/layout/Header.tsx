@@ -17,6 +17,15 @@ const Header: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
+  useEffect(() => {
+    console.log('Header theme:', state.isDarkMode ? 'dark' : 'light');
+    const button = document.querySelector('a[href="/services"]') as HTMLElement;
+    if (button) {
+      const styles = window.getComputedStyle(button);
+      console.log('Become an Instructor button - bg:', styles.backgroundColor, 'text:', styles.color);
+    }
+  }, [state.isDarkMode]);
+
  const navItems = [
     {
       name: "Home",
@@ -66,12 +75,12 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img
-              src={state.isDarkMode ? "/images/logos/afroheat logo white.png" : "/images/logos/afroheat logo and pattern-01.png"}
+              src={state.isDarkMode ? "/images/logos/afroheat logo white.webp" : "/images/logos/afroheat-logo-and-pattern-01.webp"}
               alt="AfroHeat Fitness Logo"
               className="h-20 w-auto"
             />
             <img
-              src="/images/logos/navtitle.png"
+              src="/images/logos/navtitle.webp"
               alt="AfroHeat Fitness Title"
               className="h-16 w-auto"
             />
@@ -105,9 +114,9 @@ const Header: React.FC = () => {
             </button>
             <Link
               to="/services"
-              className="bg-primary text-primary-foreground px-6 py-2 rounded-lg font-poppins font-medium hover:bg-primary/90 transition-all duration-200"
+              className="bg-muted text-foreground dark:text-primary-foreground px-6 py-2 rounded-lg font-poppins font-medium hover:bg-primary/90 transition-all duration-200"
             >
-              Find a Group Class
+              Become an Instructor
             </Link>
           </div>
 

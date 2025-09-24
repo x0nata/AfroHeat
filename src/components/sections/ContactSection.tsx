@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { useApp } from '@/context/AppContext';
+import { useEffect } from 'react';
 import {
   IconMapPin,
   IconPhone,
@@ -13,6 +15,19 @@ import {
 } from '@tabler/icons-react';
 
 const ContactSection: React.FC = () => {
+  const { state } = useApp();
+
+  useEffect(() => {
+    console.log('ContactSection theme:', state.isDarkMode ? 'dark' : 'light');
+    // Log for Become an Instructor title
+    setTimeout(() => {
+      const title = document.querySelector('[data-title="become-instructor"]') as HTMLElement;
+      if (title) {
+        const styles = window.getComputedStyle(title);
+        console.log('Become an Instructor title - color:', styles.color, 'bg:', styles.backgroundColor);
+      }
+    }, 100); // Delay to ensure render
+  }, [state.isDarkMode]);
 
   const contactInfo = [
     {
@@ -239,7 +254,7 @@ const ContactSection: React.FC = () => {
                     {/* Screen */}
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
                       <img
-                        src="/images/mini phones/instagram.jpg"
+                        src="/images/mini phones/instagram.webp"
                         alt="AfroHeat Instagram frontpage"
                         className="w-full h-full object-contain"
                       />
@@ -267,7 +282,7 @@ const ContactSection: React.FC = () => {
                     {/* Screen */}
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
                       <img
-                        src="/images/mini phones/tiktok.jpg"
+                        src="/images/mini phones/tiktok.webp"
                         alt="AfroHeat TikTok frontpage"
                         className="w-full h-full object-contain"
                       />
@@ -295,7 +310,7 @@ const ContactSection: React.FC = () => {
                     {/* Screen */}
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
                       <img
-                        src="/images/mini phones/linkedin.jpg"
+                        src="/images/mini phones/linkedin.webp"
                         alt="AfroHeat LinkedIn frontpage"
                         className="w-full h-full object-contain"
                       />

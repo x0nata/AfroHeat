@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
       {/* Decorative background pattern */}
       <div
               className="absolute inset-0 w-full h-full bg-repeat opacity-10 dark:opacity-5 pointer-events-none"
-              style={{ backgroundImage: "url('/images/footer pattern.png')" }}
+              style={{ backgroundImage: "url('/images/footer pattern.webp')" }}
               aria-hidden="true"
             />
 
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center  mb-6">
               <img
-                src="/images/logos/navtitle.png"
+                src="/images/logos/navtitle.webp"
                 alt="AfroHeat Fitness Title"
                 className="h-23 w-auto"
               />
