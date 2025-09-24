@@ -22,7 +22,7 @@ const ConnectedGridSection: React.FC<ConnectedGridSectionProps> = ({
         {/* Top Left - Image (switched) */}
         <div className="relative overflow-hidden group h-[455px]">
           <img
-            src={topRightImage}
+            src="/images/"
             alt="Women's Fitness Bootcamp"
             className="w-full h-full object-cover transition-transform duration-100 group-hover:scale-20"
           />

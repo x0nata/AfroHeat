@@ -214,9 +214,9 @@ const Header: React.FC = () => {
                 <Link
                   to="/services"
                   onClick={toggleNavigation}
-                  className="block w-full bg-primary text-primary-foreground px-6 py-3 rounded-lg font-poppins font-medium text-center hover:bg-primary/90 transition-all duration-200"
+                  className="block w-full bg-muted text-foreground dark:text-primary-foreground px-6 py-3 rounded-lg font-poppins font-medium text-center hover:bg-primary/90 transition-all duration-200"
                 >
-                  Find a Group Class
+                  Become an Instructor
                 </Link>
               </div>
             </div>
