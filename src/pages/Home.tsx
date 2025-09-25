@@ -1,22 +1,14 @@
 import { motion } from 'framer-motion';
 import HeroSection from '../components/sections/HeroSection';
 import AboutSection from '../components/sections/AboutSection';
-import ConnectedGridSection from '../components/sections/ConnectedGridSection';
+import NewHomeSection from '../components/sections/new-home-section';
 import { Boxes } from '../components/ui/background-boxes';
 
 const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      <section className="mt-20">
-        <ConnectedGridSection
-          topLeftTitle="Women’s Fitness Bootcamp"
-          topLeftDescription="Our women-only fitness classes are designed to help you build a stronger, fitter, and more resilient body in a safe learning environment."
-          topRightImage="/images/new/bootcamp.webp"
-          bottomLeftImage="/images/about us/event & activities/IMG_5760.JPG"
-          bottomRightDescription="We combine functional strength training with cardio and mobility work to improve endurance, power, and overall fitness. Whether you're a beginner or experienced, our expert instructors guide you through safe, effective workouts that challenge you while keeping it fun and supportive."
-        />
-      </section>
+      <NewHomeSection />
       <AboutSection />
       {/* CTA Section */}
       <motion.section

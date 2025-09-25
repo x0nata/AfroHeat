@@ -483,14 +483,14 @@ const Events: React.FC = () => {
                                     className={positions[index % positions.length]}
                                     baseZIndex={zIndices[index % zIndices.length]}
                                   >
-                                    <div className="relative h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80">
+                                    <div className="relative w-48 h-36 sm:w-64 sm:h-48 md:w-80 md:h-60 aspect-[4/3]">
                                       {isGalleryLoading && (
-                                        <div className="absolute inset-0 bg-muted animate-pulse rounded-lg" />
+                                        <div className="absolute inset-0 bg-transparent animate-pulse rounded-lg" />
                                       )}
                                       <img
                                         src={image}
                                         alt="Event photo"
-                                        className={`pointer-events-none relative z-10 w-full h-full object-contain bg-muted transition-opacity duration-300 ${
+                                        className={`pointer-events-none relative z-10 w-full h-full object-cover transition-opacity duration-300 ${
                                           isGalleryLoading ? 'opacity-0' : 'opacity-100'
                                         }`}
                                         loading="eager"
