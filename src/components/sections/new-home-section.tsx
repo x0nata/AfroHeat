@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { cn } from '@/lib/utils';
 
 const NewHomeSection: React.FC = () => {
   React.useEffect(() => {

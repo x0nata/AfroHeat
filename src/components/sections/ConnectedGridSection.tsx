@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 interface ConnectedGridSectionProps {
   topLeftTitle: string;
   topLeftDescription: string;
-  topRightImage: string;
   bottomLeftImage: string;
   bottomRightDescription: string;
 }
@@ -12,7 +11,6 @@ interface ConnectedGridSectionProps {
 const ConnectedGridSection: React.FC<ConnectedGridSectionProps> = ({
   topLeftTitle,
   topLeftDescription,
-  topRightImage,
   bottomLeftImage,
   bottomRightDescription
 }) => {
