@@ -1,16 +1,20 @@
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import HeroSection from '../components/sections/HeroSection';
 import AboutSection from '../components/sections/AboutSection';
 import NewHomeSection from '../components/sections/new-home-section';
 import { Boxes } from '../components/ui/background-boxes';
+import ScheduleModal from '../components/ui/ScheduleModal';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
+  const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   return (
-    <div className="min-h-screen">
+    <>
+      <div className="min-h-screen">
       <HeroSection />
-      <NewHomeSection />
+      <NewHomeSection onScheduleOpen={() => setIsScheduleOpen(true)} />
       <AboutSection />
       {/* CTA Section */}
       <motion.section
@@ -101,11 +105,34 @@ const Home: React.FC = () => {
                   transition={{ duration: 0.5 }}
                 />
               </motion.button>
+              <motion.button
+                onClick={() => setIsScheduleOpen(true)}
+                className="bg-secondary text-secondary-foreground px-5 py-2.5 rounded-lg font-semibold hover:bg-secondary/90 transition-all shadow-md hover:shadow-lg relative overflow-hidden group w-full sm:w-auto font-poppins"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                variants={{
+                  hover: {
+                    y: -3,
+                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                    transition: { duration: 0.3 }
+                  }
+                }}
+              >
+                <span className="relative z-10">See Our Schedule</span>
+                <motion.div
+                  className="absolute inset-0 bg-white/10"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.5 }}
+                />
+              </motion.button>
             </div>
           </motion.div>
         </div>
       </motion.section>
     </div>
+    <ScheduleModal isOpen={isScheduleOpen} onClose={() => setIsScheduleOpen(false)} />
+    </>
   );
 };
 

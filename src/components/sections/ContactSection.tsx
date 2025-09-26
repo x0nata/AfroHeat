@@ -14,7 +14,20 @@ import {
   IconBrandLinkedin
 } from '@tabler/icons-react';
 
-const ContactSection: React.FC = () => {
+interface ContactInfo {
+  icon: React.ReactNode;
+  title: string;
+  details: string[];
+  action: string;
+  href?: string;
+  onClick?: () => void;
+}
+
+interface ContactSectionProps {
+  onScheduleOpen?: () => void;
+}
+
+const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
   const { state } = useApp();
 
   useEffect(() => {
@@ -29,7 +42,7 @@ const ContactSection: React.FC = () => {
     }, 100); // Delay to ensure render
   }, [state.isDarkMode]);
 
-  const contactInfo = [
+  const contactInfo: ContactInfo[] = [
     {
       icon: <IconMapPin className="h-6 w-6" />,
       title: "Visit Us",
@@ -53,7 +66,8 @@ const ContactSection: React.FC = () => {
       icon: <IconClock className="h-6 w-6" />,
       title: "Operating Hours",
       details: ["Monday - Saturday: 6AM - 10PM", "Sunday: 8AM - 8PM"],
-      action: "View Schedule"
+      action: "View Schedule",
+      onClick: onScheduleOpen
     }
   ];
 
@@ -131,8 +145,9 @@ const ContactSection: React.FC = () => {
                           transition={{ duration: 0.4 }}
                         />
                       </motion.a>
-                    ) : (
+                    ) : info.onClick ? (
                       <motion.button
+                        onClick={info.onClick}
                         className="text-primary hover:text-primary/80 text-xs md:text-sm font-medium mt-1 md:mt-2 font-poppins relative overflow-hidden group"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -145,6 +160,10 @@ const ContactSection: React.FC = () => {
                           transition={{ duration: 0.4 }}
                         />
                       </motion.button>
+                    ) : (
+                      <span className="text-primary/70 text-xs md:text-sm font-medium mt-1 md:mt-2 font-poppins">
+                        {info.action}
+                      </span>
                     )}
                   </div>
                 ))}

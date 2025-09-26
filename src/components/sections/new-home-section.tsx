@@ -2,7 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const NewHomeSection: React.FC = () => {
+interface NewHomeSectionProps {
+  onScheduleOpen?: () => void;
+}
+
+const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
   React.useEffect(() => {
     console.log('NewHomeSection rendered');
     const mediaQuery = window.matchMedia('(max-width: 640px)');
@@ -30,7 +34,7 @@ const NewHomeSection: React.FC = () => {
       description: 'For women ready to conquer their limits. This bootcamp isn\'t just exercise-it\'s transformation.',
       image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop',
       buttonText: 'See Our Schedule',
-      buttonLink: '/events'
+      onClick: onScheduleOpen
     },
     {
       id: 2,
@@ -106,12 +110,23 @@ const NewHomeSection: React.FC = () => {
                   <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-900 dark:text-gray-300 leading-tight sm:leading-relaxed mb-2 sm:mb-3 md:mb-4 font-poppins">
                     {card.description}
                   </p>
-                  <Link
-                    to={card.buttonLink}
-                    className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2.5 rounded-full text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 hover:scale-105"
-                  >
-                    {card.buttonText}
-                  </Link>
+                  {card.onClick ? (
+                    <motion.button
+                      onClick={card.onClick}
+                      className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2.5 rounded-full text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 hover:scale-105"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {card.buttonText}
+                    </motion.button>
+                  ) : (
+                    <Link
+                      to={card.buttonLink!}
+                      className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2.5 rounded-full text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 hover:scale-105"
+                    >
+                      {card.buttonText}
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             ))}
