@@ -388,8 +388,8 @@ const Events: React.FC = () => {
                 }
               }}
             >
-              Experience fitness in a way that celebrates African culture, music, and dance.
-              Join us in creating a healthier, more active lifestyle for Africans and the diaspora.
+              Fitness in a way that feels right.
+              Join us in creating a healthier, more active lifestyle for Women.
             </motion.p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <motion.button

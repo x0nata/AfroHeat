@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useMemo } from 'react';
@@ -305,7 +305,7 @@ const About: React.FC = () => {
       </section>     
       
       <motion.section
-        className="py-16 relative w-full overflow-hidden flex flex-col items-center justify-center rounded-lg group"
+        className="py-6 relative w-full overflow-hidden flex flex-col items-center justify-center rounded-lg group"
         whileHover="hover"
         variants={{
           hover: {
@@ -318,78 +318,78 @@ const About: React.FC = () => {
         <div className="absolute inset-0 overflow-hidden">
           <Boxes />
         </div>
-        <div className="w-full px-4 sm:px-6 lg:px-8 text-center relative z-10 max-w-4xl mx-auto">
+        <div className="w-full px-4 sm:px-6 lg:px-8 text-center relative z-10 max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-card/30 rounded-lg p-6 md:p-8"
+            className="bg-card/20 rounded-lg p-6"
           >
             <motion.h2
               className="text-2xl font-bold mb-4 text-foreground font-industry"
               variants={{
                 hover: {
-                  scale: 1.05,
+                  scale: 1.03,
                   transition: { duration: 0.3 }
                 }
               }}
             >
-            AfroHeat Community
+              AfroHeat Community
             </motion.h2>
             <motion.p
-              className="text-lg text-muted-foreground mb-6 font-poppins"
+              className="text-base text-muted-foreground mb-4 font-poppins"
               variants={{
                 hover: {
-                  y: -5,
+                  y: -3,
                   transition: { duration: 0.3 }
                 }
               }}
             >
-              Experience fitness in a way that celebrates African culture, music, and dance.
-              Join us in creating a healthier, more active lifestyle for Africans and the diaspora.
+              Fitness in a way that feels right.
+              Join us in creating a healthier, more active lifestyle for Women.
             </motion.p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <motion.button
                 onClick={() => navigate('/about')}
-                className="bg-primary text-primary-foreground px-6 py-3 md:px-8 md:py-4 rounded-lg md:rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl relative overflow-hidden group w-full sm:w-auto"
+                className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-all shadow-md hover:shadow-lg relative overflow-hidden group w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 variants={{
                   hover: {
-                    y: -5,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                    y: -3,
+                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
                     transition: { duration: 0.3 }
                   }
                 }}
               >
                 <span className="relative z-10">Learn More</span>
                 <motion.div
-                  className="absolute inset-0 bg-white/20"
+                  className="absolute inset-0 bg-white/10"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.5 }}
                 />
               </motion.button>
               <motion.button
-                className="border border-border text-foreground px-8 py-4 rounded-xl font-semibold hover:border-primary hover:text-primary transition-all font-poppins relative overflow-hidden w-full sm:w-auto"
+                onClick={() => navigate('/contact')}
+                className="border border-border text-foreground px-5 py-2.5 rounded-lg font-semibold hover:border-primary hover:text-primary transition-all font-poppins relative overflow-hidden w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 variants={{
                   hover: {
-                    y: -5,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0.04)",
+                    y: -3,
+                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
                     transition: { duration: 0.3 }
                   }
                 }}
               >
                 <span className="relative z-10">Contact Us</span>
                 <motion.div
-                  onClick={() => navigate('/contact')}
-                  className="absolute inset-0 bg-primary/10"
+                  className="absolute inset-0 bg-primary/5"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.5 }}
                 />
               </motion.button>
             </div>
@@ -397,7 +397,7 @@ const About: React.FC = () => {
         </div>
       </motion.section>
       {/* Separator */}
-      <div className="h-16"></div>
+      <div className="h-4"></div>
     </div>
   );
 };

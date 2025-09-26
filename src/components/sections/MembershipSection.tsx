@@ -94,7 +94,7 @@ const MembershipSection: React.FC = () => {
   };
 
   return (
-    <section id="membership" className="py-20 text-foreground">
+    <section id="membership" className="pt-20 pb-8 text-foreground">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -259,121 +259,129 @@ const MembershipSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold mb-8 text-foreground font-industry">
+          <h3 className="text-3xl font-bold mb-6 text-foreground font-industry">
             All Packages Include
           </h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-6">
             {[
-              { icon: <IconUsers className="h-6 w-6" />, label: 'Women-Only Environment' },
-              { icon: <IconCalendar className="h-6 w-6" />, label: 'Flexible Scheduling' },
-              { icon: <IconBarbell className="h-6 w-6" />, label: 'Modern Equipment' },
-              { icon: <IconAward className="h-6 w-6" />, label: 'Certified Trainers' }
+              { icon: <IconUsers className="h-10 w-10 text-primary mx-auto" />, label: 'Women-Only Environment' },
+              { icon: <IconCalendar className="h-10 w-10 text-primary mx-auto" />, label: 'Flexible Scheduling' },
+              { icon: <IconBarbell className="h-10 w-10 text-primary mx-auto" />, label: 'Modern Equipment' },
+              { icon: <IconAward className="h-10 w-10 text-primary mx-auto" />, label: 'Certified Trainers' }
             ].map((benefit, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary rounded-xl text-primary-foreground mb-3 mx-auto">
+              <div key={index} className="text-center py-4">
+                <div className="mb-4">
                   {benefit.icon}
                 </div>
-                <p className="text-muted-foreground text-sm font-poppins">{benefit.label}</p>
+                <p className="text-muted-foreground text-base font-poppins">{benefit.label}</p>
               </div>
             ))}
           </div>
 
         </motion.div>
 
-        {/* New CTA Section with Background Boxes */}
         <motion.section
-          className="py-12 relative w-full overflow-hidden flex flex-col items-center justify-center rounded-lg mt-12 group"
-          whileHover="hover"
-          variants={{
-            hover: {
-              transition: {
-                staggerChildren: 0.1
-              }
-            }
-          }}
-        >
-          <div className="absolute inset-0 overflow-hidden">
-            <Boxes />
-          </div>
-          <div className="w-full px-4 sm:px-6 lg:px-8 text-center relative z-10 max-w-3xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-card/20 rounded-lg p-6"
-            >
-              <motion.h2
-                className="text-2xl font-bold mb-4 text-foreground font-industry"
+                className="py-4 relative w-full overflow-hidden flex flex-col items-center justify-center rounded-lg group"
+                whileHover="hover"
                 variants={{
                   hover: {
-                    scale: 1.03,
-                    transition: { duration: 0.3 }
+                    transition: {
+                      staggerChildren: 0.1
+                    }
                   }
                 }}
               >
-               AfroHeat Community
-              </motion.h2>
-              <motion.p
-                className="text-base text-muted-foreground mb-6 font-poppins"
+        <div className="absolute inset-0 overflow-hidden">
+          <Boxes />
+        </div>
+        <div className="w-full px-4 sm:px-6 lg:px-8 text-center relative z-10 max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-card/20 rounded-lg p-6"
+          >
+            <motion.h2
+              className="text-2xl font-bold mb-4 text-foreground font-industry"
+              variants={{
+                hover: {
+                  scale: 1.03,
+                  transition: { duration: 0.3 }
+                },
+                whileTap: {
+                  scale: 0.98,
+                  transition: { duration: 0.1 }
+                }
+              }}
+            >
+              AfroHeat Community
+            </motion.h2>
+            <motion.p
+              className="text-base text-muted-foreground mb-6 font-poppins"
+              variants={{
+                hover: {
+                  y: -3,
+                  transition: { duration: 0.3 }
+                },
+                whileTap: {
+                  y: -1,
+                  scale: 0.99,
+                  transition: { duration: 0.1 }
+                }
+              }}
+            >
+              Fitness in a way that feels right.
+              Join us in creating a healthier, more active lifestyle for Women.
+            </motion.p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <motion.button
+                onClick={() => navigate('/about')}
+                className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-all shadow-md hover:shadow-lg relative overflow-hidden group w-full sm:w-auto"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 variants={{
                   hover: {
                     y: -3,
+                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
                     transition: { duration: 0.3 }
                   }
                 }}
               >
-                Experience fitness in a way that celebrates African culture, music, and dance.
-                Join us in creating a healthier, more active lifestyle for Africans and the diaspora.
-              </motion.p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <motion.button
-                  onClick={() => navigate('/about')}
-                  className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-all shadow-md hover:shadow-lg relative overflow-hidden group w-full sm:w-auto"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  variants={{
-                    hover: {
-                      y: -3,
-                      boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                      transition: { duration: 0.3 }
-                    }
-                  }}
-                >
-                  <span className="relative z-10">Learn More</span>
-                  <motion.div
-                    className="absolute inset-0 bg-white/10"
-                    initial={{ x: '-100%' }}
-                    whileHover={{ x: '100%' }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </motion.button>
-                <motion.button
-                  onClick={() => navigate('/contact')}
-                  className="border border-border text-foreground px-5 py-2.5 rounded-lg font-semibold hover:border-primary hover:text-primary transition-all font-poppins relative overflow-hidden w-full sm:w-auto"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  variants={{
-                    hover: {
-                      y: -3,
-                      boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                      transition: { duration: 0.3 }
-                    }
-                  }}
-                >
-                  <span className="relative z-10">Contact Us</span>
-                  <motion.div
-                    className="absolute inset-0 bg-primary/5"
-                    initial={{ x: '-100%' }}
-                    whileHover={{ x: '100%' }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </motion.button>
-              </div>
-            </motion.div>
-          </div>
-        </motion.section>
+                <span className="relative z-10">Learn More</span>
+                <motion.div
+                  className="absolute inset-0 bg-white/10"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.5 }}
+                />
+              </motion.button>
+              <motion.button
+                onClick={() => navigate('/contact')}
+                className="border border-border text-foreground px-5 py-2.5 rounded-lg font-semibold hover:border-primary hover:text-primary transition-all font-poppins relative overflow-hidden w-full sm:w-auto"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                variants={{
+                  hover: {
+                    y: -3,
+                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                    transition: { duration: 0.3 }
+                  }
+                }}
+              >
+                <span className="relative z-10">Contact Us</span>
+                <motion.div
+                  className="absolute inset-0 bg-primary/5"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.5 }}
+                />
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
       </div>
     </section>
   );

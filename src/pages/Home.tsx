@@ -18,7 +18,7 @@ const Home: React.FC = () => {
       <AboutSection />
       {/* CTA Section */}
       <motion.section
-        className="py-12 relative w-full overflow-hidden flex flex-col items-center justify-center rounded-lg group mt-12"
+        className="py-12 relative w-full overflow-hidden flex flex-col items-center justify-center rounded-lg group"
         whileHover="hover"
         variants={{
           hover: {
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
                 }
               }}
             >
-            AfroHeat Community
+              AfroHeat Community
             </motion.h2>
             <motion.p
               className="text-base text-muted-foreground mb-6 font-poppins"
@@ -59,8 +59,8 @@ const Home: React.FC = () => {
                 }
               }}
             >
-              Experience fitness in a way that celebrates African culture, music, and dance.
-              Join us in creating a healthier, more active lifestyle for Africans and the diaspora.
+              Fitness in a way that feels right.
+              Join us in creating a healthier, more active lifestyle for Women.
             </motion.p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <motion.button
@@ -100,27 +100,6 @@ const Home: React.FC = () => {
                 <span className="relative z-10">Contact Us</span>
                 <motion.div
                   className="absolute inset-0 bg-primary/5"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.5 }}
-                />
-              </motion.button>
-              <motion.button
-                onClick={() => setIsScheduleOpen(true)}
-                className="bg-secondary text-secondary-foreground px-5 py-2.5 rounded-lg font-semibold hover:bg-secondary/90 transition-all shadow-md hover:shadow-lg relative overflow-hidden group w-full sm:w-auto font-poppins"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                variants={{
-                  hover: {
-                    y: -3,
-                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                    transition: { duration: 0.3 }
-                  }
-                }}
-              >
-                <span className="relative z-10">See Our Schedule</span>
-                <motion.div
-                  className="absolute inset-0 bg-white/10"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.5 }}
