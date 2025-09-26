@@ -116,7 +116,7 @@ const About: React.FC = () => {
           <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.6 }}
+           transition={{ duration: 0.45 }}
            viewport={{ once: true }}
            className="text-center mb-2 md:mb-4"
          >
@@ -125,7 +125,7 @@ const About: React.FC = () => {
               className="w-full space-y-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.45 }}
               viewport={{ once: true }}
             >
               <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
@@ -148,7 +148,7 @@ const About: React.FC = () => {
                     />
                     {/* Circular image on top */}
                     <div
-                      className="absolute inset-0 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300 flex items-center justify-center"
+                      className="absolute inset-0 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-225 flex items-center justify-center"
                     >
                       <div className="w-full h-full rounded-full overflow-hidden">
                         <OptimizedImage
@@ -189,7 +189,7 @@ const About: React.FC = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
+                    transition={{ duration: 0.45, delay: 0.3 }}
                     viewport={{ once: true }}
                     className="flex flex-wrap items-center gap-2 pt-4 border-t border-border"
                   >
@@ -205,7 +205,7 @@ const About: React.FC = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-2 py-1 bg-muted rounded-md text-xs font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-all duration-200 border border-border hover:border-primary/50"
+                        className="inline-flex items-center gap-1 px-2 py-1 bg-muted rounded-md text-xs font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-all duration-150 border border-border hover:border-primary/50"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         aria-label={link.aria}
@@ -235,7 +235,7 @@ const About: React.FC = () => {
                 onClick={() => setSelectedCategory(category.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                transition={{ type: "tween", duration: 0.2 }}
+                transition={{ type: "tween", duration: 0.15 }}
                 viewport={{ once: true }}
                 className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all ${
                   selectedCategory === category.id
@@ -258,7 +258,7 @@ const About: React.FC = () => {
             {filteredPictures.map((picture) => (
               <div
                 key={picture.id}
-                className="group relative w-full bg-card rounded-xl shadow-lg border border-border overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105"
+                className="group relative w-full bg-card rounded-xl shadow-lg border border-border overflow-hidden transition-transform duration-225 hover:shadow-xl hover:scale-105"
                 onClick={() => setExpandedImage(picture.image)}
               >
                 <OptimizedImage
@@ -267,7 +267,7 @@ const About: React.FC = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="text-lg font-bold mb-2 text-foreground font-industry group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold mb-2 text-foreground font-industry group-hover:text-primary transition-colors duration-225">
                     {picture.title}
                   </h3>
                 </div>
@@ -322,7 +322,7 @@ const About: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.45 }}
             viewport={{ once: true }}
             className="bg-card/20 rounded-lg p-6"
           >
@@ -331,7 +331,7 @@ const About: React.FC = () => {
               variants={{
                 hover: {
                   scale: 1.03,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.225 }
                 }
               }}
             >
@@ -342,7 +342,7 @@ const About: React.FC = () => {
               variants={{
                 hover: {
                   y: -3,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.225 }
                 }
               }}
             >
@@ -359,7 +359,7 @@ const About: React.FC = () => {
                   hover: {
                     y: -3,
                     boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.225 }
                   }
                 }}
               >
@@ -368,7 +368,7 @@ const About: React.FC = () => {
                   className="absolute inset-0 bg-white/10"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.375 }}
                 />
               </motion.button>
               <motion.button
@@ -380,7 +380,7 @@ const About: React.FC = () => {
                   hover: {
                     y: -3,
                     boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.225 }
                   }
                 }}
               >
@@ -389,7 +389,7 @@ const About: React.FC = () => {
                   className="absolute inset-0 bg-primary/5"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.375 }}
                 />
               </motion.button>
             </div>

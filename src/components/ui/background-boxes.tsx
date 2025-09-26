@@ -37,7 +37,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
           {cols.map((_, j) => (
             <motion.div
               whileHover={{ backgroundColor: `${getRandomColor()}`, transition: { duration: 0 } }}
-              animate={{ transition: { duration: 2 } }}
+              animate={{ transition: { duration: 1.5 } }}
               key={`col` + j}
               className="relative h-8 w-16 border-t border-r border-border"
             >

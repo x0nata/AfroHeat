@@ -283,7 +283,7 @@ const Events: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.45 }}
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 font-industry">
@@ -305,7 +305,7 @@ const Events: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.45 }}
             viewport={{ once: true }}
             className="mb-12"
           >
@@ -326,7 +326,7 @@ const Events: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.45 }}
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-center mb-12 font-industry">Past Events</h2>
@@ -364,7 +364,7 @@ const Events: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.45 }}
             viewport={{ once: true }}
             className="bg-card/20 rounded-lg p-6"
           >
@@ -401,7 +401,7 @@ const Events: React.FC = () => {
                   hover: {
                     y: -3,
                     boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.225 }
                   }
                 }}
               >
@@ -410,7 +410,7 @@ const Events: React.FC = () => {
                   className="absolute inset-0 bg-white/10"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.375 }}
                 />
               </motion.button>
               <motion.button
@@ -422,7 +422,7 @@ const Events: React.FC = () => {
                   hover: {
                     y: -3,
                     boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.225 }
                   }
                 }}
               >
@@ -431,7 +431,7 @@ const Events: React.FC = () => {
                   className="absolute inset-0 bg-primary/5"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.375 }}
                 />
               </motion.button>
             </div>
@@ -447,6 +447,7 @@ const Events: React.FC = () => {
           <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.24 }}
                         className="bg-card rounded-2xl p-6 max-w-full sm:max-w-4xl md:max-w-5xl w-full h-[95vh] relative mx-auto"
                         onClick={(e) => e.stopPropagation()}
                       >
@@ -494,7 +495,7 @@ const Events: React.FC = () => {
                                       <img
                                         src={image}
                                         alt="Event photo"
-                                        className={`pointer-events-none relative z-10 w-full h-full object-cover transition-opacity duration-300 ${
+                                        className={`pointer-events-none relative z-10 w-full h-full object-cover transition-opacity duration-225 ${
                                           isGalleryLoading ? 'opacity-0' : 'opacity-100'
                                         }`}
                                         loading="eager"

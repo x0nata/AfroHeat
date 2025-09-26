@@ -102,6 +102,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, className 
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ duration: 0.24 }}
             className="relative bg-background rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto"
           >
             {/* Header */}

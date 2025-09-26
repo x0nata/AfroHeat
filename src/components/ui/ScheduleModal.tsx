@@ -87,8 +87,8 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
                             key={time}
                             initial={{ scale: 0, rotate: -180 }}
                             animate={{ scale: 1, rotate: 0 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="bg-primary/90 hover:bg-primary text-primary-foreground px-1.5 py-0.5 rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-all duration-200 cursor-default"
+                            transition={{ type: "spring", stiffness: 380, damping: 25 }}
+                            className="bg-primary/90 hover:bg-primary text-primary-foreground px-1.5 py-0.5 rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-all duration-150 cursor-default"
                             whileHover={{ scale: 1.05 }}
                           >
                             {time}
@@ -104,8 +104,8 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
                             key={time}
                             initial={{ scale: 0, rotate: -180 }}
                             animate={{ scale: 1, rotate: 0 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="bg-secondary/90 hover:bg-secondary text-secondary-foreground px-1.5 py-0.5 rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-all duration-200 cursor-default"
+                            transition={{ type: "spring", stiffness: 380, damping: 25 }}
+                            className="bg-secondary/90 hover:bg-secondary text-secondary-foreground px-1.5 py-0.5 rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-all duration-150 cursor-default"
                             whileHover={{ scale: 1.05 }}
                           >
                             {time}

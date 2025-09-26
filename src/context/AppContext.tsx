@@ -161,6 +161,20 @@ export function AppProvider({ children }: { children: ReactNode }) {
     }
   }, [state.isDarkMode]);
 
+  // Prevent body scroll when mobile navigation is open
+  useEffect(() => {
+    if (state.isNavigationOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    // Cleanup on unmount or state change
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [state.isNavigationOpen]);
+
   const login = (user: User) => {
     dispatch({ type: 'LOGIN', payload: user });
   };

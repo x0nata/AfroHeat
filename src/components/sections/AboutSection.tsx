@@ -18,7 +18,7 @@ const useCounter = (target: number, duration: number = 2000) => {
   useEffect(() => {
     let start = 0;
     const end = target;
-    const incrementTime = (duration / end) * 0.1;
+    const incrementTime = (1500 / end) * 0.1;
     
     const timer = setInterval(() => {
       start += 1;
@@ -169,7 +169,7 @@ const AboutSection: React.FC = () => {
           className="mb-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
         >
           <div className="text-center mb-12">
@@ -204,7 +204,7 @@ const AboutSection: React.FC = () => {
                 className="absolute top-8 left-8 w-2/5 h-2/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10"
                 initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: -2 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ rotate: 0, scale: 1.05 }}
               >
@@ -219,7 +219,7 @@ const AboutSection: React.FC = () => {
                 className="absolute bottom-8 right-8 w-2/5 h-2/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10"
                 initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 2 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ rotate: 0, scale: 1.05 }}
               >
@@ -236,7 +236,7 @@ const AboutSection: React.FC = () => {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.3, delay: 0.6 }}
               viewport={{ once: true }}
             >
               {values.map((value, index) => (
@@ -245,7 +245,7 @@ const AboutSection: React.FC = () => {
                   className="relative rounded-xl p-4 overflow-hidden group cursor-default"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -8 }}
                 >
@@ -270,7 +270,7 @@ const AboutSection: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
           viewport={{ once: true }}
           className="mb-20"
         >
@@ -286,10 +286,10 @@ const AboutSection: React.FC = () => {
                     x: ['-100%', '100%']
                   }}
                   transition={{
-                    duration: 3 + i,
+                    duration: 2.25 + i * 0.75,
                     repeat: Infinity,
                     ease: 'linear',
-                    delay: i * 0.5
+                    delay: i * 0.375
                   }}
                 />
               ))}
@@ -325,7 +325,7 @@ const AboutSection: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
           className="mb-12 md:mb-20"
         >
@@ -346,7 +346,7 @@ const AboutSection: React.FC = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.3, delay: 0.6 }}
           viewport={{ once: true }}
           className="mb-16 w-full"
         >
@@ -367,7 +367,7 @@ const AboutSection: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.8 }}
           viewport={{ once: true }}
           className="mb-8 w-full"
         >
@@ -400,14 +400,14 @@ const AboutSection: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.45, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="relative group overflow-hidden rounded-lg aspect-square bg-muted block"
               >
                 <img
                   src={src}
                   alt={`Instagram post ${index + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-225"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <IconBrandInstagram className="h-12 w-12 text-white drop-shadow-2xl" />

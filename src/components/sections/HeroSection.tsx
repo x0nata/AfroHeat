@@ -50,7 +50,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0.4, scale: 1.05 }}
-              transition={{ duration: 0.9, ease: 'easeOut' }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
             />
           </AnimatePresence>
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20 dark:from-black/85 dark:via-black/60 dark:to-black/30" />
@@ -98,7 +98,7 @@ const HeroSection = () => {
                 className="absolute inset-0 bg-white/20"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: '100%' }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.45 }}
               />
             </motion.button>
           </div>

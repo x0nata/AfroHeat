@@ -111,7 +111,7 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     const animate = () => {
       if (!isDragging && !(pauseOnHover && isHovering) && totalWidth > 0 && isReady) {
-        const delta = 0.6; // slow speed
+        const delta = 0.75; // faster speed
         const moveDir = direction === "left" ? -1 : 1;
         let newTranslate = translateRef.current + delta * moveDir;
         const cycle = cycleWidth.current;
@@ -162,7 +162,7 @@ export const InfiniteMovingCards = ({
       >
         {duplicatedItems.map((item, idx) => (
           <li
-            className="relative w-[400px] max-w-full shrink-0 rounded-2xl border border-border bg-card px-6 py-4 md:w-[500px] shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col min-h-[180px]"
+            className="relative w-[400px] max-w-full shrink-0 rounded-2xl border border-border bg-card px-6 py-4 md:w-[500px] shadow-lg hover:shadow-xl transition-shadow duration-225 flex flex-col min-h-[180px]"
             key={idx}
           >
             <blockquote className="flex flex-col h-full">

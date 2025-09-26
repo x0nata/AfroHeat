@@ -35,7 +35,7 @@ const Home: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.45 }}
             viewport={{ once: true }}
             className="bg-card/20 rounded-lg p-6"
           >
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
               variants={{
                 hover: {
                   scale: 1.03,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.225 }
                 }
               }}
             >
@@ -55,7 +55,7 @@ const Home: React.FC = () => {
               variants={{
                 hover: {
                   y: -3,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.225 }
                 }
               }}
             >
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
                   hover: {
                     y: -3,
                     boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.225 }
                   }
                 }}
               >
@@ -81,7 +81,7 @@ const Home: React.FC = () => {
                   className="absolute inset-0 bg-white/10"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.375 }}
                 />
               </motion.button>
               <motion.button
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
                   hover: {
                     y: -3,
                     boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.225 }
                   }
                 }}
               >
@@ -102,7 +102,7 @@ const Home: React.FC = () => {
                   className="absolute inset-0 bg-primary/5"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.375 }}
                 />
               </motion.button>
             </div>

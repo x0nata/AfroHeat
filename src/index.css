@@ -105,7 +105,7 @@
 }
 
 .animate-scroll {
-  animation: scroll var(--animation-duration, 40s) linear infinite var(--animation-direction, forwards);
+  animation: scroll var(--animation-duration, 32s) linear infinite var(--animation-direction, forwards);
 }
 .services-background::before {
   content: '';

@@ -18,11 +18,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className }) => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.45 }}
       viewport={{ once: true }}
       className={cn(
         "group bg-gradient-to-br from-card to-card/80 rounded-3xl border-2 border-border/20 overflow-hidden",
-        "hover:shadow-2xl hover:border-primary/30 transition-all duration-500",
+        "hover:shadow-2xl hover:border-primary/30 transition-all duration-375",
         "transform hover:scale-105 focus:scale-105 focus:outline-none",
         "relative backdrop-blur-sm",
         className
@@ -32,14 +32,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className }) => {
       tabIndex={0}
     >
       {/* Glow effect on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-375 rounded-3xl" />
       
       {/* Image Container */}
       <div className="relative w-full aspect-video overflow-hidden">
         <img
           src={service.image}
           alt={service.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-375"
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -60,7 +60,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className }) => {
 
       {/* Content */}
       <div className="p-6 relative z-10">
-        <h3 className="text-2xl font-bold mb-4 font-industry text-foreground group-hover:text-primary transition-colors duration-300">
+        <h3 className="text-2xl font-bold mb-4 font-industry text-foreground group-hover:text-primary transition-colors duration-225">
           {service.title}
         </h3>
         
@@ -95,7 +95,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className }) => {
               className="absolute inset-0 bg-white/20"
               initial={{ x: '-100%' }}
               whileHover={{ x: '100%' }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.45 }}
             />
           </motion.button>
         ) : (

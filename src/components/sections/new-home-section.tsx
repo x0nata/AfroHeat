@@ -52,7 +52,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
         className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.3 }}
         viewport={{ once: true }}
       >
         {/* Left Side - Header Section */}
@@ -60,7 +60,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
           className="flex-1 lg:w-2/5 space-y-3 sm:space-y-4 text-center lg:text-left mt-5"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <span className="text-xs sm:text-sm uppercase font-bold text-[#8c1e81] dark:text-[#a53a97] tracking-wide">HEALTH + FITNESS</span>
@@ -77,7 +77,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
           className="flex-1 lg:w-3/5"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
           viewport={{ once: true }}
         >
           <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 min-h-[300px] sm:min-h-[400px] md:min-h-[500px] xl:min-h-[400px]">
