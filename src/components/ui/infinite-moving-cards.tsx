@@ -62,18 +62,19 @@ export const InfiniteMovingCards = ({
   }, [items.length]);
 
   const handleStart = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!isReady) return;
-    const container = containerRef.current;
-    if (!container || isDragging) return;
-    container.setPointerCapture(e.pointerId);
-    setIsDragging(true);
-    startXRef.current = e.clientX;
-    startTranslateRef.current = translateRef.current;
-    if (container) {
-      container.style.cursor = "grabbing";
-      container.style.userSelect = "none";
-    }
-  };
+      if (!isReady) return;
+      const container = containerRef.current;
+      if (!container || isDragging) return;
+      e.preventDefault();
+      container.setPointerCapture(e.pointerId);
+      setIsDragging(true);
+      startXRef.current = e.clientX;
+      startTranslateRef.current = translateRef.current;
+      if (container) {
+        container.style.cursor = "grabbing";
+        container.style.userSelect = "none";
+      }
+    };
 
   const handleMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!isDragging || !scrollerRef.current || totalWidth === 0) return;
@@ -145,7 +146,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,var(--background)_20%,var(--background)_80%,transparent)] cursor-grab select-none",
+        "scroller relative z-20 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,var(--background)_20%,var(--background)_80%,transparent)] cursor-grab select-none touch-none",
         className
       )}
       onPointerDown={handleStart}
