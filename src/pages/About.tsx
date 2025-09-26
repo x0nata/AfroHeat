@@ -1,5 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import React, { useState, useMemo } from 'react';
 import { Boxes } from '@/components/ui/background-boxes';
 import AnimatedTrainersSection from '@/components/sections/AnimatedTrainersSection';
@@ -63,6 +64,7 @@ interface Category {
 }
 
 const About: React.FC = () => {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('fitness');
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
@@ -349,6 +351,7 @@ const About: React.FC = () => {
             </motion.p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
+                onClick={() => navigate('/about')}
                 className="bg-primary text-primary-foreground px-6 py-3 md:px-8 md:py-4 rounded-lg md:rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl relative overflow-hidden group w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -382,6 +385,7 @@ const About: React.FC = () => {
               >
                 <span className="relative z-10">Contact Us</span>
                 <motion.div
+                  onClick={() => navigate('/contact')}
                   className="absolute inset-0 bg-primary/10"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}

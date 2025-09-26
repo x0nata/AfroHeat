@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CardSpotlight } from '../ui/card-spotlight';
 import { motion } from 'framer-motion';
 import { useApp } from '@/context/AppContext';
@@ -15,6 +16,7 @@ import {
 } from '@tabler/icons-react';
 
 const MembershipSection: React.FC = () => {
+  const navigate = useNavigate();
   const { selectMembership, state } = useApp();
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
 
@@ -327,6 +329,7 @@ const MembershipSection: React.FC = () => {
               </motion.p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <motion.button
+                  onClick={() => navigate('/about')}
                   className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-all shadow-md hover:shadow-lg relative overflow-hidden group w-full sm:w-auto"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -347,6 +350,7 @@ const MembershipSection: React.FC = () => {
                   />
                 </motion.button>
                 <motion.button
+                  onClick={() => navigate('/contact')}
                   className="border border-border text-foreground px-5 py-2.5 rounded-lg font-semibold hover:border-primary hover:text-primary transition-all font-poppins relative overflow-hidden w-full sm:w-auto"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

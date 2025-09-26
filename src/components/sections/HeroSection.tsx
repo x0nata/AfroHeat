@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { IconChevronLeft, IconChevronRight, IconStarFilled } from '@tabler/icons-react';
 
 const SLIDE_DURATION = 6000;
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const slides = useMemo(
     () => [
       { src: '/images/about us/our space/IMG_4295.webp', alt: 'Women training at AfroHeat' },
@@ -85,12 +87,7 @@ const HeroSection = () => {
             </div>
 
             <motion.button
-              onClick={() => {
-                const aboutSection = document.getElementById('about');
-                if (aboutSection) {
-                  aboutSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
+              onClick={() => navigate('/about')}
               className="bg-primary text-primary-foreground px-6 py-3 md:px-8 md:py-4 rounded-lg md:rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl relative overflow-hidden group mt-7 font-poppins"
               aria-label="Learn who we are"
               whileHover={{ scale: 1.05 }}

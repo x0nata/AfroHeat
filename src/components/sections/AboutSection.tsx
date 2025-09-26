@@ -7,7 +7,10 @@ import {
   IconUsers,
   IconHeart,
   IconTarget,
-  IconBrandInstagram
+  IconBrandInstagram,
+  IconClipboard,
+  IconTrophy,
+  IconChartBar
 } from '@tabler/icons-react';
 import { useState, useEffect } from 'react';
 
@@ -110,17 +113,17 @@ const AboutSection: React.FC = () => {
     {
       icon: <IconUsers className="h-8 w-8" aria-hidden="true" />,
       title: "Cultural Community",
-      description: "Building lasting friendships while celebrating African music, dance, and culture together."
+      description: "Building lasting friendships while building your desired body."
     },
     {
       icon: <IconHeart className="h-8 w-8" aria-hidden="true" />,
       title: "Holistic Wellness",
-      description: "Focusing on physical, mental, and cultural well-being for complete life transformation."
+      description: "Focusing on physical and mental well-being for complete life transformation."
     },
     {
       icon: <IconTarget className="h-8 w-8" aria-hidden="true" />,
       title: "Africa-Inspired",
-      description: "Fitness programs that honor and celebrate African heritage and movement traditions."
+      description: "Fitness programs that honor and celebrate African traditions."
     }
   ];
 
@@ -139,14 +142,14 @@ const AboutSection: React.FC = () => {
     {
       title: "Dance Fitness",
       src: "/images/new/dance.webp",
-      description: "High-energy dance workouts inspired by African rhythms. Burn calories while celebrating culture in a fun, supportive environment.",
+      description: "High-energy dance workouts. Burn calories while in a fun, supportive environment.",
       ctaText: "Join Dance Class",
       ctaHref: "/services#dance"
     },
     {
       title: "Bootcamp",
       src: "/images/new/boootcamp.webp",
-      description: "Intensive 2-month program combining strength, cardio, and mobility. Transform your fitness with expert guidance in a supportive group setting.",
+      description: "Intensive program combining strength, cardio, and mobility. Transform your fitness with expert guidance in a supportive group setting.",
       ctaText: "Start Bootcamp",
       ctaHref: "/services#bootcamp"
     },
@@ -163,75 +166,106 @@ const AboutSection: React.FC = () => {
     <section id="about" className="py-16 md:py-20 bg-background text-foreground">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 font-industry">
-            Where Women{" "}
-            <span className="text-primary">
-              Celebrate Culture
-            </span>
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4 font-poppins">
-            More than just a gym, AfroHeat Fitness is a community where African and Black women
-            can celebrate their heritage while building strength, confidence, and wellness.
-          </p>
-        </motion.div>
 
-
-        {/* Values */}
+        {/* Why Choose Us Section */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
           className="mb-20"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-foreground">
-            Our Core Values
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center group relative"
-              >
-                {/* Floating background effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  initial={{ scale: 0.8 }}
-                  whileHover={{ scale: 1 }}
-                  transition={{ duration: 0.3 }}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center mb-4">
+              <IconHeart className="h-5 w-5 mr-2 text-primary flex-shrink-0" />
+              <span className="text-sm uppercase font-bold text-primary tracking-wide">Why Choose Us</span>
+            </div>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-industry">
+              Where Women{" "}
+              <span className="text-primary">
+                find strength & community
+              </span>
+            </h3>
+          </div>
+
+          {/* Main content container with modern collage layout */}
+          <div className="relative max-w-7xl mx-auto px-4">
+            {/* Collage-style image layout */}
+            <div className="relative h-[500px] mb-16 overflow-hidden rounded-3xl">
+              {/* Background image */}
+              <div className="absolute inset-0">
+                <img
+                  src="/images/about us/Transformation/IMG_0381.webp"
+                  alt="Team collaboration"
+                  className="w-full h-full object-cover"
                 />
-                
-                <div className="relative z-10">
-                  <motion.div
-                    className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-primary rounded-xl md:rounded-2xl text-primary-foreground mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{
-                      rotate: [0, -10, 10, -10, 0],
-                      transition: { duration: 0.5 }
-                    }}
-                  >
-                    {value.icon}
-                  </motion.div>
-                  <h4 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-foreground font-industry">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#8c1e81]/20 to-[#fab313]/10"></div>
+              </div>
+              
+              {/* Overlapping image cards */}
+              <motion.div
+                className="absolute top-8 left-8 w-2/5 h-2/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10"
+                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: -2 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ rotate: 0, scale: 1.05 }}
+              >
+                <img
+                  src="/images/about us/Transformation/IMG_9101.webp"
+                  alt="People working together"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              
+              <motion.div
+                className="absolute bottom-8 right-8 w-2/5 h-2/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10"
+                initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 2 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+                whileHover={{ rotate: 0, scale: 1.05 }}
+              >
+                <img
+                  src="/images/about us/Transformation/IMG_9104.webp"
+                  alt="Additional team image"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </div>
+
+            {/* Feature boxes with updated design - no background */}
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              {values.map((value, index) => (
+                <motion.div
+                  key={index}
+                  className="relative rounded-xl p-4 overflow-hidden group cursor-default"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8 }}
+                >
+                  <div className="flex items-center justify-center w-12 h-12 mb-3 mx-auto">
+                    <div className="h-6 w-6 text-primary flex items-center justify-center">
+                      {value.icon}
+                    </div>
+                  </div>
+                  <h4 className="text-base font-bold mb-2 font-industry text-foreground text-center">
                     {value.title}
                   </h4>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-poppins">
+                  <p className="text-muted-foreground text-xs leading-relaxed text-center font-poppins">
                     {value.description}
                   </p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </motion.div>
 

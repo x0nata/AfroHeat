@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import {
   IconCalendar,
@@ -9,6 +10,7 @@ import { DraggableCardContainer, DraggableCardBody } from '@/components/ui/dragg
 import { Boxes } from '@/components/ui/background-boxes';
 
 const Events: React.FC = () => {
+  const navigate = useNavigate();
   const upcomingEvents = [
     {
       id: 1,
@@ -391,6 +393,7 @@ const Events: React.FC = () => {
             </motion.p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <motion.button
+                onClick={() => navigate('/about')}
                 className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-all shadow-md hover:shadow-lg relative overflow-hidden group w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -411,6 +414,7 @@ const Events: React.FC = () => {
                 />
               </motion.button>
               <motion.button
+                onClick={() => navigate('/contact')}
                 className="border border-border text-foreground px-5 py-2.5 rounded-lg font-semibold hover:border-primary hover:text-primary transition-all font-poppins relative overflow-hidden w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

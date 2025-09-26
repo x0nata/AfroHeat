@@ -108,7 +108,7 @@ const NewHomeSection: React.FC = () => {
                   </p>
                   <Link
                     to={card.buttonLink}
-                    className="inline-block bg-[#fab313] hover:bg-[#e09e0a] dark:bg-[#e09e0a] dark:hover:bg-[#c98c09] text-gray-900 dark:text-gray-100 font-semibold px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2.5 rounded-full text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 hover:scale-105"
+                    className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2.5 rounded-full text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 hover:scale-105"
                   >
                     {card.buttonText}
                   </Link>
