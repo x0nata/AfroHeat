@@ -7,10 +7,7 @@ import {
   IconUsers,
   IconHeart,
   IconTarget,
-  IconBrandInstagram,
-  IconClipboard,
-  IconTrophy,
-  IconChartBar
+  IconBrandInstagram
 } from '@tabler/icons-react';
 import { useState, useEffect } from 'react';
 
