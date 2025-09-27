@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { InfiniteMovingCards } from '../ui/infinite-moving-cards';
 import SignatureClassCard from '../ui/signature-class-card';
 import GoogleRating from '../ui/GoogleRating';
+import ImageReveal from '../ui/image-tiles';
 import {
   IconShield,
   IconUsers,
@@ -172,8 +173,8 @@ const AboutSection: React.FC = () => {
           transition={{ duration: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-4">
+          <div className="text-center mb-0">
+            <div className="inline-flex items-center justify-center mb-0">
               <IconHeart className="h-5 w-5 mr-2 text-primary flex-shrink-0" />
               <span className="text-sm uppercase font-bold text-primary tracking-wide">Why Choose Us</span>
             </div>
@@ -187,48 +188,12 @@ const AboutSection: React.FC = () => {
 
           {/* Main content container with modern collage layout */}
           <div className="relative max-w-7xl mx-auto px-4">
-            {/* Collage-style image layout */}
-            <div className="relative h-[500px] mb-16 overflow-hidden rounded-3xl">
-              {/* Background image */}
-              <div className="absolute inset-0">
-                <img
-                  src="/images/about us/Transformation/IMG_0381.webp"
-                  alt="Team collaboration"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8c1e81]/20 to-[#fab313]/10"></div>
-              </div>
-              
-              {/* Overlapping image cards */}
-              <motion.div
-                className="absolute top-8 left-8 w-2/5 h-2/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10"
-                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: -2 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ rotate: 0, scale: 1.05 }}
-              >
-                <img
-                  src="/images/about us/Transformation/IMG_9101.webp"
-                  alt="People working together"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              
-              <motion.div
-                className="absolute bottom-8 right-8 w-2/5 h-2/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10"
-                initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 2 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                whileHover={{ rotate: 0, scale: 1.05 }}
-              >
-                <img
-                  src="/images/about us/Transformation/IMG_9104.webp"
-                  alt="Additional team image"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
+            <div className="flex justify-center my-0">
+              <ImageReveal
+                leftImage="/images/about us/Transformation/IMG_0381.webp"
+                middleImage="/images/about us/Transformation/IMG_9101.webp"
+                rightImage="/images/about us/Transformation/IMG_9104.webp"
+              />
             </div>
 
             {/* Feature boxes with updated design - no background */}

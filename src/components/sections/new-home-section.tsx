@@ -47,7 +47,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
   ];
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background relative overflow-visible">
+    <section className="pt-12 pb-8 px-4 sm:px-6 lg:px-8 bg-background relative overflow-visible mt-10">
       <motion.div
         className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start"
         initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
       >
         {/* Left Side - Header Section */}
         <motion.div
-          className="flex-1 lg:w-2/5 space-y-3 sm:space-y-4 text-center lg:text-left mt-5"
+          className="flex-1 lg:w-2/5 space-y-3 sm:space-y-4 text-center lg:text-left "
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
