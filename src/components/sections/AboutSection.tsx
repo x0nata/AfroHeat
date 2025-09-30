@@ -117,23 +117,17 @@ const AboutSection: React.FC = () => {
       icon: <IconHeart className="h-8 w-8" aria-hidden="true" />,
       title: "Holistic Wellness",
       description: "Focusing on physical and mental well-being for complete life transformation."
-    },
-    {
-      icon: <IconTarget className="h-8 w-8" aria-hidden="true" />,
-      title: "Africa-Inspired",
-      description: "Fitness programs that honor and celebrate African traditions."
     }
   ];
 
   const memberCount = useCounter(200);
   const yearCount = useCounter(4);
-  const classCount = useCounter(3);
+  const classCount = useCounter(30);
 
   const stats = [
     { number: `${yearCount}+`, label: "Years Strong", target: 4 },
     { number: `${memberCount}+`, label: "Active Members", target: 200 },
-    { number: `${classCount}`, label: "Class Types", target: 3 },
-    { number: "2021", label: "Founded", target: null }
+    { number: `${classCount}+`, label: "Classes per Week", target: 30 }
   ];
 
   const services = [
@@ -198,10 +192,10 @@ const AboutSection: React.FC = () => {
 
             {/* Feature boxes with updated design - no background */}
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.6 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
               viewport={{ once: true }}
             >
               {values.map((value, index) => (
@@ -235,7 +229,7 @@ const AboutSection: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           viewport={{ once: true }}
           className="mb-20"
         >
@@ -260,7 +254,7 @@ const AboutSection: React.FC = () => {
               ))}
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 relative z-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 relative z-10">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}

@@ -11,9 +11,10 @@ interface ServiceCardProps {
     price?: string;
   };
   className?: string;
+  onSignUp?: () => void;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ service, className }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ service, className, onSignUp }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -89,6 +90,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className }) => {
             aria-label={`Sign up for ${service.title}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={onSignUp}
           >
             <span className="relative z-10">Sign Up Now</span>
             <motion.div

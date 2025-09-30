@@ -30,17 +30,13 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
   const cardData = [
     {
       id: 1,
-      title: '',
       description: 'For women ready to conquer their limits. This bootcamp isn\'t just exercise-it\'s transformation.',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop',
       buttonText: 'See Our Schedule',
       onClick: onScheduleOpen
     },
     {
       id: 2,
-      title: '',
       description: 'Build resilience under the stars. Evening sessions that strengthen body and mind in a supportive community.',
-      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7e87?w=800&h=600&fit=crop',
       buttonText: 'See Our Packages',
       buttonLink: '/services'
     }
@@ -72,7 +68,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
           </p>
         </motion.div>
 
-        {/* Right Side - Cards Section */}
+        {/* Right Side - Simplified Descriptions + Buttons */}
         <motion.div
           className="flex-1 lg:w-3/5"
           initial={{ opacity: 0, x: 20 }}
@@ -80,55 +76,27 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
           transition={{ duration: 0.3, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 min-h-[300px] sm:min-h-[400px] md:min-h-[500px] xl:min-h-[400px]">
+          <div className="grid grid-cols-1 gap-6 lg:gap-8">
             {cardData.map((card) => (
-              <motion.div
+              <motion.button
                 key={card.id}
-                className="relative aspect-[2/3] sm:aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] xl:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-gray-200 dark:border-gray-700 group cursor-pointer transition-all duration-300"
-                whileHover={{ y: -4, scale: 1.02, transition: { duration: 0.3 } }}
+                className="w-full px-2 sm:px-4 lg:px-2 relative overflow-hidden bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-4 sm:py-5 lg:py-6 rounded-xl font-bold font-poppins text-base sm:text-lg lg:text-xl shadow-lg hover:shadow-xl hover:from-primary hover:to-primary/90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50 focus:ring-offset-2"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={card.onClick || (() => window.location.href = card.buttonLink!)}
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${card.image})` }}
+                <span className="relative z-10">{card.buttonText}</span>
+                <motion.div
+                  className="absolute inset-0 bg-white/20"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.45 }}
                 />
-                {/* Light mode overlay - lighter gradient for dark text */}
-                <div
-                  className="absolute inset-0 z-0 dark:hidden"
-                  style={{
-                    background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.7) 70%, rgba(255, 255, 255, 0.9) 100%)'
-                  }}
-                />
-                {/* Dark mode overlay - dark gradient for light text */}
-                <div
-                  className="absolute inset-0 z-0 hidden dark:block"
-                  style={{
-                    background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.95) 100%)'
-                  }}
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 md:p-4 lg:p-5 xl:p-6 text-left z-10 transition-all duration-300">
-                  <h3 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 md:mb-3 font-poppins">{card.title}</h3>
-                  <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-900 dark:text-gray-300 leading-tight sm:leading-relaxed mb-2 sm:mb-3 md:mb-4 font-poppins">
-                    {card.description}
-                  </p>
-                  {card.onClick ? (
-                    <motion.button
-                      onClick={card.onClick}
-                      className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2.5 rounded-full text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 hover:scale-105"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {card.buttonText}
-                    </motion.button>
-                  ) : (
-                    <Link
-                      to={card.buttonLink!}
-                      className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2.5 rounded-full text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 hover:scale-105"
-                    >
-                      {card.buttonText}
-                    </Link>
-                  )}
-                </div>
-              </motion.div>
+              </motion.button>
             ))}
           </div>
         </motion.div>

@@ -21,12 +21,26 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="relative w-full bg-background dark:bg-[hsla(300, 94%, 6%, 1.00)] text-black-800 py-10 px-10 sm:px-20 lg:px-20">
-      {/* Decorative background pattern */}
+      {/* Mobile Background Pattern */}
       <div
-              className="absolute inset-0 w-full h-full bg-repeat opacity-10 dark:opacity-5 pointer-events-none"
-              style={{ backgroundImage: "url('/images/footer pattern.webp')" }}
-              aria-hidden="true"
-            />
+        style={{
+          backgroundImage: "url('/images/footer pattern.webp')",
+          backgroundSize: '150%',
+          backgroundRepeat: 'repeat'
+        }}
+        className="absolute inset-0 w-full h-full opacity-10 dark:opacity-5 pointer-events-none block md:hidden"
+        aria-hidden="true"
+      />
+      {/* Desktop Background Pattern */}
+      <div
+        style={{
+          backgroundImage: "url('/images/footer pattern.webp')",
+          backgroundSize: '40%',
+          backgroundRepeat: 'repeat'
+        }}
+        className="absolute inset-0 w-full h-full opacity-10 dark:opacity-5 pointer-events-none hidden md:block"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10">
         {/* Main Footer Content */}

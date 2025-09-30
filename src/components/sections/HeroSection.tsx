@@ -64,14 +64,14 @@ const HeroSection = () => {
               More than your average fitness center
             </div>
 
-            <h1 className="text-white font-industry font-black leading-[1.05] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 className="text-white font-poppins font-medium font-black leading-[1.05] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl">
               <span className="relative inline-block pr-2">
                 <span className="absolute -left-8 -top-2 w-10 h-1 bg-secondary rotate-12 rounded-full" />
-                <span className="absolute -left-5 top-2 w-10 h-1 bg-primary -rotate-12 rounded-full" />
+                <span className="absolute  -left-5 top-2 w-10 h-1 bg-primary -rotate-12 rounded-full" />
                 A Vibrant
               </span>
               <br className="hidden sm:block" />
-              <span>community and creative hub for wellness and meaningful connections</span>
+              <span className="font-poppins font-medium">community and creative hub for wellness and meaningful connections</span>
             </h1>
 
             <div className="mt-5 flex items-center gap-3">
@@ -93,7 +93,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10">Who We Are</span>
+              <span className="relative z-10">J</span>
               <motion.div
                 className="absolute inset-0 bg-white/20"
                 initial={{ x: '-100%' }}
