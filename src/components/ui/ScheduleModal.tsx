@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
 
@@ -48,18 +48,6 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
   };
 
   if (!isOpen) return null;
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
 
   return (
     <AnimatePresence>
@@ -113,7 +101,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
                                 transition={{ 
                                   delay: index * 0.05 + timeIndex * 0.02
                                 }}
-                                className="flex items-center gap-1 min-w-0"
+                                className="flex items-center gap-1 ml-1 min-w-0"
                               >
                                 <Icon className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-primary flex-shrink-0" size={8} />
                                 <span className="text-[10px] sm:text-xs font-bold text-foreground whitespace-nowrap">
@@ -137,7 +125,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
                                 transition={{ 
                                   delay: index * 0.05 + timeIndex * 0.02
                                 }}
-                                className="flex items-center gap-1 min-w-0"
+                                className="flex items-center gap-1 ml-1 min-w-0"
                               >
                                 <Icon className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-primary flex-shrink-0" size={8} />
                                 <span className="text-[10px] sm:text-xs font-bold text-foreground whitespace-nowrap">

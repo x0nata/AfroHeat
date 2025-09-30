@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer, ReactNode, useEffect } from 'react';
+import { lockScroll, unlockScroll } from '../lib/overflowManager';
 
 // Types
 export interface User {
@@ -164,15 +165,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
   // Prevent body scroll when mobile navigation is open
   useEffect(() => {
     if (state.isNavigationOpen) {
-      document.body.style.overflow = 'hidden';
+      lockScroll();
     } else {
-      document.body.style.overflow = '';
+      unlockScroll();
     }
-
-    // Cleanup on unmount or state change
-    return () => {
-      document.body.style.overflow = '';
-    };
   }, [state.isNavigationOpen]);
 
   const login = (user: User) => {
