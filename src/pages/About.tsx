@@ -1,8 +1,6 @@
  "use client";
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import React, { useState, useMemo } from 'react';
-import { Boxes } from '@/components/ui/background-boxes';
 import AnimatedTrainersSection from '@/components/sections/AnimatedTrainersSection';
 import {
   IconHeart,
@@ -64,7 +62,6 @@ interface Category {
 }
 
 const About: React.FC = () => {
-  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('fitness');
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
