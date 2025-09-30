@@ -232,7 +232,7 @@ const AboutSection: React.FC = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="bg-card rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 text-foreground border border-border relative overflow-hidden">
+          <div className="bg-card rounded-xl md:rounded-2xl p-8 md:p-12 lg:p-12 text-foreground border border-border relative overflow-hidden">
             {/* Animated background pattern */}
             <div className="absolute inset-0 opacity-10">
               {[...Array(5)].map((_, i) => (
@@ -253,16 +253,16 @@ const AboutSection: React.FC = () => {
               ))}
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 relative z-10">
+            <div className="flex flex-row flex-nowrap justify-between items-center gap-4 sm:gap-6 md:gap-8 lg:gap-8 max-w-4xl mx-auto relative z-10">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="text-center group"
+                  className="text-center group flex-shrink-0 px-3"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
                   <motion.div
-                    className="text-3xl md:text-4xl lg:text-5xl font-bold mb-1 md:mb-2 text-primary font-industry"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1 md:mb-2 text-primary font-industry"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: index * 0.2, duration: 0.5 }}

@@ -130,32 +130,19 @@ const About: React.FC = () => {
                 <div className="w-full lg:w-2/5 h-64 lg:h-auto flex-shrink-0 relative group mb-8 lg:mb-0">
                   {/* Container for square */}
                   <div
-                    className="relative w-full max-w-sm aspect-square min-h-48 max-h-96 mx-auto shadow-lg border-4 border-primary/20 overflow-hidden"
+                    className="relative w-full max-w-sm aspect-square min-h-48 max-h-96 mx-auto shadow-lg overflow-hidden"
                   >
-                    {/* Blurred pattern background layer */}
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        backgroundImage: `url('/images/logos/pattern.webp')`,
-                        backgroundSize: '400px 200px',
-                        backgroundRepeat: 'repeat',
-                        backgroundPosition: 'center',
-                        filter: 'blur(0.6px)'
-                      }}
-                    />
                     {/* Circular image on top */}
                     <div
-                      className="absolute inset-0 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-225 flex items-center justify-center"
+                      className="absolute inset-0 rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-225 flex items-center justify-center"
                     >
-                      <div className="w-full h-full rounded-full overflow-hidden">
+                      <div className="w-full h-full rounded-lg overflow-hidden">
                         <OptimizedImage
                           src="/images/about us/aboutuspic.webp"
                           alt="Hamrawit Gizaw, Founder of AfroHeat"
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      {/* Subtle accent ring */}
-                      <div className="absolute inset-0 rounded-full border-2 border-primary/30" />
                     </div>
                   </div>
                 </div>
