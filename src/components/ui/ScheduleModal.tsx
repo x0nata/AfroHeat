@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Sun, Moon } from 'lucide-react';
 
 interface ScheduleModalProps {
   isOpen: boolean;
@@ -8,36 +9,57 @@ interface ScheduleModalProps {
 
 const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
   const scheduleData = {
-    monday: {
-      strength: ['7am', '8am', '9am', '5pm', '6pm', '7pm'],
-      kickboxing: ['6pm']
+     monday: {
+      strength: ['7:00 AM', '8:00 AM', '9:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
+      kickboxing: ['6:00 PM']
     },
     tuesday: {
-      strength: ['6am', '7am', '8am', '5pm', '6pm', '7pm'],
-      kickboxing: ['7am', '8am', '9am']
+      strength: ['6:00 AM', '7:00 AM', '8:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
+      kickboxing: ['7:00 AM', '8:00 AM', '9:00 AM']
     },
     wednesday: {
-      strength: ['5pm', '6pm', '7pm'],
-      kickboxing: ['6pm']
+      strength: ['5:00 PM', '6:00 PM', '7:00 PM'],
+      kickboxing: ['6:00 PM']
     },
     thursday: {
-      strength: ['6am', '7am', '8am', '5pm', '6pm', '7pm'],
-      kickboxing: ['7am', '8am', '9am']
+      strength: ['6:00 AM', '7:00 AM', '8:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
+      kickboxing: ['7:00 AM', '8:00 AM', '9:00 AM']
     },
     friday: {
-      strength: ['7am', '8am', '9am', '5pm', '6pm', '7pm'],
-      kickboxing: ['6pm']
+      strength: ['7:00 AM', '8:00 AM', '9:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
+      kickboxing: ['6:00 PM']
     },
     saturday: {
-      strength: ['8am', '9am'],
-      kickboxing: ['9am']
+      strength: ['8:00 AM', '9:00 AM'],
+      kickboxing: ['9:00 AM']
     }
   };
 
   const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+  const getIcon = (time: string) => {
+    const [hourStr, period] = time.split(' ');
+    const hour = parseInt(hourStr.split(':')[0]);
+    if (period === 'PM' && hour >= 6) {
+      return Moon;
+    }
+    return Sun;
+  };
+
   if (!isOpen) return null;
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   return (
     <AnimatePresence>
@@ -45,79 +67,93 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+        className="fixed inset-0 z-50 flex items-center justify-center p-2 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       >
         <motion.div
           initial={{ scale: 0.9, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
-          className="bg-background rounded-2xl shadow-2xl max-w-4xl w-full max-h-screen border border-primary/20"
+          className="bg-background rounded-xl shadow-2xl w-full max-w-sm sm:max-w-2xl md:max-w-3xl max-h-[98vh] border border-primary/20 overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="p-2 overflow-y-auto scrollbar-hide max-h-[80vh]">
-            <div className="flex justify-between items-center mb-3">
-              <h2 className="text-2xl font-bold text-primary font-industry uppercase">Group Classes Schedule</h2>
+          <div className="p-2 sm:p-4">
+            <div className="flex justify-between items-center mb-2 sm:mb-3">
+              <h2 className="text-base sm:text-xl font-bold text-primary font-industry uppercase tracking-wide">Group Classes Schedule</h2>
               <button
                 onClick={onClose}
-                className="text-foreground hover:text-primary text-xl font-bold"
+                className="text-foreground hover:text-primary text-xl font-bold transition-colors duration-200"
               >
                 ×
               </button>
             </div>
-            <div className="space-y-1 mb-2">
+            <div className="space-y-2 sm:space-y-3">
               {days.map((day, index) => (
                 <Fragment key={day}>
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.06 }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-1.5 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-md p-2 shadow-sm border border-primary/10 hover:shadow-md transition-shadow duration-300 font-poppins"
+                    transition={{ delay: index * 0.05 }}
+                    className="font-poppins bg-primary/5 rounded-lg p-2 sm:p-3 border border-primary/10"
                   >
-                    <div className="md:col-span-2">
-                      <h3 className="text-base font-bold text-foreground mb-1 text-center md:text-left uppercase tracking-wide">
-                        {dayNames[index]}
-                      </h3>
-                    </div>
-                    <div className="space-y-0.5">
-                      <h4 className="font-semibold text-primary text-xs uppercase tracking-wide">Strength & Conditioning</h4>
-                      <div className="flex flex-wrap gap-0.5">
-                        {scheduleData[day as keyof typeof scheduleData].strength.map((time) => (
-                          <motion.span
-                            key={time}
-                            initial={{ scale: 0, rotate: -180 }}
-                            animate={{ scale: 1, rotate: 0 }}
-                            transition={{ type: "spring", stiffness: 380, damping: 25 }}
-                            className="bg-primary/90 hover:bg-primary text-primary-foreground px-1.5 py-0.5 rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-all duration-150 cursor-default"
-                            whileHover={{ scale: 1.05 }}
-                          >
-                            {time}
-                          </motion.span>
-                        ))}
+                    <h3 className="text-sm sm:text-base font-bold text-foreground mb-1 sm:mb-2 uppercase tracking-wide">
+                      {dayNames[index]}
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4">
+                      <div className="space-y-0.5 sm:space-y-1">
+                        <h4 className="font-semibold text-primary text-[10px] sm:text-xs uppercase tracking-wide">Strength & Conditioning</h4>
+                        <div className="flex flex-wrap gap-0.5 sm:gap-1">
+                          {scheduleData[day as keyof typeof scheduleData].strength.map((time, timeIndex) => {
+                            const Icon = getIcon(time);
+                            return (
+                              <motion.div
+                                key={time}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ 
+                                  delay: index * 0.05 + timeIndex * 0.02
+                                }}
+                                className="flex items-center gap-1 min-w-0"
+                              >
+                                <Icon className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-primary flex-shrink-0" size={8} />
+                                <span className="text-[10px] sm:text-xs font-bold text-foreground whitespace-nowrap">
+                                  {time}
+                                </span>
+                              </motion.div>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-0.5">
-                      <h4 className="font-semibold text-secondary text-xs uppercase tracking-wide">Kickboxing</h4>
-                      <div className="flex flex-wrap gap-0.5">
-                        {scheduleData[day as keyof typeof scheduleData].kickboxing.map((time) => (
-                          <motion.span
-                            key={time}
-                            initial={{ scale: 0, rotate: -180 }}
-                            animate={{ scale: 1, rotate: 0 }}
-                            transition={{ type: "spring", stiffness: 380, damping: 25 }}
-                            className="bg-secondary/90 hover:bg-secondary text-secondary-foreground px-1.5 py-0.5 rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-all duration-150 cursor-default"
-                            whileHover={{ scale: 1.05 }}
-                          >
-                            {time}
-                          </motion.span>
-                        ))}
+                      <div className="space-y-0.5 sm:space-y-1">
+                        <h4 className="font-semibold text-primary text-[10px] sm:text-xs uppercase tracking-wide">Kickboxing</h4>
+                        <div className="flex flex-wrap gap-0.5 sm:gap-1">
+                          {scheduleData[day as keyof typeof scheduleData].kickboxing.map((time, timeIndex) => {
+                            const Icon = getIcon(time);
+                            return (
+                              <motion.div
+                                key={time}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ 
+                                  delay: index * 0.05 + timeIndex * 0.02
+                                }}
+                                className="flex items-center gap-1 min-w-0"
+                              >
+                                <Icon className="h-2 w-2 sm:h-2.5 sm:w-2.5 text-primary flex-shrink-0" size={8} />
+                                <span className="text-[10px] sm:text-xs font-bold text-foreground whitespace-nowrap">
+                                  {time}
+                                </span>
+                              </motion.div>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
                   </motion.div>
                 </Fragment>
               ))}
             </div>
-            <div className="text-center text-xs text-muted-foreground bg-accent/5 p-1 rounded mt-1">
+            <div className="text-center text-xs text-muted-foreground bg-primary/5 p-1 sm:p-2 rounded mt-1 sm:mt-2 border border-primary/10">
               *Daily online booking required +2519044222
             </div>
           </div>

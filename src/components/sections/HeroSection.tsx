@@ -93,7 +93,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10">J</span>
+              <span className="relative z-10">Join us</span>
               <motion.div
                 className="absolute inset-0 bg-white/20"
                 initial={{ x: '-100%' }}

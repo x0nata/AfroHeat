@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
       <div
         style={{
           backgroundImage: "url('/images/footer pattern.webp')",
-          backgroundSize: '150%',
+          backgroundSize: '130%',
           backgroundRepeat: 'repeat'
         }}
         className="absolute inset-0 w-full h-full opacity-10 dark:opacity-5 pointer-events-none block md:hidden"
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 pt-2 pb-1 text-center">
+        <div className="pt-2 pb-1 text-center">
           <p className="text-sm font-poppins text-black-600">
             Copyright © 2025 AfroHeat Fitness. All Rights Reserved.
           </p>

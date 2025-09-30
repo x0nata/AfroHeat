@@ -10,14 +10,12 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import { useApp } from '@/context/AppContext';
 import React, { useState, useEffect } from 'react';
-import InstructorModal from '../ui/InstructorModal';
 
 const Header: React.FC = () => {
   const location = useLocation();
   const { state, toggleDarkMode, toggleNavigation } = useApp();
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [isInstructorModalOpen, setIsInstructorModalOpen] = useState(false);
 
   useEffect(() => {
     console.log('Header theme:', state.isDarkMode ? 'dark' : 'light');
@@ -74,32 +72,34 @@ const Header: React.FC = () => {
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'} bg-background/50 backdrop-blur-lg border-b border-border/20`}>
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="relative flex items-center justify-between py-4">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
-              <img
-                src={state.isDarkMode ? "/images/logos/afroheat logo white.webp" : "/images/logos/afroheat purple.webp"}
-                alt="AfroHeat Fitness Logo"
-                className="h-20 w-auto"
-              />
-              <img
-                src="/images/logos/navtitle.webp"
-                alt="AfroHeat Fitness Title"
-                className="h-16 w-auto"
-              />
-            </Link>
+            <div className="flex-shrink-0">
+              <Link to="/" className="flex items-center space-x-2">
+                <img
+                  src={state.isDarkMode ? "/images/logos/afroheat logo white.webp" : "/images/logos/afroheat purple.webp"}
+                  alt="AfroHeat Fitness Logo"
+                  className="h-20 w-auto"
+                />
+                <img
+                  src="/images/logos/navtitle.webp"
+                  alt="AfroHeat Fitness Title"
+                  className="h-16 w-auto"
+                />
+              </Link>
+            </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-8">
               {navItems.map((item, index) => (
                 <Link
                   key={index}
                   to={item.link}
                   className={`transition-colors duration-200 font-poppins font-medium ${
-                                    location.pathname === item.link
-                                      ? 'text-primary font-bold'
-                                      : 'text-black dark:text-foreground hover:text-foreground'
-                                  }`}
+                    location.pathname === item.link
+                      ? 'text-primary font-bold'
+                      : 'text-black dark:text-foreground hover:text-foreground'
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
             </nav>
 
             {/* Theme Toggle and CTA Button */}
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md:flex flex-shrink-0 items-center space-x-4">
               <button
                 onClick={toggleDarkMode}
                 className="p-2 rounded-lg bg-card text-foreground hover:bg-muted transition-colors"
@@ -115,13 +115,8 @@ const Header: React.FC = () => {
               >
                 {state.isDarkMode ? <IconSun className="h-5 w-5" /> : <IconMoon className="h-5 w-5" />}
               </button>
-              <button
-                              onClick={() => setIsInstructorModalOpen(true)}
-                              className="bg-muted text-foreground px-6 py-2 rounded-lg font-poppins font-bold hover:bg-primary hover:text-white transition-all duration-200 shadow-md hover:shadow-lg"
-                            >
-                              Become an Instructor
-                            </button>
             </div>
+
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center space-x-2">
@@ -214,15 +209,6 @@ const Header: React.FC = () => {
                       </>
                     )}
                   </button>
-                  <button
-                                      onClick={() => {
-                                        toggleNavigation();
-                                        setIsInstructorModalOpen(true);
-                                      }}
-                                      className="block w-full bg-muted text-foreground px-6 py-3 rounded-lg font-poppins font-bold text-center hover:bg-primary hover:text-white transition-all duration-200"
-                                    >
-                                      Become an Instructor
-                                    </button>
                 </div>
               </div>
             </div>
@@ -230,11 +216,6 @@ const Header: React.FC = () => {
         </div>
       </header>
       
-      {/* Instructor Modal */}
-      <InstructorModal
-        isOpen={isInstructorModalOpen}
-        onClose={() => setIsInstructorModalOpen(false)}
-      />
     </>
   );
 };

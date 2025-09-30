@@ -67,7 +67,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
           </p>
         </motion.div>
 
-        {/* Right Side - Simplified Descriptions + Buttons */}
+        {/* Right Side - Buttons */}
         <motion.div
           className="flex-1 lg:w-3/5"
           initial={{ opacity: 0, x: 20 }}
@@ -75,7 +75,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
           transition={{ duration: 0.3, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="grid grid-cols-1 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 gap-6 lg:gap-8 mt-5">
             {cardData.map((card) => (
               <motion.button
                 key={card.id}
