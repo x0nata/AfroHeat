@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { CardSpotlight } from '../ui/card-spotlight';
 import { motion } from 'framer-motion';
 import { useApp } from '@/context/AppContext';
-import { Boxes } from '../ui/background-boxes';
 import {
   IconCheck,
   IconStar,
@@ -16,7 +15,6 @@ import {
 } from '@tabler/icons-react';
 
 const MembershipSection: React.FC = () => {
-  const navigate = useNavigate();
   const { selectMembership, state } = useApp();
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
 

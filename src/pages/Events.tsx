@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import {
   IconCalendar,
@@ -7,10 +6,8 @@ import {
 } from '@tabler/icons-react';
 import EventCard from '@/components/ui/event-card';
 import { DraggableCardContainer, DraggableCardBody } from '@/components/ui/draggable-card';
-import { Boxes } from '@/components/ui/background-boxes';
 
 const Events: React.FC = () => {
-  const navigate = useNavigate();
   const upcomingEvents = [
     {
       id: 1,
