@@ -1,7 +1,6 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 interface Trainer {
   id: string;
@@ -12,10 +11,9 @@ interface Trainer {
 }
 
 interface AnimatedTrainersSectionProps {
-  autoplay?: boolean;
 }
 
-const AnimatedTrainersSection: React.FC<AnimatedTrainersSectionProps> = ({ autoplay = false }) => {
+const AnimatedTrainersSection: React.FC<AnimatedTrainersSectionProps> = () => {
   const trainers: Trainer[] = [
     {
       id: '1',
