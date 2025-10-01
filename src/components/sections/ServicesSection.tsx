@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BookingModal from '../ui/booking-modal';
 import ServiceCard from '../ui/service-card';
 import BootcampModal from '../ui/BootcampModal';
@@ -11,6 +11,51 @@ const ServicesSection: React.FC = () => {
   const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
   const [isPrivateClassModalOpen, setIsPrivateClassModalOpen] = useState(false);
   const [isInstructorModalOpen, setIsInstructorModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Function to handle the scroll and highlight
+    const handleScrollToStudio = () => {
+      // Use a timeout to ensure the DOM is fully loaded
+      setTimeout(() => {
+        const element = document.getElementById('studio-rental');
+        if (element) {
+          // Add a temporary highlight class
+          element.classList.add('ring-4', 'ring-secondary', 'ring-offset-2', 'ring-offset-background');
+          element.classList.add('scale-105');
+          element.classList.add('z-10'); // Ensure it's above other elements
+          
+          // Scroll to the element with smooth behavior
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
+          // Remove the highlight after 3 seconds
+          const timer = setTimeout(() => {
+            element.classList.remove('ring-4', 'ring-secondary', 'ring-offset-2', 'ring-offset-background');
+            element.classList.remove('scale-105');
+            element.classList.remove('z-10');
+          }, 3000);
+        }
+      }, 100); // Small delay to ensure rendering is complete
+    };
+
+    // Check if there's a hash in the URL when the component mounts
+    if (window.location.hash === '#studio-rental') {
+      handleScrollToStudio();
+    }
+
+    // Listen for hash changes (in case user navigates using links)
+    const handleHashChange = () => {
+      if (window.location.hash === '#studio-rental') {
+        handleScrollToStudio();
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
 
   const serviceOfferings = [
     {
@@ -51,7 +96,7 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="classes" className="py-12 md:py-20">
+    <section id="classes" className="py-12 md:py-20" >
       <div className="w-full px-4 sm:px-6 lg:px-8">
       
     {/* All Services Grid */}
@@ -66,6 +111,7 @@ const ServicesSection: React.FC = () => {
               <ServiceCard
                 key={service.id}
                 service={service}
+                id={service.title === "Space/Studio Rental" ? "studio-rental" : undefined}
                 onSignUp={() => {
                   if (service.title === "Bootcamp") {
                     setIsBootcampModalOpen(true);

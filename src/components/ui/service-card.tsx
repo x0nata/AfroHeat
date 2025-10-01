@@ -11,16 +11,18 @@ interface ServiceCardProps {
     price?: string;
   };
   className?: string;
+  id?: string;
   onSignUp?: () => void;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ service, className, onSignUp }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ service, className, id, onSignUp }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45 }}
       viewport={{ once: true }}
+      id={id}
       className={cn(
         "group bg-gradient-to-br from-card to-card/80 rounded-3xl border-2 border-border/20 overflow-hidden",
         "hover:shadow-2xl hover:border-primary/30 transition-all duration-375",

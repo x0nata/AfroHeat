@@ -36,6 +36,13 @@ const HamrawitMediaSection: React.FC = () => {
     },
     {
       id: 4,
+      title: "YOUTUBE INTERVIEW 4",
+      description: "Interview about AfroHeat's mission and impact",
+      link: "https://youtu.be/3znXXXJCTD4",
+      image: "https://i.ytimg.com/vi/3znXXXJCTD4/hqdefault.jpg" // YouTube thumbnail
+    },
+    {
+      id: 5,
       title: "MERHA MAGAZINE ARTICLE",
       description: "Women Who Inspire: Celebrating the Women Transforming Addis Ababa",
       link: "https://merha.co/women-who-inspire-celebrating-the-women-transforming-addis-ababa/",

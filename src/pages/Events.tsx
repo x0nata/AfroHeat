@@ -414,10 +414,30 @@ const Events: React.FC = () => {
           </motion.div>
         </div>
       )}
+  
+      
+      {/* Studio Rental Promotion Section */}
+      <section className="py-16 bg-background text-foreground">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-industry text-primary">
+              Rent Our Studio Space
+            </h2>
+            <p className="text-lg md:text-xl mb-8 font-poppins max-w-2xl mx-auto text-muted-foreground">
+              Looking for a premium space for your events? 
+            </p>
+            <a
+              href="/services#studio-rental"
+              className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold font-poppins hover:bg-primary/90 transition-colors duration-300 transform hover:scale-105 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50 focus:ring-offset-2"
+            >
+              Book Studio Space Now
+            </a>
+          </div>
+        </div>
+      </section>
+      
+     </div>
+   );
+ };
  
-     
-    </div>
-  );
-};
-
-export default Events;
+ export default Events;
