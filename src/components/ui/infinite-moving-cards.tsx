@@ -35,11 +35,25 @@ export const InfiniteMovingCards = ({
     autoPausedRef.current = autoPaused;
   }, [autoPaused]);
   const [cardWidth, setCardWidth] = useState(0);
+  const [containerWidth, setContainerWidth] = useState(0);
   const rafRef = useRef<number>();
   const startXRef = useRef(0);
   const startTranslateRef = useRef(0);
   const cycleWidth = useRef(0);
   const autoPausedRef = useRef(false);
+
+  // Calculate container width for centering
+  useEffect(() => {
+    const updateContainerWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth);
+      }
+    };
+    
+    updateContainerWidth();
+    window.addEventListener('resize', updateContainerWidth);
+    return () => window.removeEventListener('resize', updateContainerWidth);
+  }, []);
 
   // Three copies for bi-directional infinite scroll
   const duplicatedItems = [...items, ...items, ...items];
@@ -193,15 +207,24 @@ export const InfiniteMovingCards = ({
                 e.preventDefault();
                 e.stopPropagation();
                 if (!isReady || cardWidth === 0) return;
-                const gap = 16;
-                const step = cardWidth + gap;
-                let newTranslate = translateRef.current + step; // Previous
+                
+                // Calculate the target translation to center the previous card
+                // Find the current center position and move to the previous card's center position
+                const containerCenter = containerWidth / 2;
+                const currentCardIndex = Math.round(-translateRef.current / (cardWidth + 16));
+                const targetCardIndex = currentCardIndex - 1;
+                
+                // Calculate the translation needed to center the target card
+                let newTranslate = -(targetCardIndex * (cardWidth + 16)) + containerCenter - cardWidth / 2;
+                
+                // Adjust for the duplicated items structure - ensure we're working within the middle cycle
                 const cycle = cycleWidth.current;
                 if (newTranslate > 0) {
                   newTranslate -= cycle;
                 } else if (newTranslate < -2 * cycle) {
                   newTranslate += cycle;
                 }
+                
                 translateRef.current = newTranslate;
                 if (scrollerRef.current) {
                   scrollerRef.current.style.transform = `translateX(${newTranslate}px)`;
@@ -218,15 +241,24 @@ export const InfiniteMovingCards = ({
                 e.preventDefault();
                 e.stopPropagation();
                 if (!isReady || cardWidth === 0) return;
-                const gap = 16;
-                const step = cardWidth + gap;
-                let newTranslate = translateRef.current - step; // Next
+                
+                // Calculate the target translation to center the next card
+                // Find the current center position and move to the next card's center position
+                const containerCenter = containerWidth / 2;
+                const currentCardIndex = Math.round(-translateRef.current / (cardWidth + 16));
+                const targetCardIndex = currentCardIndex + 1;
+                
+                // Calculate the translation needed to center the target card
+                let newTranslate = -(targetCardIndex * (cardWidth + 16)) + containerCenter - cardWidth / 2;
+                
+                // Adjust for the duplicated items structure - ensure we're working within the middle cycle
                 const cycle = cycleWidth.current;
                 if (newTranslate > 0) {
                   newTranslate -= cycle;
                 } else if (newTranslate < -2 * cycle) {
                   newTranslate += cycle;
                 }
+                
                 translateRef.current = newTranslate;
                 if (scrollerRef.current) {
                   scrollerRef.current.style.transform = `translateX(${newTranslate}px)`;

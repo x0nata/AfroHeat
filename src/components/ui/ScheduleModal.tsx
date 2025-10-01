@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
+import { lockScroll, unlockScroll } from '@/lib/overflowManager';
 
 interface ScheduleModalProps {
   isOpen: boolean;
@@ -46,6 +47,19 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
     }
     return Sun;
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+
+    // Cleanup function to ensure scroll is unlocked when component unmounts
+    return () => {
+      unlockScroll();
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 

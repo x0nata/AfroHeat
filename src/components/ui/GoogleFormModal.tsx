@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IconX } from '@tabler/icons-react';
+import { lockScroll, unlockScroll } from '@/lib/overflowManager';
 
 interface GoogleFormModalProps {
   isOpen: boolean;
@@ -20,6 +21,19 @@ const GoogleFormModal: React.FC<GoogleFormModalProps> = ({
   const handleOpenInNewTab = () => {
     window.open(formUrl, '_blank', 'noopener,noreferrer');
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+
+    // Cleanup function to ensure scroll is unlocked when component unmounts
+    return () => {
+      unlockScroll();
+    };
+  }, [isOpen]);
 
   return (
     <AnimatePresence>

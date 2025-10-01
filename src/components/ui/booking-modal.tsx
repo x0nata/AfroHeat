@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useApp } from '@/context/AppContext';
-import { 
-  IconX, 
-  IconCalendar, 
-  IconClock, 
-  IconUsers, 
+import { lockScroll, unlockScroll } from '@/lib/overflowManager';
+import {
+  IconX,
+  IconCalendar,
+  IconClock,
+  IconUsers,
   IconBarbell,
   IconCheck
 } from '@tabler/icons-react';
@@ -81,6 +82,19 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, className 
       day: 'numeric' 
     });
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+
+    // Cleanup function to ensure scroll is unlocked when component unmounts
+    return () => {
+      unlockScroll();
+    };
+  }, [isOpen]);
 
   if (!className) return null;
 

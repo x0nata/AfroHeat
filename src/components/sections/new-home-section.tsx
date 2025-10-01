@@ -79,7 +79,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
             {cardData.map((card) => (
               <motion.button
                 key={card.id}
-                className="w-full px-2 sm:px-4 lg:px-2 relative overflow-hidden bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-4 sm:py-5 lg:py-6 rounded-xl font-bold font-poppins text-base sm:text-lg lg:text-xl shadow-lg hover:shadow-xl hover:from-primary hover:to-primary/90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50 focus:ring-offset-2"
+                className="w-full px-6 sm:px-8 relative overflow-hidden bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-5 sm:py-6 rounded-xl font-bold font-poppins text-base sm:text-lg lg:text-xl shadow-lg hover:shadow-xl hover:from-primary hover:to-primary/90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50 focus:ring-offset-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
