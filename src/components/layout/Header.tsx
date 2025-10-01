@@ -79,12 +79,12 @@ const Header: React.FC = () => {
                 <img
                   src={state.isDarkMode ? "/images/logos/afroheat logo white.webp" : "/images/logos/afroheat purple.webp"}
                   alt="AfroHeat Fitness Logo"
-                  className="h-20 w-auto"
+                  className="h-20 w-auto max-w-full max-h-full"
                 />
                 <img
                   src="/images/logos/navtitle.webp"
                   alt="AfroHeat Fitness Title"
-                  className="h-16 w-auto"
+                  className="h-16 w-auto max-w-full max-h-full"
                 />
               </Link>
             </div>

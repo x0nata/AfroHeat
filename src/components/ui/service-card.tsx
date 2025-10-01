@@ -40,7 +40,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className, onSignUp 
         <img
           src={service.image}
           alt={service.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-375"
+          className="w-full h-full object-cover max-w-full max-h-full group-hover:scale-110 transition-transform duration-375"
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />

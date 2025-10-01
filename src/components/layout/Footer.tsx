@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
               <img
                 src="/images/logos/navtitle.webp"
                 alt="AfroHeat Fitness Title"
-                className="h-23 w-auto"
+                className="h-23 w-auto max-w-full max-h-full"
               />
             </div>
             <p className="font-poppins font-bold mb-6 text-black-600 max-w-md">

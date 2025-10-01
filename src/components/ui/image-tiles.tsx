@@ -136,7 +136,7 @@ export default function ImageReveal({ leftImage, middleImage, rightImage }: Imag
                 <img
                     src={leftImage}
                     alt="Left image"
-                    className="object-cover p-2 sm:p-3 md:p-4 rounded-xl"
+                    className="w-full h-full object-fill p-2 sm:p-3 md:p-4 rounded-xl"
                 />
             </motion.div>
 
@@ -151,7 +151,7 @@ export default function ImageReveal({ leftImage, middleImage, rightImage }: Imag
                 <img
                     src={middleImage}
                     alt="Middle image"
-                    className="object-cover p-2 sm:p-3 md:p-4 rounded-2xl"
+                    className="w-full h-full object-fill p-2 sm:p-3 md:p-4 rounded-2xl"
                 />
             </motion.div>
 
@@ -166,7 +166,7 @@ export default function ImageReveal({ leftImage, middleImage, rightImage }: Imag
                 <img
                     src={rightImage}
                     alt="Right image"
-                    className="object-cover p-2 sm:p-3 md:p-4 rounded-2xl"
+                    className="w-full h-full object-fill p-2 sm:p-3 md:p-4 rounded-2xl"
                 />
             </motion.div>
         </motion.div>

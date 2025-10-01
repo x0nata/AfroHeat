@@ -15,7 +15,7 @@ const Services: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl text-primary md:text-6xl font-bold mb-6 font-industry">
+            <h1 className="text-4xl md:text-6xl text-primary font-bold mb-6 font-industry">
               Our{" "}
               <span className="text-primary">
                 Services

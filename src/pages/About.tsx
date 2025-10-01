@@ -1,14 +1,13 @@
  "use client";
 import { motion } from 'framer-motion';
 import React, { useState, useMemo } from 'react';
-import AnimatedTrainersSection from '@/components/sections/AnimatedTrainersSection';
+import AboutTrainersSection from '@/components/sections/AboutTrainersSection';
+import HamrawitMediaSection from '@/components/sections/HamrawitMediaSection';
 import {
   IconHeart,
   IconCalendar,
   IconTransform,
   IconUsers,
-  IconBrandYoutube,
-  IconFileText
 } from '@tabler/icons-react';
 
 
@@ -38,7 +37,7 @@ const OptimizedImage = React.memo(({
         src={hasError ? fallbackSrc : src}
         alt={alt}
         onError={handleError}
-        className={className}
+        className={`${className} max-w-full max-h-full`}
         loading="lazy"
         decoding="async"
         {...props}
@@ -119,36 +118,45 @@ const About: React.FC = () => {
          >
             {/* Founder Story - Remade Compact */}
             <motion.div
-              className="w-full space-y-6"
+              className="w-full space-y-6 ml-100"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
               viewport={{ once: true }}
             >
-              <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                {/* Circular Founder Image */}
-                <div className="w-full lg:w-2/5 h-64 lg:h-auto flex-shrink-0 relative group mb-8 lg:mb-0">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
+                {/* Founder Image */}
+                <div
+                  className="w-full lg:w-2/5 flex-shrink-0 relative group mb-8 lg:mb-0 z-0"
+                  style={{ minHeight: '256px' }} // min-h-64 equivalent
+                >
                   {/* Container for square */}
                   <div
-                    className="relative w-full max-w-sm aspect-square min-h-48 max-h-96 mx-auto shadow-lg overflow-hidden"
+                    className="relative w-full max-w-sm aspect-square mx-auto shadow-lg border-4 border-primary/20 rounded-lg overflow-hidden"
+                    style={{
+                      backgroundImage: `url('/images/about us/aboutuspic.webp')`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat',
+                      minHeight: '256px' // min-h-64 equivalent
+                    }}
                   >
-                    {/* Circular image on top */}
+                    {/* Optional overlay for hover effect */}
                     <div
-                      className="absolute inset-0 rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-225 flex items-center justify-center"
-                    >
-                      <div className="w-full h-full rounded-lg overflow-hidden">
-                        <OptimizedImage
-                          src="/images/about us/aboutuspic.webp"
-                          alt="Hamrawit Gizaw, Founder of AfroHeat"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
+                      className="absolute inset-0 rounded-lg transition-transform duration-225 scale-100 group-hover:scale-105"
+                      style={{
+                        backgroundImage: `url('/images/about us/aboutuspic.webp')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        transformOrigin: 'center'
+                      }}
+                    ></div>
                   </div>
                 </div>
 
-                {/* Content & Links */}
-                <div className="lg:w-3/5 space-y-4">
+                {/* story */}
+                <div className="w-full lg:w-3/5 space-y-4 z-10">
                   <div>
                     <h1 className="text-4xl font-bold text-foreground font-industry mb-1">
                       Hamrawit Gizaw
@@ -169,45 +177,18 @@ const About: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Hear from Hamrawit - Small Buttons */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.45, delay: 0.3 }}
-                    viewport={{ once: true }}
-                    className="flex flex-wrap items-center gap-2 pt-4 border-t border-border"
-                  >
-                    <span className="text-sm font-medium text-muted-foreground font-poppins mr-4 whitespace-nowrap">Hear from Hamrawit:</span>
-                    {[
-                      { href: "https://youtu.be/qnWB-m7Ybys?si=BrBHG8nbaEinTmIn", icon: <IconBrandYoutube className="h-4 w-4" />, aria: "First interview" },
-                      { href: "https://youtu.be/Q9uazzpnEps?si=NS3zX4p7NNJvA26c", icon: <IconBrandYoutube className="h-4 w-4" />, aria: "Second interview" },
-                      { href: "https://youtu.be/tnZRtSHueyA?si=7tXo6lSqYfWGRqG0", icon: <IconBrandYoutube className="h-4 w-4" />, aria: "Third interview" },
-                      { href: "https://merha.co/women-who-inspire-celebrating-the-women-transforming-addis-ababa/", icon: <IconFileText className="h-4 w-4" />, aria: "Featured article" }
-                    ].map((link, index) => (
-                      <motion.a
-                        key={index}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-2 py-1 bg-muted rounded-md text-xs font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-all duration-150 border border-border hover:border-primary/50"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        aria-label={link.aria}
-                      >
-                        {link.icon}
-                        <span className="sr-only">{index < 3 ? `Interview ${index + 1}` : 'Article'}</span>
-                      </motion.a>
-                    ))}
-                  </motion.div>
                 </div>
               </div>
             </motion.div>
           </motion.div>
         </div>
-      </section>
-
-       {/* Trainers Section */}
-      <AnimatedTrainersSection />
+              </section>
+       
+              {/* Hear from Hamrawit - Media Features */}
+              <HamrawitMediaSection />
+       
+               {/* Trainers Section */}
+                     <AboutTrainersSection />
 
       {/* Category Filter */}
       <section className="py-8 bg-card">

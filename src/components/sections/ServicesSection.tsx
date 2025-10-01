@@ -1,6 +1,17 @@
+import { useState } from 'react';
+import BookingModal from '../ui/booking-modal';
 import ServiceCard from '../ui/service-card';
+import BootcampModal from '../ui/BootcampModal';
+import PrivateClassModal from '../ui/PrivateClassModal';
+import InstructorModal from '../ui/InstructorModal';
 import { motion } from 'framer-motion';
+
 const ServicesSection: React.FC = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
+  const [isPrivateClassModalOpen, setIsPrivateClassModalOpen] = useState(false);
+  const [isInstructorModalOpen, setIsInstructorModalOpen] = useState(false);
+
   const serviceOfferings = [
     {
       id: 1,
@@ -39,10 +50,6 @@ const ServicesSection: React.FC = () => {
     }
   ];
 
-  const handleSignUp = () => {
-    document.getElementById('membership')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section id="classes" className="py-12 md:py-20">
       <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -59,13 +66,36 @@ const ServicesSection: React.FC = () => {
               <ServiceCard
                 key={service.id}
                 service={service}
-                onSignUp={handleSignUp}
+                onSignUp={() => {
+                  if (service.title === "Bootcamp") {
+                    setIsBootcampModalOpen(true);
+                  } else {
+                    setIsBookingModalOpen(true);
+                  }
+                }}
               />
             ))}
           </div>
         </motion.div>
       </div>
       
+      {/* Modals */}
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+      />
+      <BootcampModal
+        isOpen={isBootcampModalOpen}
+        onClose={() => setIsBootcampModalOpen(false)}
+      />
+      <PrivateClassModal
+        isOpen={isPrivateClassModalOpen}
+        onClose={() => setIsPrivateClassModalOpen(false)}
+      />
+      <InstructorModal
+        isOpen={isInstructorModalOpen}
+        onClose={() => setIsInstructorModalOpen(false)}
+      />
     </section>
   );
 };

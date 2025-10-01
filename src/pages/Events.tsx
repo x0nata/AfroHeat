@@ -283,7 +283,7 @@ const Events: React.FC = () => {
             transition={{ duration: 0.45 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl text-primary md:text-6xl font-bold mb-6 font-industry">
+            <h1 className="text-4xl md:text-6xl text-primary font-bold mb-6 font-industry">
               AfroHeat{" "}
               <span className="text-primary">
                 Events

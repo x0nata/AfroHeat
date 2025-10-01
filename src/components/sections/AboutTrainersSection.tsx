@@ -16,7 +16,7 @@ const TrainerImage: React.FC<{
   alt: string;
   className?: string;
   fallbackSrc?: string;
-}> = ({ src, alt, className = '', fallbackSrc = "/images/logos/afroheat logo black.png" }) => {
+}> = ({ src, alt, className = '', fallbackSrc = "/images/logos/afroheat logo black.webp" }) => {
   const [imageSrc, setImageSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -56,35 +56,28 @@ const TrainerImage: React.FC<{
   );
 };
 
-const TrainersSection: React.FC = () => {
+const AboutTrainersSection: React.FC = () => {
   const trainers: Trainer[] = [
     {
       id: '1',
       name: 'HAMRAWIT GIZAW',
       role: 'Founder & Head Trainer',
       description: 'Internationally certified personal trainer and group fitness instructor specializing in AfroHeat Dance Fitness programs.',
-      image: '/images/trainers/hamrawit.webp'
+      image: '/images/Trainers/hamrawit-gizaw-head-coach.webp'
     },
     {
       id: '2',
-      name: 'ALEM TADESSE',
-      role: 'Senior Fitness Instructor',
+      name: 'SELAM AYELE',
+      role: 'KIKBOXING & STRENGTH',
       description: 'Specializes in strength training and functional fitness with over 5 years of experience in group fitness.',
-      image: '/images/trainers/alem.webp'
+      image: '/images/Trainers/selam-ayele-kikboxing-strength-trainer.webp'
     },
     {
       id: '3',
-      name: 'SARA MENGISTU',
-      role: 'Dance Fitness Specialist',
-      description: 'Professional dancer and certified fitness instructor with expertise in African dance styles and choreography.',
-      image: '/images/trainers/sara.webp'
-    },
-    {
-      id: '4',
-      name: 'DAWIT BEKELE',
-      role: 'Nutrition & Wellness Coach',
-      description: 'Certified nutritionist and wellness coach focusing on holistic health approaches for the African community.',
-      image: '/images/trainers/dawit.webp'
+      name: 'LINA TESFAYEE',
+      role: 'STRENGTH TRAINER',
+      description: 'Specializes in strength training and functional fitness with over 5 years of experience in group fitness.',
+      image: '/images/Trainers/lina-tesfayee-strength-trainer.webp'
     }
   ];
 
@@ -103,7 +96,7 @@ const TrainersSection: React.FC = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="space-y-16">
           {trainers.map((trainer, index) => (
             <motion.div
               key={trainer.id}
@@ -111,26 +104,25 @@ const TrainersSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-card rounded-2xl shadow-lg border border-border overflow-hidden hover:shadow-xl hover:border-primary transition-all duration-300"
+              className={`flex flex-col ${trainer.name === 'SELAM AYELE' ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-8 md:gap-12 max-w-6xl mx-auto bg-card rounded-2xl shadow-lg border border-border overflow-hidden hover:shadow-xl hover:border-primary transition-all duration-300`}
             >
-              <div className="relative overflow-hidden">
+              <div className="w-full md:w-2/5 overflow-hidden">
                 <TrainerImage
                   src={trainer.image}
                   alt={`${trainer.name} - ${trainer.role}`}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-80 object-cover rounded-t-2xl md:rounded-none md:rounded-l-2xl group-hover:scale-105 transition-transform duration-300"
                   fallbackSrc="/images/logos/afroheat logo black.webp"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground font-industry mb-2 group-hover:text-primary transition-colors">
+              <div className="w-full md:w-3/5 p-6 md:p-8 flex flex-col justify-center">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-industry mb-3 group-hover:text-primary transition-colors">
                   {trainer.name}
                 </h3>
-                <p className="text-primary font-semibold mb-3 font-poppins">
+                <p className="text-primary font-semibold mb-4 font-poppins uppercase tracking-wide text-lg">
                   {trainer.role}
                 </p>
-                <p className="text-muted-foreground leading-relaxed font-poppins">
+                <p className="text-muted-foreground leading-relaxed font-poppins text-base md:text-lg">
                   {trainer.description}
                 </p>
               </div>
@@ -142,4 +134,4 @@ const TrainersSection: React.FC = () => {
   );
 };
 
-export default TrainersSection;
+export default AboutTrainersSection;

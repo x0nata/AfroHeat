@@ -29,13 +29,17 @@ const HeroSection = () => {
   return (
     <section
       className="relative min-h-screen w-full overflow-hidden bg-black"
-      style={{
-        backgroundImage: `url('/images/logos/pattern.webp')`,
-        backgroundSize: '500px 214px',
-        backgroundRepeat: 'repeat',
-        backgroundPosition: 'center'
-      }}
     >
+      {/* Pattern background with opacity at the bottom */}
+      <div
+        className="absolute inset-0 opacity-100"
+        style={{
+          backgroundImage: `url('/images/footer pattern.webp')`,
+          backgroundSize: '500px 214px',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: 'center'
+        }}
+      />
       <div
         className="absolute inset-0"
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 88%, 0 100%)' }}
@@ -46,7 +50,7 @@ const HeroSection = () => {
               key={slides[index].src}
               src={slides[index].src}
               alt={slides[index].alt}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover max-w-full max-h-full"
               initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0.4, scale: 1.05 }}

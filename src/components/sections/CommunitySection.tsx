@@ -32,11 +32,11 @@ const CommunitySection: React.FC<CommunitySectionProps> = ({
             alignment === 'right' ? 'lg:grid-flow-row-dense' : ''
           }`}>
             {/* Image */}
-            <div className={`${alignment === 'right' ? 'lg:col-start-2' : ''}`}>
+            <div className={`${alignment === 'right' ? 'lg:col-start-2' : ''} overflow-hidden`}>
               <img
                 src={imageSrc}
                 alt="AfroHeat community"
-                className="rounded-lg md:rounded-xl shadow-lg w-full h-64 md:h-80 object-cover"
+                className="rounded-lg md:rounded-xl shadow-lg w-full h-64 md:h-80 object-cover max-w-full max-h-full"
               />
             </div>
 

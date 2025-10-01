@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { InfiniteMovingCards } from '../ui/infinite-moving-cards';
 import SignatureClassCard from '../ui/signature-class-card';
 import GoogleRating from '../ui/GoogleRating';
-import ImageReveal from '../ui/image-tiles';
+import WhyChooseUsCards from '../ui/why-choose-us-cards';
 import {
   IconShield,
   IconUsers,
@@ -117,7 +117,7 @@ const AboutSection: React.FC = () => {
       title: "Holistic Wellness",
       description: "Focusing on physical and mental well-being for complete life transformation."
     }
-  ];
+ ];
 
   const memberCount = useCounter(200);
   const yearCount = useCounter(4);
@@ -182,10 +182,10 @@ const AboutSection: React.FC = () => {
           {/* Main content container with modern collage layout */}
           <div className="relative max-w-7xl mx-auto px-4">
             <div className="flex justify-center my-0">
-              <ImageReveal
-                leftImage="/images/about us/Transformation/IMG_0381.webp"
-                middleImage="/images/about us/Transformation/IMG_9101.webp"
-                rightImage="/images/about us/Transformation/IMG_9104.webp"
+              <WhyChooseUsCards
+                leftImage="/images/why us/IMG_20251001_122529_701.webp"
+                middleImage="/images/why us/IMG_20251001_122538_467.webp"
+                rightImage="/images/why us/IMG_2523.webp"
               />
             </div>
 
@@ -232,7 +232,7 @@ const AboutSection: React.FC = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="bg-card rounded-xl md:rounded-2xl p-8 md:p-12 lg:p-12 text-foreground border border-border relative overflow-hidden">
+          <div className="bg-card rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 text-foreground border border-border relative overflow-hidden">
             {/* Animated background pattern */}
             <div className="absolute inset-0 opacity-10">
               {[...Array(5)].map((_, i) => (
@@ -253,16 +253,16 @@ const AboutSection: React.FC = () => {
               ))}
             </div>
             
-            <div className="flex flex-row flex-nowrap justify-between items-center gap-4 sm:gap-6 md:gap-8 lg:gap-8 max-w-4xl mx-auto relative z-10">
+            <div className="grid grid-cols-3 gap-4 md:gap-6 lg:gap-8 relative z-10">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="text-center group flex-shrink-0 px-3"
+                  className="text-center group min-w-0"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
                   <motion.div
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1 md:mb-2 text-primary font-industry"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1 md:mb-2 text-primary font-industry whitespace-nowrap"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: index * 0.2, duration: 0.5 }}
@@ -270,7 +270,7 @@ const AboutSection: React.FC = () => {
                   >
                     {stat.number}
                   </motion.div>
-                  <div className="text-sm md:text-base text-muted-foreground group-hover:text-primary transition-colors font-poppins">
+                  <div className="text-xs sm:text-sm md:text-base text-muted-foreground group-hover:text-primary transition-colors font-poppins whitespace-nowrap">
                     {stat.label}
                   </div>
                 </motion.div>
