@@ -85,7 +85,7 @@ const GoogleFormModal: React.FC<GoogleFormModalProps> = ({
             </div>
 
             {/* Google Form Embed */}
-            <div className="p-6 overflow-hidden">
+            <div className="p-6 overflow-y-auto max-h-[calc(95vh-150px)]">
               <div className="w-full h-[2000px] rounded-lg overflow-auto border border-border bg-muted/20">
                 <iframe
                   src={formUrl}

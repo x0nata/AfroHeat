@@ -1,16 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import BookingModal from '../ui/booking-modal';
 import ServiceCard from '../ui/service-card';
 import BootcampModal from '../ui/BootcampModal';
-import PrivateClassModal from '../ui/PrivateClassModal';
-import InstructorModal from '../ui/InstructorModal';
 import { motion } from 'framer-motion';
 
 const ServicesSection: React.FC = () => {
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
-  const [isPrivateClassModalOpen, setIsPrivateClassModalOpen] = useState(false);
-  const [isInstructorModalOpen, setIsInstructorModalOpen] = useState(false);
   const highlightTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -126,9 +120,8 @@ const ServicesSection: React.FC = () => {
                 onSignUp={() => {
                   if (service.title === "Bootcamp") {
                     setIsBootcampModalOpen(true);
-                  } else {
-                    setIsBookingModalOpen(true);
                   }
+                  // All other services do nothing for now
                 }}
               />
             ))}
@@ -137,21 +130,9 @@ const ServicesSection: React.FC = () => {
       </div>
       
       {/* Modals */}
-      <BookingModal
-        isOpen={isBookingModalOpen}
-        onClose={() => setIsBookingModalOpen(false)}
-      />
       <BootcampModal
         isOpen={isBootcampModalOpen}
         onClose={() => setIsBootcampModalOpen(false)}
-      />
-      <PrivateClassModal
-        isOpen={isPrivateClassModalOpen}
-        onClose={() => setIsPrivateClassModalOpen(false)}
-      />
-      <InstructorModal
-        isOpen={isInstructorModalOpen}
-        onClose={() => setIsInstructorModalOpen(false)}
       />
     </section>
   );
