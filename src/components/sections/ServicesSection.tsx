@@ -28,7 +28,7 @@ const ServicesSection: React.FC = () => {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
           
           // Remove the highlight after 3 seconds
-          const timer = setTimeout(() => {
+          const highlightTimer = setTimeout(() => {
             element.classList.remove('ring-4', 'ring-secondary', 'ring-offset-2', 'ring-offset-background');
             element.classList.remove('scale-105');
             element.classList.remove('z-10');
