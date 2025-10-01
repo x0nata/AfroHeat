@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import BookingModal from '../ui/booking-modal';
 import ServiceCard from '../ui/service-card';
 import BootcampModal from '../ui/BootcampModal';
@@ -11,10 +11,17 @@ const ServicesSection: React.FC = () => {
   const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
   const [isPrivateClassModalOpen, setIsPrivateClassModalOpen] = useState(false);
   const [isInstructorModalOpen, setIsInstructorModalOpen] = useState(false);
+  const highlightTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     // Function to handle the scroll and highlight
     const handleScrollToStudio = () => {
+      // Clear any existing timer to prevent conflicts
+      if (highlightTimerRef.current) {
+        clearTimeout(highlightTimerRef.current);
+        highlightTimerRef.current = null;
+      }
+      
       // Use a timeout to ensure the DOM is fully loaded
       setTimeout(() => {
         const element = document.getElementById('studio-rental');
@@ -28,10 +35,11 @@ const ServicesSection: React.FC = () => {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
           
           // Remove the highlight after 3 seconds
-          const highlightTimer = setTimeout(() => {
+          highlightTimerRef.current = setTimeout(() => {
             element.classList.remove('ring-4', 'ring-secondary', 'ring-offset-2', 'ring-offset-background');
             element.classList.remove('scale-105');
             element.classList.remove('z-10');
+            highlightTimerRef.current = null;
           }, 3000);
         }
       }, 100); // Small delay to ensure rendering is complete
@@ -51,9 +59,12 @@ const ServicesSection: React.FC = () => {
 
     window.addEventListener('hashchange', handleHashChange);
 
-    // Clean up the event listener
+    // Clean up the event listener and any pending timers
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
+      if (highlightTimerRef.current) {
+        clearTimeout(highlightTimerRef.current);
+      }
     };
   }, []);
 
