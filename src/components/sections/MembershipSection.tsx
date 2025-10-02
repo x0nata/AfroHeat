@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { CardSpotlight } from '../ui/card-spotlight';
 import { motion } from 'framer-motion';
 import { useApp } from '@/context/AppContext';
+import BootcampModal from '../ui/BootcampModal';
 import {
   IconCheck,
   IconStar,
@@ -14,8 +15,9 @@ import {
 } from '@tabler/icons-react';
 
 const MembershipSection: React.FC = () => {
-  const { selectMembership, state } = useApp();
+  const { selectMembership } = useApp();
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
+  const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
 
   const membershipPlans = [
     {
@@ -87,7 +89,7 @@ const MembershipSection: React.FC = () => {
   ];
 
   const handleSelectPlan = (planId: string) => {
-    selectMembership(planId);
+    setIsBootcampModalOpen(true); // Open the same form as Bootcamp when choosing a plan
   };
 
   return (
@@ -223,9 +225,7 @@ const MembershipSection: React.FC = () => {
                   <motion.button
                     onClick={() => handleSelectPlan(plan.id)}
                     className={`w-full py-4 rounded-xl font-semibold transition-all relative overflow-hidden group ${
-                      state.selectedMembership === plan.id
-                        ? 'bg-green-600 text-primary-foreground '
-                        : plan.popular
+                      plan.popular
                         ? 'bg-primary text-primary-foreground hover:bg-primary/90'
                         : 'bg-primary/20 text-foreground hover:bg-primary/30'
                     }`}
@@ -233,7 +233,7 @@ const MembershipSection: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <span className="relative z-10">
-                      {state.selectedMembership === plan.id ? 'Selected' : 'Choose Plan'}
+                      Choose Plan
                     </span>
                     <motion.div
                       className="absolute inset-0 bg-white/20"
@@ -279,6 +279,12 @@ const MembershipSection: React.FC = () => {
         </motion.div>
 
       </div>
+      
+      {/* Bootcamp Modal for membership form */}
+      <BootcampModal
+        isOpen={isBootcampModalOpen}
+        onClose={() => setIsBootcampModalOpen(false)}
+      />
     </section>
   );
 };

@@ -5,53 +5,9 @@ import AboutTrainersSection from '@/components/sections/AboutTrainersSection';
 import HamrawitMediaSection from '@/components/sections/HamrawitMediaSection';
 import {
   IconHeart,
-  IconCalendar,
   IconTransform,
   IconUsers,
 } from '@tabler/icons-react';
-
-
-// Simplified Image Component with lazy loading
-const OptimizedImage = React.memo(({
-  src,
-  alt,
-  className,
-  fallbackSrc = "/images/logos/afroheat logo black.webp",
-  ...props
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-  fallbackSrc?: string;
-  [key: string]: any;
-}) => {
-  const [hasError, setHasError] = useState(false);
-
-  const handleError = () => {
-    setHasError(true);
-  };
-
-  return (
-    <div className={`relative ${className || ''}`}>
-      <img
-        src={hasError ? fallbackSrc : src}
-        alt={alt}
-        onError={handleError}
-        className={`${className} max-w-full max-h-full`}
-        loading="lazy"
-        decoding="async"
-        {...props}
-      />
-      {hasError && (
-        <div className="absolute inset-0 flex items-center justify-center bg-muted rounded-md">
-          <span className="text-muted-foreground text-sm font-poppins">Image not available</span>
-        </div>
-      )}
-    </div>
-  );
-});
-
-OptimizedImage.displayName = 'OptimizedImage';
 
 
 interface Category {
@@ -61,41 +17,31 @@ interface Category {
 }
 
 const About: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState('fitness');
+  const [selectedCategory, setSelectedCategory] = useState('outcommunity');
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
   // Memoize categories to prevent unnecessary re-renders
   const categories = useMemo<Category[]>(() => [
-    { id: 'fitness', name: 'Fitness', icon: <IconHeart className="h-5 w-5" /> },
-    { id: 'events', name: 'Events & Activities', icon: <IconCalendar className="h-5 w-5" /> },
+    { id: 'outcommunity', name: 'Our Space', icon: <IconHeart className="h-5 w-5" /> },
     { id: 'transformation', name: 'Transformation', icon: <IconTransform className="h-5 w-5" /> },
     { id: 'community', name: 'Community Engagement', icon: <IconUsers className="h-5 w-5" /> }
   ], []);
 
   // Picture collections for each category (with labels) - converted to WebP for better performance
   const pictureCollections = useMemo(() => ({
-    fitness: [
-      { id: 1, image: "/images/about us/fitness/IMG_2472.webp", title: "Fitness Class 1" },
-      { id: 2, image: "/images/about us/fitness/IMG_2473.webp", title: "Fitness Class 2" },
-      { id: 3, image: "/images/about us/fitness/IMG_7751.webp", title: "Fitness Class 3" }
-    ],
-    events: [
-      { id: 1, image: "/images/about us/event & activities/IMG_2467.webp", title: "Event 1" },
-      { id: 2, image: "/images/about us/event & activities/IMG_2475.webp", title: "Event 2" },
-      { id: 3, image: "/images/about us/event & activities/IMG_2487.webp", title: "Event 3" },
-      { id: 4, image: "/images/about us/event & activities/IMG_2489.webp", title: "Event 4" },
-      { id: 5, image: "/images/about us/event & activities/IMG_2494.webp", title: "Event 5" }
+    outcommunity: [
+      { id: 1, image: "/images/about us/our space/IMG_4295.webp", title: "" }
     ],
     transformation: [
-      { id: 1, image: "/images/about us/Transformation/IMG_0381.webp", title: "Transformation 1" },
-      { id: 2, image: "/images/about us/Transformation/IMG_9101.webp", title: "Transformation 2" },
-      { id: 3, image: "/images/about us/Transformation/IMG_9104.webp", title: "Transformation 3" }
+      { id: 1, image: "/images/about us/Transformation/IMG_0381.webp", title: "" },
+      { id: 2, image: "/images/about us/Transformation/IMG_9104.webp", title: "" },
+      { id: 3, image: "/images/about us/Transformation/IMG_20251002_114409_421.webp", title: "" },
+      { id: 4, image: "/images/about us/Transformation/IMG_20251002_114431_613.webp", title: "" }
     ],
     community: [
-      { id: 1, image: "/images/about us/community engagement/IMG_4537.webp", title: "Community 1" },
-      { id: 2, image: "/images/about us/community engagement/IMG_4898.webp", title: "Community 2" },
-      { id: 3, image: "/images/about us/community engagement/IMG_4901.webp", title: "Community 3" },
-      { id: 4, image: "/images/about us/community engagement/IMG_5832.webp", title: "Community 4" }
+      { id: 1, image: "/images/about us/community engagement/IMG_4898.webp", title: "" },
+      { id: 2, image: "/images/about us/community engagement/IMG_4901.webp", title: "" },
+      { id: 3, image: "/images/about us/community engagement/IMG_8788.webp", title: "" }
     ],
   }), []);
 
@@ -134,7 +80,7 @@ const About: React.FC = () => {
                   <div
                     className="relative w-full max-w-sm aspect-square mx-auto shadow-lg border-4 border-primary/20 rounded-lg overflow-hidden"
                     style={{
-                      backgroundImage: `url('/images/about us/aboutuspic.webp')`,
+                      backgroundImage: `url('/images/about us/founderpic.webp')`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       backgroundRepeat: 'no-repeat',
@@ -145,7 +91,7 @@ const About: React.FC = () => {
                     <div
                       className="absolute inset-0 rounded-lg transition-transform duration-225 scale-100 group-hover:scale-105"
                       style={{
-                        backgroundImage: `url('/images/about us/aboutuspic.webp')`,
+                        backgroundImage: `url('/images/about us/founderpic.webp')`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
@@ -202,14 +148,14 @@ const About: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "tween", duration: 0.15 }}
                 viewport={{ once: true }}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all ${
+                className={`flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedCategory === category.id
                     ? 'bg-primary text-primary-foreground'
                     : 'bg-card text-foreground hover:bg-muted'
                 }`}
               >
                 {category.icon}
-                <span className="font-poppins">{category.name}</span>
+                <span className="font-poppins text-sm">{category.name}</span>
               </motion.button>
             ))}
           </div>
@@ -226,15 +172,18 @@ const About: React.FC = () => {
                 className="group relative w-full bg-card rounded-xl shadow-lg border border-border overflow-hidden transition-transform duration-225 hover:shadow-xl hover:scale-105"
                 onClick={() => setExpandedImage(picture.image)}
               >
-                <OptimizedImage
+                <img
                   src={picture.image}
                   alt={`AfroHeat ${selectedCategory} image ${picture.id}`}
                   className="w-full h-64 object-cover"
+                  loading="lazy"
                 />
                 <div className="p-4">
-                  <h3 className="text-lg font-bold mb-2 text-foreground font-industry group-hover:text-primary transition-colors duration-225">
-                    {picture.title}
-                  </h3>
+                  {picture.title && picture.title.trim() !== '' && (
+                    <h3 className="text-lg font-bold mb-2 text-foreground font-industry group-hover:text-primary transition-colors duration-225">
+                      {picture.title}
+                    </h3>
+                  )}
                 </div>
               </div>
             ))}
@@ -258,7 +207,7 @@ const About: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
-                <OptimizedImage
+                <img
                   src={expandedImage}
                   alt="Expanded view"
                   className="max-w-full max-h-full object-contain rounded-lg"

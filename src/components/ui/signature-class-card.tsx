@@ -8,13 +8,16 @@ interface SignatureClassCardProps {
     description: string;
     ctaText: string;
     ctaHref?: string;
+    onClick?: () => void;
   };
   className?: string;
 }
 
 const SignatureClassCard: React.FC<SignatureClassCardProps> = ({ classData, className }) => {
   const handleCtaClick = () => {
-    if (classData.ctaHref) {
+    if (classData.onClick) {
+      classData.onClick();
+    } else if (classData.ctaHref) {
       window.location.href = classData.ctaHref;
     }
   };

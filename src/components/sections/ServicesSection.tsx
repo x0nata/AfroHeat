@@ -1,15 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import ServiceCard from '../ui/service-card';
 import BootcampModal from '../ui/BootcampModal';
+import StudentPassModal from '../ui/StudentPassModal';
 import { motion } from 'framer-motion';
 
 const ServicesSection: React.FC = () => {
   const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
+  const [isStudentPassModalOpen, setIsStudentPassModalOpen] = useState(false);
   const highlightTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     // Function to handle the scroll and highlight
-    const handleScrollToStudio = () => {
+    const handleScrollToElement = (elementId: string) => {
       // Clear any existing timer to prevent conflicts
       if (highlightTimerRef.current) {
         clearTimeout(highlightTimerRef.current);
@@ -18,7 +20,7 @@ const ServicesSection: React.FC = () => {
       
       // Use a timeout to ensure the DOM is fully loaded
       setTimeout(() => {
-        const element = document.getElementById('studio-rental');
+        const element = document.getElementById(elementId);
         if (element) {
           // Add a temporary highlight class
           element.classList.add('ring-4', 'ring-secondary', 'ring-offset-2', 'ring-offset-background');
@@ -36,18 +38,26 @@ const ServicesSection: React.FC = () => {
             highlightTimerRef.current = null;
           }, 3000);
         }
-      }, 100); // Small delay to ensure rendering is complete
+      }, 10); // Small delay to ensure rendering is complete
     };
-
+  
     // Check if there's a hash in the URL when the component mounts
     if (window.location.hash === '#studio-rental') {
-      handleScrollToStudio();
+      handleScrollToElement('studio-rental');
+    } else if (window.location.hash === '#dance') {
+      handleScrollToElement('dance');
+    } else if (window.location.hash === '#studentpass') {
+      handleScrollToElement('studentpass');
     }
-
+  
     // Listen for hash changes (in case user navigates using links)
     const handleHashChange = () => {
       if (window.location.hash === '#studio-rental') {
-        handleScrollToStudio();
+        handleScrollToElement('studio-rental');
+      } else if (window.location.hash === '#dance') {
+        handleScrollToElement('dance');
+      } else if (window.location.hash === '#studentpass') {
+        handleScrollToElement('studentpass');
       }
     };
 
@@ -116,10 +126,12 @@ const ServicesSection: React.FC = () => {
               <ServiceCard
                 key={service.id}
                 service={service}
-                id={service.title === "Space/Studio Rental" ? "studio-rental" : undefined}
+                id={service.title === "Space/Studio Rental" ? "studio-rental" : service.title === "Dance Fitness" ? "dance" : service.title === "Studentpass" ? "studentpass" : undefined}
                 onSignUp={() => {
                   if (service.title === "Bootcamp") {
                     setIsBootcampModalOpen(true);
+                  } else if (service.title === "Studentpass") {
+                    setIsStudentPassModalOpen(true);
                   }
                   // All other services do nothing for now
                 }}
@@ -133,6 +145,10 @@ const ServicesSection: React.FC = () => {
       <BootcampModal
         isOpen={isBootcampModalOpen}
         onClose={() => setIsBootcampModalOpen(false)}
+      />
+      <StudentPassModal
+        isOpen={isStudentPassModalOpen}
+        onClose={() => setIsStudentPassModalOpen(false)}
       />
     </section>
   );

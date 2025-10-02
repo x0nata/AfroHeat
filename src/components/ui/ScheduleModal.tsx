@@ -156,7 +156,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
               ))}
             </div>
             <div className="text-center text-xs text-muted-foreground bg-primary/5 p-1 sm:p-2 rounded mt-1 sm:mt-2 border border-primary/10">
-              *Daily online booking required +2519044222
+              *Daily online booking required +251 90 424 2222
             </div>
           </div>
         </motion.div>

@@ -53,13 +53,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
     {
       icon: <IconPhone className="h-6 w-6" />,
       title: "Call Us",
-      details: ["+251 911 234 567", "Available 7 days a week"],
+      details: ["+251 90 424 2222", "Available 7 days a week"],
       action: "Call Now"
     },
     {
       icon: <IconMail className="h-6 w-6" />,
       title: "Email Us",
-      details: ["hello@afroheatfitness.com"],
+      details: ["afroheatfitness1@gmail.com"],
       action: "Send Email"
     },
     {
@@ -76,7 +76,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
       icon: <IconCalendar className="h-8 w-8" />,
       title: "Find a Group Class",
       description: "Join our scheduled group fitness sessions",
-      action: "View Classes"
+      action: "View Classes",
+      onClick: onScheduleOpen
     },
     {
       icon: <IconUsers className="h-8 w-8" />,
@@ -190,19 +191,36 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
                           {action.description}
                         </p>
                       </div>
-                      <motion.button
-                        className="bg-primary text-primary-foreground px-3 py-1.5 md:px-4 md:py-2 rounded-md md:rounded-lg font-medium hover:bg-primary/90 transition-all text-xs md:text-sm font-poppins relative overflow-hidden group"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <span className="relative z-10">{action.action}</span>
-                        <motion.div
-                          className="absolute inset-0 bg-white/20"
-                          initial={{ x: '-100%' }}
-                          whileHover={{ x: '100%' }}
-                          transition={{ duration: 0.6 }}
-                        />
-                      </motion.button>
+                      {action.onClick ? (
+                        <motion.button
+                          onClick={action.onClick}
+                          className="bg-primary text-primary-foreground px-3 py-1.5 md:px-4 md:py-2 rounded-md md:rounded-lg font-medium hover:bg-primary/90 transition-all text-xs md:text-sm font-poppins relative overflow-hidden group"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <span className="relative z-10">{action.action}</span>
+                          <motion.div
+                            className="absolute inset-0 bg-white/20"
+                            initial={{ x: '-100%' }}
+                            whileHover={{ x: '100%' }}
+                            transition={{ duration: 0.6 }}
+                          />
+                        </motion.button>
+                      ) : (
+                        <motion.button
+                          className="bg-primary text-primary-foreground px-3 py-1.5 md:px-4 md:py-2 rounded-md md:rounded-lg font-medium hover:bg-primary/90 transition-all text-xs md:text-sm font-poppins relative overflow-hidden group"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <span className="relative z-10">{action.action}</span>
+                          <motion.div
+                            className="absolute inset-0 bg-white/20"
+                            initial={{ x: '-100%' }}
+                            whileHover={{ x: '100%' }}
+                            transition={{ duration: 0.6 }}
+                          />
+                        </motion.button>
+                      )}
                     </div>
                   </div>
                 ))}

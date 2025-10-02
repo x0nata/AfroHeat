@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       <div className="min-h-screen">
       <HeroSection />
       <NewHomeSection onScheduleOpen={() => setIsScheduleOpen(true)} />
-      <AboutSection />
+      <AboutSection onBootcampOpen={() => setIsBootcampModalOpen(true)} />
     </div>
     <ScheduleModal isOpen={isScheduleOpen} onClose={() => setIsScheduleOpen(false)} />
     <BootcampModal

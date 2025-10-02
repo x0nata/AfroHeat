@@ -32,7 +32,11 @@ const useCounter = (target: number, duration: number = 2000) => {
   return count;
 };
 
-const AboutSection: React.FC = () => {
+interface AboutSectionProps {
+  onBootcampOpen?: () => void;
+}
+
+const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
   const testimonials = [
     {
       quote: "I used to dance alone in my house and I don't know why but suddenly I stopped. This class brings out that side of me!",
@@ -142,7 +146,7 @@ const AboutSection: React.FC = () => {
       src: "/images/new/boootcamp.webp",
       description: "Intensive program combining strength, cardio, and mobility. Transform your fitness with expert guidance in a supportive group setting.",
       ctaText: "Start Bootcamp",
-      ctaHref: "/services#bootcamp"
+      onClick: onBootcampOpen
     },
     {
       title: "Student Pass",
