@@ -15,7 +15,7 @@ import {
 } from '@tabler/icons-react';
 
 const MembershipSection: React.FC = () => {
-  const { selectMembership } = useApp();
+  const { } = useApp(); // Removed selectMembership as it's not being used
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
   const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
 
@@ -88,7 +88,7 @@ const MembershipSection: React.FC = () => {
     }
   ];
 
-  const handleSelectPlan = (planId: string) => {
+  const handleSelectPlan = () => {
     setIsBootcampModalOpen(true); // Open the same form as Bootcamp when choosing a plan
   };
 
@@ -223,7 +223,7 @@ const MembershipSection: React.FC = () => {
 
                   {/* CTA Button */}
                   <motion.button
-                    onClick={() => handleSelectPlan(plan.id)}
+                    onClick={() => handleSelectPlan()}
                     className={`w-full py-4 rounded-xl font-semibold transition-all relative overflow-hidden group ${
                       plan.popular
                         ? 'bg-primary text-primary-foreground hover:bg-primary/90'
