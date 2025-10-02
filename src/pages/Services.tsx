@@ -15,6 +15,15 @@ const Services: React.FC = () => {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       }, 300); // Small delay to ensure ServicesSection has rendered
+    } else if (window.location.hash === '#membership') {
+      // Wait a bit for the MembershipSection to render, then scroll
+      setTimeout(() => {
+        const element = document.getElementById('membership');
+        if (element) {
+          // Scroll to the element with smooth behavior
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 300); // Small delay to ensure MembershipSection has rendered
     }
   }, []); // Empty dependency array means this runs once on mount
 

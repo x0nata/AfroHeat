@@ -37,7 +37,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
       id: 2,
       description: 'Build resilience under the stars. Evening sessions that strengthen body and mind in a supportive community.',
       buttonText: 'See Our Packages',
-      buttonLink: '/services'
+      buttonLink: '/services#membership'
     }
   ];
 

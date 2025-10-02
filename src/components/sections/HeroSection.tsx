@@ -64,7 +64,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen grid">
         <div className="flex items-center">
           <div className="max-w-3xl">
-            <div className="text-secondary uppercase tracking-[0.25em] text-xs sm:text-sm font-poppins mb-4">
+            <div className="text-secondary uppercase tracking-[0.25em] text-xs sm:text-sm font-poppins mb-4 mt-12 sm:mt-16">
               More than your average fitness center
             </div>
 
