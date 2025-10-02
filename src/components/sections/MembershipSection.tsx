@@ -104,7 +104,7 @@ const MembershipSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground font-industry">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary font-industry">
             Choose Your{" "}
             <span className="text-primary">
               Package
