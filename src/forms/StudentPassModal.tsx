@@ -16,7 +16,6 @@ const StudentPassModal: React.FC<StudentPassModalProps> = ({ isOpen, onClose }) 
       formUrl={studentPassFormUrl}
       title="Student Pass Registration"
       description="Fill out the form below to register for our student pass"
-      height="2762px"
       scrolling="no"
     />
   );

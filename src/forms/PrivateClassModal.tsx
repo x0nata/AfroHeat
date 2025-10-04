@@ -16,7 +16,6 @@ const PrivateClassModal: React.FC<PrivateClassModalProps> = ({ isOpen, onClose }
       formUrl={privateClassFormUrl}
       title="Private Class Registration"
       description="Fill out the form below to register for our private class"
-      height="2762px"
       scrolling="no"
     />
   );
