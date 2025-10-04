@@ -9,7 +9,6 @@ interface GenericFormModalProps {
   formUrl: string;
   title: string;
  description?: string;
-  height?: string;
   scrolling?: 'yes' | 'no';
 }
 
@@ -19,7 +18,6 @@ const GenericFormModal: React.FC<GenericFormModalProps> = ({
   formUrl,
   title,
   description,
-  height = '2000px',
   scrolling = 'yes'
 }) => {
   const handleOpenInNewTab = () => {
