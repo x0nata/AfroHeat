@@ -9,8 +9,8 @@ const HeroSection = () => {
   const navigate = useNavigate();
   const slides = useMemo(
     () => [
-      { src: '/images/about us/our space/IMG_4295.webp', alt: 'Women training at AfroHeat' },
-      { src: '/images/about us/community engagement/IMG_5841.webp', alt: 'AfroHeat class in action' },
+      { src: '/images/hero/yoga.webp', alt: 'Women training at AfroHeat' },
+      { src: '/images/hero/grouppic.webp', alt: 'AfroHeat class in action' },
       { src: '/images/about us/event & activities/IMG_6499.webp', alt: 'Strong women community' },
     ],
     []
@@ -28,23 +28,13 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-screen w-full overflow-hidden bg-black"
+      className="relative min-h-screen w-full overflow-hidden bg-background"
     >
-      {/* Pattern background with opacity at the bottom */}
-      <div
-        className="absolute inset-0 opacity-100"
-        style={{
-          backgroundImage: `url('/images/footer pattern.webp')`,
-          backgroundSize: '500px 214px',
-          backgroundRepeat: 'repeat',
-          backgroundPosition: 'center'
-        }}
-      />
       <div
         className="absolute inset-0"
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 88%, 0 100%)' }}
       >
-        <div className="absolute inset-0 bg-black">
+        <div className="absolute inset-0 bg-background">
           <AnimatePresence initial={false} mode="wait">
             <motion.img
               key={slides[index].src}

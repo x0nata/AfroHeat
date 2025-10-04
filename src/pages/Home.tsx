@@ -3,7 +3,7 @@ import HeroSection from '../components/sections/HeroSection';
 import AboutSection from '../components/sections/AboutSection';
 import NewHomeSection from '../components/sections/new-home-section';
 import ScheduleModal from '../components/ui/ScheduleModal';
-import BootcampModal from '../components/ui/BootcampModal';
+import BootcampModal from '@/forms/BootcampModal';
 
 const Home: React.FC = () => {
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);

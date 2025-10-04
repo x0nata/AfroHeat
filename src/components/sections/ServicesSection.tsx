@@ -1,12 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import ServiceCard from '../ui/service-card';
-import BootcampModal from '../ui/BootcampModal';
-import StudentPassModal from '../ui/StudentPassModal';
+import BootcampModal from '@/forms/BootcampModal';
+import StudentPassModal from '@/forms/StudentPassModal';
+import StudioRentalForm from '@/forms/StudioRentalForm';
+import ContactInfoModal from '@/components/ui/ContactInfoModal';
 import { motion } from 'framer-motion';
 
 const ServicesSection: React.FC = () => {
   const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
   const [isStudentPassModalOpen, setIsStudentPassModalOpen] = useState(false);
+  const [isStudioRentalModalOpen, setIsStudioRentalModalOpen] = useState(false);
+  const [isContactInfoModalOpen, setIsContactInfoModalOpen] = useState(false);
   const highlightTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -83,7 +87,7 @@ const ServicesSection: React.FC = () => {
     {
       id: 2,
       title: "Studentpass",
-      description: "Affordable and flexible access plans tailored specifically for students to balance fitness with busy study schedules.",
+      description: "flexible access plans tailored specifically for students to balance fitness with busy study schedules, with budget-friendly pricing support.",
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&h=400&fit=crop",
       status: "Available" as const,
     },
@@ -98,7 +102,7 @@ const ServicesSection: React.FC = () => {
       id: 4,
       title: "Space/Studio Rental",
       description: "Rent our premium studio space for your events, workshops, or fitness classes. Fully equipped with professional sound system, mirrors, and fitness equipment.",
-      image: "https://images.unsplash.com/photo-1542772146-e49c50ad6bcf?w=500&h=400&fit=crop",
+      image: "/images/new/studio.webp",
       status: "Available" as const,
     },
     {
@@ -130,8 +134,10 @@ const ServicesSection: React.FC = () => {
                 onSignUp={() => {
                   if (service.title === "Bootcamp") {
                     setIsBootcampModalOpen(true);
-                  } else if (service.title === "Studentpass") {
-                    setIsStudentPassModalOpen(true);
+                  } else if (service.title === "Studentpass" || service.title === "Dance Fitness" || service.title === "Cafe and Meal Service") {
+                    setIsContactInfoModalOpen(true);
+                  } else if (service.title === "Space/Studio Rental") {
+                    setIsStudioRentalModalOpen(true);
                   }
                   // All other services do nothing for now
                 }}
@@ -149,6 +155,14 @@ const ServicesSection: React.FC = () => {
       <StudentPassModal
         isOpen={isStudentPassModalOpen}
         onClose={() => setIsStudentPassModalOpen(false)}
+      />
+      <StudioRentalForm
+        isOpen={isStudioRentalModalOpen}
+        onClose={() => setIsStudioRentalModalOpen(false)}
+      />
+      <ContactInfoModal
+        isOpen={isContactInfoModalOpen}
+        onClose={() => setIsContactInfoModalOpen(false)}
       />
     </section>
   );

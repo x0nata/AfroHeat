@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface WhyChooseUsCardsProps {
   leftImage: string;
@@ -7,111 +7,152 @@ interface WhyChooseUsCardsProps {
 }
 
 export default function WhyChooseUsCards({ leftImage, middleImage, rightImage }: WhyChooseUsCardsProps) {
-
-  // Variants for the main container
-  const containerVariants = {
-    initial: { opacity: 0 },
+  const containerVariants: Variants = {
+    initial: {
+      opacity: 0,
+    },
     animate: {
       opacity: 1,
       transition: {
+        delay: 0.2,
         staggerChildren: 0.2,
       }
     }
   };
 
-  // Variants for each card
-  const cardVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 50,
-      scale: 0.8
-    },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      scale: 1,
+  const leftImageVariants: Variants = {
+    initial: { rotate: 0, x: 0, y: 0 },
+    animate: {
+      rotate: -8,
+      x: '-60%',
+      y: '-45%',
       transition: {
-        delay: i * 0.2,
-        duration: 0.6,
-        type: "spring",
-        stiffness: 10,
+        type: "spring" as const,
+        stiffness: 120,
+        damping: 12
+      }
+    },
+    whileHover: {
+      rotate: -6,
+      x: '-62%',
+      y: '-47%',
+      scale: 1.05,
+      zIndex: 50,
+      transition: {
+        type: "spring" as const,
+        stiffness: 200,
         damping: 15
       }
-    }),
-    hover: {
-      y: -10,
-      scale: 1.02,
+    }
+  };
+
+  const middleImageVariants: Variants = {
+    initial: { rotate: 0, x: 0, y: 0 },
+    animate: {
+      rotate: 0,
+      x: '0%',
+      y: '0%',
       transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20
+        type: "spring" as const,
+        stiffness: 120,
+        damping: 12
+      }
+    },
+    whileHover: {
+      rotate: 0,
+      x: '0%',
+      y: '-2%',
+      scale: 1.05,
+      zIndex: 50,
+      transition: {
+        type: "spring" as const,
+        stiffness: 200,
+        damping: 15
+      }
+    }
+  };
+
+  const rightImageVariants: Variants = {
+    initial: { rotate: 0, x: 0, y: 0 },
+    animate: {
+      rotate: 8,
+      x: '65%',
+      y: '65%',
+      transition: {
+        type: "spring" as const,
+        stiffness: 120,
+        damping: 12
+      }
+    },
+    whileHover: {
+      rotate: 10,
+      x: '67%',
+      y: '67%',
+      scale: 1.05,
+      zIndex: 50,
+      transition: {
+        type: "spring" as const,
+        stiffness: 200,
+        damping: 15
       }
     }
   };
 
   return (
     <motion.div
-      className="flex items-center justify-center w-full max-w-6xl mx-auto my-8 md:my-12 lg:my-16 gap-2 md:gap-4"
+      className="relative flex items-center justify-center w-full max-w-7xl mx-auto h-[350px] md:h-[450px] lg:h-[600px] xl:h-[700px] my-0 px-4"
       variants={containerVariants}
-      initial="hidden"
+      initial="initial"
       animate="animate"
       whileInView="animate"
       viewport={{ once: true }}
     >
-      {/* Left Card */}
+      {/* Left Image - Top-left, front */}
       <motion.div
-        className="w-1/3 min-w-[120px] h-44 sm:h-52 md:h-64 lg:h-72 rounded-2xl shadow-xl bg-white border-2 border-primary/20 overflow-hidden relative z-10"
-        custom={0}
-        variants={cardVariants}
-        whileHover="hover"
-        style={{ 
-          marginRight: '-2rem',
-          zIndex: 20
-        }}
+        className="absolute w-2/5 h-2/5 md:w-2/5 md:h-2/5 lg:w-2/5 lg:h-2/5 origin-top-left overflow-hidden rounded-xl shadow-2xl bg-white"
+        variants={leftImageVariants}
+        whileHover="whileHover"
+        animate="animate"
+        style={{ zIndex: 30 }}
+        whileTap={{ scale: 0.98, zIndex: 50 }}
       >
         <img
           src={leftImage}
-          alt="Community support"
+          alt="Left image"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
       </motion.div>
 
-      {/* Middle Card (Foreground) */}
+      {/* Middle Image - Center, middle */}
       <motion.div
-        className="w-1/3 min-w-[120px] h-44 sm:h-52 md:h-64 lg:h-72 rounded-2xl shadow-2xl bg-white border-2 border-primary/30 overflow-hidden relative z-20"
-        custom={1}
-        variants={cardVariants}
-        whileHover="hover"
-        style={{ 
-          zIndex: 30
-        }}
+        className="absolute w-1/2 h-1/2 md:w-2/5 md:h-2/5 lg:w-1/2 lg:h-1/2 origin-center overflow-hidden rounded-xl shadow-2xl bg-white"
+        variants={middleImageVariants}
+        whileHover="whileHover"
+        animate="animate"
+        style={{ zIndex: 20 }}
+        whileTap={{ scale: 0.98, zIndex: 50 }}
       >
         <img
           src={middleImage}
-          alt="Empowering environment"
+          alt="Middle image"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-30 rounded-2xl" />
       </motion.div>
 
-      {/* Right Card */}
+      {/* Right Image - Bottom-right, back */}
       <motion.div
-        className="w-1/3 min-w-[120px] h-44 sm:h-52 md:h-64 lg:h-72 rounded-2xl shadow-xl bg-white border-2 border-primary/20 overflow-hidden relative z-10"
-        custom={2}
-        variants={cardVariants}
-        whileHover="hover"
-        style={{ 
-          marginLeft: '-2rem',
-          zIndex: 20
-        }}
+        className="absolute w-2/5 h-2/5 md:w-2/5 md:h-2/5 lg:w-2/5 lg:h-2/5 origin-bottom-right overflow-hidden rounded-xl shadow-2xl bg-white"
+        variants={rightImageVariants}
+        whileHover="whileHover"
+        animate="animate"
+        style={{ zIndex: 10 }}
+        whileTap={{ scale: 0.98, zIndex: 50 }}
       >
         <img
           src={rightImage}
-          alt="Strength building"
+          alt="Right image"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
       </motion.div>
     </motion.div>
   );

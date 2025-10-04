@@ -45,16 +45,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className, id, onSig
           className="w-full h-full object-cover max-w-full max-h-full group-hover:scale-110 transition-transform duration-375"
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
         
         {/* Status Badge */}
         <div className="absolute top-4 right-4">
           <span className={cn(
-            "inline-block px-4 py-2 rounded-full text-sm font-bold font-poppins backdrop-blur-sm",
+            "inline-block px-4 py-2 rounded-full text-primary text-sm font-bold font-poppins backdrop-blur-sm",
             "border-2 border-white/20 shadow-lg",
             service.status === 'Coming Soon'
               ? 'bg-secondary/30 text-secondary border-secondary/30'
-              : 'bg-accent-4/30 text-accent-4 border-accent-4/30'
+              : 'bg-accent-4/30 text-primary border-accent-4/30'
           )}>
             {service.status}
           </span>
@@ -89,12 +89,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className, id, onSig
               "transition-all duration-300 transform hover:scale-105 focus:scale-105",
               "shadow-lg hover:shadow-xl relative overflow-hidden group"
             )}
-            aria-label={`Sign up for ${service.title}`}
+            aria-label={service.title === 'Studentpass' || service.title === 'Dance Fitness' || service.title === 'Cafe and Meal Service' ? `Get more info about ${service.title}` : `Sign up for ${service.title}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={onSignUp}
           >
-            <span className="relative z-10">Sign Up Now</span>
+            <span className="relative z-10">{service.title === 'Studentpass' || service.title === 'Dance Fitness' || service.title === 'Cafe and Meal Service' ? 'More Info' : 'Sign Up Now'}</span>
             <motion.div
               className="absolute inset-0 bg-white/20"
               initial={{ x: '-100%' }}

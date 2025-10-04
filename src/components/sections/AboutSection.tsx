@@ -170,8 +170,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
           transition={{ duration: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="text-center mb-0">
-            <div className="inline-flex items-center justify-center mb-0">
+          <div className="text-center ">
+            <div className="inline-flex items-center justify-center ">
               <IconHeart className="h-5 w-5 mr-2 text-primary flex-shrink-0" />
               <span className="text-sm uppercase font-bold text-primary tracking-wide">Why Choose Us</span>
             </div>
@@ -183,19 +183,21 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
             </h3>
           </div>
 
-          {/* Main content container with modern collage layout */}
-          <div className="relative max-w-7xl mx-auto px-4">
-            <div className="flex justify-center my-0">
-              <WhyChooseUsCards
-                leftImage="/images/why us/IMG_20251001_122529_701.webp"
-                middleImage="/images/why us/IMG_20251001_122538_467.webp"
-                rightImage="/images/why us/IMG_2523.webp"
-              />
+          {/* Main content container with image reveal */}
+          <div className="relative max-w-7xl mx-auto ">
+            <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+              <div className="flex justify-center my-0 px-0 sm:px-0 lg:px-0 xl:px-0">
+                <WhyChooseUsCards
+                  leftImage="/images/why-us/IMG_20251001_122529_701.webp"
+                  middleImage="/images/why-us/IMG_20251001_122538_467.webp"
+                  rightImage="/images/why-us/IMG_2523.webp"
+                />
+              </div>
             </div>
 
             {/* Feature boxes with updated design - no background */}
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-5" // Added mt-20 to separate from gallery
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.3 }}
@@ -331,7 +333,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.8 }}
           viewport={{ once: true }}
-          className="mb-8 w-full"
+          className="mb-8 w-full px-4 md:px-6"
         >
           <div className="text-center mb-4 md:mb-12">
             <motion.a
@@ -342,12 +344,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground font-industry">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-industry">
                 Follow us on instagram
               </h3>
             </motion.a>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 px-3 md:px-6">
             {[
               '/images/about us/event & activities/IMG_7019.webp',
               '/images/about us/event & activities/IMG_5833.webp',
@@ -378,6 +380,32 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
             ))}
           </div>
         </motion.div>
+
+        {/* OwlEvents Section */}
+        <div className="mb-2 mt-2 w-full">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="inline-flex items-center justify-center mb-6">
+              
+            </div>
+            
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground font-industry mb-6">
+              Book a class using <span className="text-primary">OwlEvents</span>
+            </h3>
+            
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-base md:text-lg">
+              Reserve your spot in our fitness classes through our partner booking platform
+            </p>
+            
+            <a
+              href="https://owlevents.app/organizers/detail?org_id=250"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-xl font-bold font-poppins text-base md:text-lg shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50 focus:ring-offset-2"
+            >
+              <span>Book Now</span>
+            </a>
+          </div>
+        </div>
 
 
       </div>

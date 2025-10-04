@@ -278,7 +278,7 @@ export const InfiniteMovingCards = ({
       >
         {duplicatedItems.map((item, idx) => (
           <li
-            className="relative w-[400px] max-w-full shrink-0 rounded-2xl border border-border bg-card px-6 py-4 md:w-[500px] shadow-lg hover:shadow-xl transition-shadow duration-225 flex flex-col min-h-[180px]"
+            className="relative w-[300px] max-w-full shrink-0 rounded-2xl border border-border bg-card px-4 py-3 md:w-[400px] shadow-lg hover:shadow-xl transition-shadow duration-225 flex flex-col min-h-[150px]"
             key={idx}
           >
             <blockquote className="flex flex-col h-full">
@@ -286,15 +286,15 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className="relative z-20 text-sm leading-[1.6] font-normal text-foreground font-poppins flex-grow">
+              <span className="relative z-20 text-xs leading-[1.5] font-normal text-foreground font-poppins flex-grow">
                 {item.quote}
               </span>
-              <div className="relative z-20 mt-auto pt-4 flex flex-row items-center">
+              <div className="relative z-20 mt-auto pt-3 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] font-normal text-muted-foreground font-poppins">
+                  <span className="text-xs leading-[1.4] font-normal text-muted-foreground font-poppins">
                     {item.name}
                   </span>
-                  <span className="text-sm leading-[1.6] font-normal text-muted-foreground font-poppins">
+                  <span className="text-xs leading-[1.4] font-normal text-muted-foreground font-poppins">
                     {item.title}
                   </span>
                 </span>
