@@ -58,13 +58,13 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
           transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <span className="text-xs sm:text-sm uppercase font-bold text-[#8c1e81] dark:text-[#a53a97] tracking-wide">HEALTH + FITNESS</span>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 font-industry">
-            Women's Fitness Bootcamp
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg text-gray-900 dark:text-gray-300 leading-relaxed font-poppins">
-            Our women-only fitness classes are designed to help you build a stronger, fitter, and more resilient body in a safe learning environment.
-          </p>
+          <span className="text-xs sm:text-sm uppercase font-bold text-[#8c1e81] dark:text-white tracking-wide">HEALTH + FITNESS</span>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 font-industry">
+                      Women's Fitness Bootcamp
+                    </h1>
+          <p className="text-sm sm:text-base md:text-lg text-gray-900 dark:text-white leading-relaxed font-poppins">
+                      Our women-only fitness classes are designed to help you build a stronger, fitter, and more resilient body in a safe learning environment.
+                    </p>
         </motion.div>
 
         {/* Right Side - Buttons */}

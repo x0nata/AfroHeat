@@ -172,15 +172,15 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
         >
           <div className="text-center ">
             <div className="inline-flex items-center justify-center ">
-              <IconHeart className="h-5 w-5 mr-2 text-primary flex-shrink-0" />
-              <span className="text-sm uppercase font-bold text-primary tracking-wide">Why Choose Us</span>
+              <IconHeart className="h-5 w-5 mr-2 text-primary dark:text-white flex-shrink-0" />
+              <span className="text-sm uppercase font-bold text-primary dark:text-white tracking-wide">Why Choose Us</span>
             </div>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-industry">
-              Where Women{" "}
-              <span className="text-primary">
-                find strength & community
-              </span>
-            </h3>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white font-industry">
+                          Where Women{" "}
+                          <span className="text-gray-900 dark:text-white">
+                            find strength & community
+                          </span>
+                        </h3>
           </div>
 
           {/* Main content container with image reveal */}
@@ -214,16 +214,16 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
                   whileHover={{ y: -8 }}
                 >
                   <div className="flex items-center justify-center w-12 h-12 mb-3 mx-auto">
-                    <div className="h-6 w-6 text-primary flex items-center justify-center">
+                    <div className="h-6 w-6 text-primary dark:text-white flex items-center justify-center">
                       {value.icon}
                     </div>
                   </div>
-                  <h4 className="text-base font-bold mb-2 font-industry text-foreground text-center">
-                    {value.title}
-                  </h4>
-                  <p className="text-muted-foreground text-xs leading-relaxed text-center font-poppins">
-                    {value.description}
-                  </p>
+                  <h4 className="text-base font-bold mb-2 font-industry text-foreground dark:text-white text-center">
+                                       {value.title}
+                                     </h4>
+                  <p className="text-gray-900 dark:text-white text-xs leading-relaxed text-center font-poppins">
+                                       {value.description}
+                                     </p>
                 </motion.div>
               ))}
             </motion.div>
@@ -268,7 +268,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
                   transition={{ duration: 0.2 }}
                 >
                   <motion.div
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1 md:mb-2 text-primary font-industry whitespace-nowrap"
+                                      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1 md:mb-2 text-primary dark:text-white font-industry whitespace-nowrap"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: index * 0.2, duration: 0.5 }}
@@ -276,9 +276,9 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
                   >
                     {stat.number}
                   </motion.div>
-                  <div className="text-xs sm:text-sm md:text-base text-muted-foreground group-hover:text-primary transition-colors font-poppins whitespace-nowrap">
-                    {stat.label}
-                  </div>
+                  <div className="text-xs sm:text-sm md:text-base text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-white transition-colors font-poppins whitespace-nowrap">
+                                       {stat.label}
+                                     </div>
                 </motion.div>
               ))}
             </div>
