@@ -46,7 +46,7 @@ const HamrawitMediaSection: React.FC = () => {
       title: "MERHA MAGAZINE ARTICLE",
       description: "Women Who Inspire: Celebrating the Women Transforming Addis Ababa",
       link: "https://merha.co/women-who-inspire-celebrating-the-women-transforming-addis-ababa/",
-      image: "/images/logos/afroheat logo black.webp" // NOTE: Replace with actual Merha Magazine article screenshot
+      image: "/images/logos/afroheat logo black.webp" // NOTE: Replace with article screenshot
     }
   ];
 
@@ -61,7 +61,7 @@ const HamrawitMediaSection: React.FC = () => {
           className="text-center mb-8 md:mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground font-industry mb-4">
-            Media Publications and Features:
+            Media Publications:
           </h2>
         </motion.div>
 
