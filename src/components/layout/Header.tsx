@@ -77,7 +77,7 @@ const Header: React.FC = () => {
             <div className="flex-shrink-0">
               <Link to="/" className="flex items-center space-x-2">
                 <img
-                  src={state.isDarkMode ? "/images/logos/afroheat logo white.webp" : "/images/logos/afroheat purple.webp"}
+                  src={state.isDarkMode ? "images/logos/afroheat logo black.webp" : "/images/logos/afroheat purple.webp"}
                   alt="AfroHeat Fitness Logo"
                   className="h-20 w-auto max-w-full max-h-full"
                 />

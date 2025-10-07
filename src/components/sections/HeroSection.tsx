@@ -28,11 +28,12 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-screen w-full overflow-hidden bg-background"
+      className="relative min-h-[60vh] sm:min-h-screen w-full overflow-hidden bg-background -mb-20"
     >
       <div
+      
         className="absolute inset-0"
-        style={{ clipPath: 'polygon(0 0, 100% 0, 100% 88%, 0 100%)' }}
+        style={{ clipPath: 'polygon(0 0, 100% 0, 100% 75%, 0 90%)' }}
       >
         <div className="absolute inset-0 bg-background">
           <AnimatePresence initial={false} mode="wait">
@@ -51,14 +52,14 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen grid">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[50vh] sm:min-h-screen grid">
         <div className="flex items-center">
-          <div className="max-w-3xl">
-            <div className="text-secondary uppercase tracking-[0.25em] text-xs sm:text-sm font-poppins mb-4 mt-12 sm:mt-16">
+          <div className="max-w-3xl scale-75 sm:scale-100 origin-top-left">
+            <div className="text-secondary uppercase tracking-[0.25em] text-[20px] sm:text-sm font-poppins mb-4 mt-8 sm:mt-16">
               More than your average fitness center
             </div>
 
-            <h1 className="text-white font-poppins font-medium font-black leading-[1.05] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 className="text-white font-poppins font-medium font-black leading-[1.05] text-[20px] sm:text-5xl lg:text-6xl xl:text-7xl">
               <span className="relative inline-block pr-2">
                 <span className="absolute -left-8 -top-2 w-10 h-1 bg-secondary rotate-12 rounded-full" />
                 <span className="absolute  -left-5 top-2 w-10 h-1 bg-primary -rotate-12 rounded-full" />
