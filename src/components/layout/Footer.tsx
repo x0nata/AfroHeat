@@ -4,10 +4,6 @@ import {
   IconBrandLinkedin,
   IconPhone,
   IconMapPin,
-  IconHome,
-  IconBarbell,
-  IconCalendar,
-  IconUser,
 } from '@tabler/icons-react';
 
 const Footer: React.FC = () => {
