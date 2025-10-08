@@ -11,13 +11,6 @@ import {
 } from '@tabler/icons-react';
 
 const Footer: React.FC = () => {
-  const navItems = [
-    { name: "Home", link: "/", icon: <IconHome className="h-3 w-3 sm:h-5 sm:w-5" /> },
-    { name: "Services", link: "/services", icon: <IconBarbell className="h-3 w-3 sm:h-5 sm:w-5" /> },
-    { name: "Events", link: "/events", icon: <IconCalendar className="h-3 w-3 sm:h-5 sm:w-5" /> },
-    { name: "About", link: "/about", icon: <IconUser className="h-3 w-3 sm:h-5 sm:w-5" /> },
-    { name: "Contact", link: "/contact", icon: <IconPhone className="h-3 w-3 sm:h-5 sm:w-5" /> },
-  ];
 
   return (
     <footer className="relative w-full bg-background dark:bg-[hsla(300, 94%, 6%, 1.00)] text-black-800 py-3 px-6 sm:py-5 sm:px-20 lg:px-20">
