@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { IconStarFilled } from '@tabler/icons-react';
+
 
 const HeroSection = () => {
   const navigate = useNavigate();
