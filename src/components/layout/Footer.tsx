@@ -9,7 +9,7 @@ import {
 const Footer: React.FC = () => {
 
   return (
-    <footer className="relative w-full bg-background dark:bg-[hsla(300, 94%, 6%, 1.00)] text-black-800 py-3 px-6 sm:py-5 sm:px-20 lg:px-20">
+    <footer className="relative w-full bg-background dark:bg-[hsla(300, 94%, 6%, 1.00)] text-neutral-800 dark:text-neutral-400 py-2 px-4 sm:py-3 sm:px-12 lg:px-12">
       {/* Mobile Background Pattern */}
       <div
         style={{
@@ -33,26 +33,26 @@ const Footer: React.FC = () => {
 
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 mb-4 sm:mb-4 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-2 sm:mb-2 text-left">
           {/* Brand Section */}
           <div>
-            <div className="flex items-center justify-start mb-3">
+            <div className="flex items-center justify-start mb-2">
               <img
                 src="/images/logos/navtitle.webp"
                 alt="AfroHeat Fitness Title"
-                className="h-14 sm:h-23 w-auto max-w-full max-h-full"
+                className="h-10 sm:h-14 w-auto max-w-full max-h-full"
               />
             </div>
-            <p className="font-poppins font-bold mb-2 text-sm sm:text-base text-black-600 max-w-md ml-0 md:ml-0 md:max-w-none">
+            <p className="font-poppins font-semibold mb-1.5 text-xs sm:text-sm text-neutral-700 dark:text-neutral-400 max-w-md ml-0 md:ml-0 md:max-w-none">
               Powered by women, built on community, fueled by connection.
             </p>
-            <div className="space-y-1 sm:space-y-2 font-poppins ml-0 md:ml-0 max-w-xs md:max-w-none">
-              <div className="flex items-center justify-start space-x-2 sm:space-x-3 text-sm sm:text-base text-black-1000 ">
-                <IconMapPin className="h-3 w-3 sm:h-5 sm:w-5 " />
+            <div className="space-y-0.5 sm:space-y-1 font-poppins ml-0 md:ml-0 max-w-xs md:max-w-none">
+              <div className="flex items-center justify-start space-x-1.5 sm:space-x-2 text-xs sm:text-sm text-neutral-700 dark:text-neutral-400 ">
+                <IconMapPin className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5 " />
                 <span>Wello sefer, Ethio China St, Addis Ababa</span>
               </div>
-              <div className="flex items-center justify-start space-x-2 sm:space-x-3 text-sm sm:text-base text-black-1000 ">
-                <IconPhone className="h-3 w-3 sm:h-5 sm:w-5 " />
+              <div className="flex items-center justify-start space-x-1.5 sm:space-x-2 text-xs sm:text-sm text-neutral-700 dark:text-neutral-400 ">
+                <IconPhone className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5 " />
                 <span>+251 90 424 2222</span>
               </div>
             </div>
@@ -60,26 +60,26 @@ const Footer: React.FC = () => {
 
           {/* Social Media */}
           <div className="flex flex-col md:items-end justify-center">
-            <p className="font-poppins text-sm sm:text-base text-black-600 mb-5 mt-5 font-bold text-left md:text-right">
-              Stay connected with our fitness community
+            <div className="flex space-x-2 sm:space-x-3 items-center md:justify-end">
+              <p className="font-poppins text-xs sm:text-sm text-neutral-700 dark:text-neutral-400 mb-4 mt-3 font-semibold text-left md:text-right">
+              stay connected 
             </p>
-            <div className="flex space-x-3 sm:space-x-4 mt-2 items-center  md:justify-end">
               <a href="https://www.instagram.com/afroheatfitness?igsh=NGpsc3F0YnpydjJu" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
-                <IconBrandInstagram className="h-7 w-7 sm:h-12 sm:w-12 text-[#E1306C]" />
+                <IconBrandInstagram className="h-5 w-5 sm:h-8 sm:w-8 text-[#f2a8c3]" />
               </a>
               <a href="https://vm.tiktok.com/ZMHnKdc5qF2eT-RqFic/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="TikTok">
-                <IconBrandTiktok className="h-7 w-7 sm:h-12 sm:w-12 text-[#FF0050]" />
+                <IconBrandTiktok className="h-5 w-5 sm:h-8 sm:w-8 text-[#ff87a7]" />
               </a>
               <a href="https://www.linkedin.com/company/afroheat/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
-                <IconBrandLinkedin className="h-7 w-7 sm:h-12 sm:w-12 text-[#0077B5]" />
+                <IconBrandLinkedin className="h-5 w-5 sm:h-8 sm:w-8 text-[#8ec8ec]" />
               </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-1.5 sm:pt-2 pb-0.5 sm:pb-1 text-center">
-          <p className="text-xs sm:text-sm font-poppins text-black-600">
+        <div className="pt-0.5 sm:pt-1 pb-0 sm:pb-0.5 text-center">
+          <p className="text-[0.6rem] sm:text-xs font-poppins text-neutral-700 dark:text-neutral-400">
             Copyright © 2025 AfroHeat Fitness. All Rights Reserved.
           </p>
         </div>
