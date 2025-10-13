@@ -39,16 +39,12 @@ const Services: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl text-primary font-bold mb-6 font-industry">
+            <h1 className="text-4xl md:text-6xl text-primary font-bold  font-industry">
               Our{" "}
               <span className="text-primary">
                 Services
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-poppins">
-              Discover our Africa-inspired fitness programs designed specifically for women.
-              Build strength, celebrate culture, and join our empowering community.
-            </p>
           </motion.div>
         </div>
       </section>
