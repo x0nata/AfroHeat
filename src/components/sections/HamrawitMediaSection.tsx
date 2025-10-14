@@ -46,7 +46,7 @@ const HamrawitMediaSection: React.FC = () => {
       title: "MERHA MAGAZINE ARTICLE",
       description: "Women Who Inspire: Celebrating the Women Transforming Addis Ababa",
       link: "https://merha.co/women-who-inspire-celebrating-the-women-transforming-addis-ababa/",
-      image: "/images/logos/afroheat logo black.webp" // NOTE: Replace with article screenshot
+      image: "/images/new/j.webp" // NOTE: Replace with article screenshot
     }
   ];
 

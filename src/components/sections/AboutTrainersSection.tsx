@@ -62,21 +62,21 @@ const AboutTrainersSection: React.FC = () => {
       id: '1',
       name: 'HAMRAWIT GIZAW',
       role: 'Founder & Head Trainer',
-      description: 'Internationally certified personal trainer and group fitness instructor specializing in AfroHeat Dance Fitness programs.',
+      description: 'Founder and Group exercise instructor who has successfully completed the objectives and skills evaluation in accordance with the ISSA CPR and AER certification curriculum.',
       image: '/images/Trainers/hamrawit-gizaw-head-coach.webp'
     },
     {
       id: '2',
-      name: 'SELAM AYELE',
+      name: 'SELAMAWIT AYELE',
       role: 'KIKBOXING & STRENGTH',
-      description: 'Specializes in strength training and functional fitness with over 5 years of experience in group fitness.',
+      description: 'Kickboxing instructor and Level 2 health-related physical fitness coach who has successfully completed First Aid training at the Tikur Anbessa Specialized Hospital Training Center.',
       image: '/images/Trainers/selam-ayele-kikboxing-strength-trainer.webp'
     },
     {
       id: '3',
-      name: 'LINA TESFAYEE',
+      name: 'LINA TESFAYE',
       role: 'STRENGTH TRAINER',
-      description: 'Specializes in strength training and functional fitness with over 5 years of experience in group fitness.',
+      description: 'Group exercise instructor, Level 1 health-related physical fitness coach who has successfully completed the Sports Injury Treatment and Physiotherapy Training organized by CPID and SPHMMC, in collaboration with the Addis Ababa Youth and Sport Bureau.',
       image: '/images/Trainers/lina-tesfayee-strength-trainer.webp'
     }
   ];
