@@ -353,8 +353,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
             {[
               '/images/about us/event & activities/IMG_7019.webp',
               '/images/about us/event & activities/IMG_5833.webp',
-              '/images/about us/event & activities/IMG_5837.webp',
-              '/images/about us/event & activities/IMG_5843.webp'
+              '/images/new/3rd.webp',
+              '/images/new/4th.webp'
             ].map((src, index) => (
               <motion.a
                 key={index}
