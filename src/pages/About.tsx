@@ -115,12 +115,10 @@ const About: React.FC = () => {
                     <p className="text-lg text-foreground leading-relaxed font-poppins">
                       Founded in 2021, AfroHeat was born from Hamrawit Gizaw's passion after returning to Ethiopia from the US and UK, where she earned degrees in Computer Science and Business Psychology.
                     </p>
-                    <p className="text-lg text-foreground leading-relaxed font-poppins">
-                      Spotting a gap in women-only fitness spaces, she became a certified trainer.
-                    </p>
-                    <p className="text-lg text-foreground leading-relaxed font-poppins">
-                      More than workouts, AfroHeat builds a vibrant community celebrating African music, dance, and wellness for women everywhere.
-                    </p>
+                    {/* <p className="text-lg text-foreground leading-relaxed font-poppins">
+                      Spotting a gap in women-only fitness spaces
+                    </p> */}
+          
                   </div>
 
                 </div>

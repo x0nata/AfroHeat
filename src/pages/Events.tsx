@@ -6,6 +6,7 @@ import {
 } from '@tabler/icons-react';
 import EventCard from '@/components/ui/event-card';
 import { DraggableCardContainer, DraggableCardBody } from '@/components/ui/draggable-card';
+import StudioRentalForm from '@/forms/StudioRentalForm';
 
 const Events: React.FC = () => {
   const upcomingEvents = [
@@ -41,7 +42,7 @@ const Events: React.FC = () => {
       date: "2025-03-08",
       time: "2:00 PM - 6:00 PM", 
       location: "Main Studio, Addis Ababa",
-      description: "Celebrate International Women's Day with African music, dance, fitness, and community building.",
+      description: "Celebrate International Women's Day with music, dance, fitness, and community building.",
       instructor: "All Instructors",
       price: "Free",
       capacity: 50,
@@ -57,7 +58,7 @@ const Events: React.FC = () => {
       date: "2025-01-15",
       time: "",
       location: "Main Studio, Addis Ababa",
-      description: "High-energy kickboxing session to start the year strong with African rhythms and intense cardio workout",
+      description: "High-energy kickboxing session to start the year strong with rhythms and intense cardio workout",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
@@ -77,7 +78,7 @@ const Events: React.FC = () => {
       date: "2024-12-20",
       time: "",
       location: "Main Studio, Addis Ababa",
-      description: "Festive AfroHeat dance celebration featuring traditional African music and cultural dance styles",
+      description: "Festive AfroHeat dance celebration featuring traditional music and cultural dance styles",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
@@ -97,7 +98,7 @@ const Events: React.FC = () => {
       date: "2024-08-10",
       time: "",
       location: "Main Studio, Addis Ababa",
-      description: "Outdoor strength training event with African drumming and community fitness challenges",
+      description: "Outdoor strength training event with drumming and community fitness challenges",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
@@ -137,7 +138,7 @@ const Events: React.FC = () => {
       date: "2024-06-15",
       time: "",
       location: "Main Studio, Addis Ababa",
-      description: "Non-stop dance marathon featuring Afrobeat, Amapiano, and traditional African dance styles",
+      description: "Non-stop dance marathon featuring Afrobeat, Amapiano, and traditional dance styles",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
@@ -157,7 +158,7 @@ const Events: React.FC = () => {
       date: "2024-05-05",
       time: "",
       location: "Main Studio, Addis Ababa",
-      description: "Educational event exploring the intersection of African culture and modern fitness practices",
+      description: "Educational event exploring the intersection of cultural traditions and modern fitness practices",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
@@ -177,7 +178,7 @@ const Events: React.FC = () => {
       date: "2024-04-12",
       time: "",
       location: "Main Studio, Addis Ababa",
-      description: "Seasonal fitness challenge with African-inspired workouts and team competitions",
+      description: "Seasonal fitness challenge with culture-inspired workouts and team competitions",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
@@ -196,7 +197,7 @@ const Events: React.FC = () => {
       date: "2024-03-08",
       time: "",
       location: "Main Studio, Addis Ababa",
-      description: "Learn traditional African dances from various regions with certified instructors",
+      description: "Learn traditional dances from various regions with certified instructors",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
@@ -213,6 +214,7 @@ const Events: React.FC = () => {
  
   const [selectedPastEvent, setSelectedPastEvent] = useState<typeof pastEvents[0] | null>(null);
   const [isGalleryLoading, setIsGalleryLoading] = useState(true);
+  const [isStudioRentalModalOpen, setIsStudioRentalModalOpen] = useState(false);
 
   const modalContainerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -329,7 +331,7 @@ const Events: React.FC = () => {
             <h2 className="text-3xl font-bold text-center mb-12 font-industry">Past Events</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {pastEvents.map((event) => (
+              {pastEvents.slice(0, 5).map((event) => (
                 <EventCard
                   key={event.id}
                   event={event}
@@ -426,15 +428,21 @@ const Events: React.FC = () => {
             <p className="text-lg md:text-xl mb-8 font-poppins max-w-2xl mx-auto text-muted-foreground">
               Looking for a premium space for your events? 
             </p>
-            <a
-              href="/services#studio-rental"
+            <button
+              onClick={() => setIsStudioRentalModalOpen(true)}
               className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold font-poppins hover:bg-primary/90 transition-colors duration-300 transform hover:scale-105 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50 focus:ring-offset-2"
             >
               Book Studio Space Now
-            </a>
+            </button>
           </div>
         </div>
       </section>
+      
+      {/* Studio Rental Form Modal */}
+      <StudioRentalForm
+        isOpen={isStudioRentalModalOpen}
+        onClose={() => setIsStudioRentalModalOpen(false)}
+      />
       
      </div>
    );

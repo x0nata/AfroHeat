@@ -34,9 +34,10 @@ const useCounter = (target: number, duration: number = 2000) => {
 
 interface AboutSectionProps {
   onBootcampOpen?: () => void;
+  onDanceClassOpen?: () => void;
 }
 
-const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
+const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen, onDanceClassOpen }) => {
   const testimonials = [
     {
       quote: "I used to dance alone in my house and I don't know why but suddenly I stopped. This class brings out that side of me!",
@@ -139,7 +140,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
       src: "/images/new/dance.webp",
       description: "High-energy dance workouts. Burn calories while in a fun, supportive environment.",
       ctaText: "Join Dance Class",
-      ctaHref: "/services#dance"
+      onClick: onDanceClassOpen
     },
     {
       title: "Bootcamp",
@@ -153,7 +154,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen }) => {
       src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&h=400&fit=crop",
       description: "Affordable and flexible access plans tailored for students. Balance fitness with your study schedule and join our vibrant community.",
       ctaText: "Get Student Pass",
-      ctaHref: "/services#studentpass"
+      onClick: onDanceClassOpen  // Same as Dance Fitness - opens ContactInfoModal
     },
   ];
 
