@@ -66,12 +66,12 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
       title: "Email Us",
       details: ["afroheatfitness1@gmail.com"],
       action: "Learn More",
-      onClick: () => setIsContactInfoModalOpen(true)
+      href: "mailto:afroheatfitness1@gmail.com"
     },
     {
       icon: <IconClock className="h-6 w-6" />,
       title: "Operating Hours",
-      details: ["Monday - Saturday: 6AM - 10PM", "Sunday: 8AM - 8PM"],
+      details: ["Monday - Friday: 6AM -8PM", "Saturday: 6AM - 12PM"],
       action: "View Schedule",
       onClick: onScheduleOpen
     }
