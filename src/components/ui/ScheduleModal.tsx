@@ -16,15 +16,15 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
     },
     tuesday: {
       strength: ['6:00 AM', '7:00 AM', '8:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
-      kickboxing: ['7:00 AM', '8:00 AM', '9:00 AM']
+      kickboxing: ['8:00 AM']
     },
     wednesday: {
-      strength: ['5:00 PM', '6:00 PM', '7:00 PM'],
+      strength: ['7:00 AM', '8:00 AM', '9:00 AM','5:00 PM', '6:00 PM', '7:00 PM'],
       kickboxing: ['6:00 PM']
     },
     thursday: {
       strength: ['6:00 AM', '7:00 AM', '8:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
-      kickboxing: ['7:00 AM', '8:00 AM', '9:00 AM']
+      kickboxing: ['8:00 AM']
     },
     friday: {
       strength: ['7:00 AM', '8:00 AM', '9:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
@@ -42,7 +42,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
   const getIcon = (time: string) => {
     const [hourStr, period] = time.split(' ');
     const hour = parseInt(hourStr.split(':')[0]);
-    if (period === 'PM' && hour >= 6) {
+    if (period === 'PM' && hour >= 5) {
       return Moon;
     }
     return Sun;
