@@ -61,7 +61,7 @@ const AboutTrainersSection: React.FC = () => {
     {
       id: '1',
       name: 'HAMRAWIT GIZAW',
-      role: 'Founder & Head Trainer',
+      role: 'Head Trainer',
       description: 'Founder and Group exercise instructor who has successfully completed the objectives and skills evaluation in accordance with the ISSA CPR and AER certification curriculum.',
       image: '/images/Trainers/hamrawit-gizaw-head-coach.webp'
     },
