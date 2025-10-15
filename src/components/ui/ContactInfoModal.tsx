@@ -41,8 +41,8 @@ const ContactInfoModal: React.FC<ContactInfoModalProps> = ({ isOpen, onClose }) 
         
         <div className="mt-6 p-4 bg-muted/50 rounded-lg">
           <h3 className="font-medium mb-2">Opening Hours</h3>
-          <p className="text-sm text-muted-foreground">Monday - Friday: 6:00 AM - 9:00 PM</p>
-          <p className="text-sm text-muted-foreground">Saturday - Sunday: 8:00 AM - 6:00 PM</p>
+          <p className="text-sm text-muted-foreground">Monday - Friday: 6:00 AM - 8:00 PM</p>
+          <p className="text-sm text-muted-foreground">Saturday: 6:00 AM - 12:00 PM</p>
         </div>
       </div>
     </SimpleModal>
