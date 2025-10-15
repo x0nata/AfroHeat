@@ -113,8 +113,6 @@ const About: React.FC = () => {
 
                   <div className="space-y-3">
                     <p className="text-lg text-foreground leading-relaxed font-poppins">
-                      Founder & CEO of AfroHeat
-
                       Founded in 2021, AfroHeat was born from
                       Hamrawit Gizaw's passion after returning
                       to Ethiopia from the US and UK, where she
