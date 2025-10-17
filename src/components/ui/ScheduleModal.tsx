@@ -16,7 +16,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
     },
     tuesday: {
       strength: ['6:00 AM', '7:00 AM', '8:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
-      kickboxing: ['8:00 AM']
+      kickboxing: ['7:00 AM', '8:00 AM']
     },
     wednesday: {
       strength: ['7:00 AM', '8:00 AM', '9:00 AM','5:00 PM', '6:00 PM', '7:00 PM'],
@@ -24,15 +24,15 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
     },
     thursday: {
       strength: ['6:00 AM', '7:00 AM', '8:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
-      kickboxing: ['8:00 AM']
+      kickboxing: ['7:00 AM','8:00 AM']
     },
     friday: {
-      strength: ['7:00 AM', '8:00 AM', '9:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
+      strength: ['7:00 AM', '8:00 AM', '9:00 AM', '5:00 PM', '6:00 PM'],
       kickboxing: ['6:00 PM']
     },
     saturday: {
-      strength: ['8:00 AM', '9:00 AM'],
-      kickboxing: ['9:00 AM']
+      strength: ['8:00 AM'],
+      kickboxing: ['8:00 AM', '9:00 AM']
     }
   };
 
@@ -76,7 +76,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
           initial={{ scale: 0.9, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
-          className="bg-background rounded-xl shadow-2xl w-full max-w-sm sm:max-w-1.5x0.5 md:max-w-3xl max-h-[98vh] border border-primary/20 overflow-y-auto"
+          className="bg-background rounded-xl shadow-2xl w-full max-w-sm sm:max-w-1.5x0.5 md:max-w-3xl max-h-[120vh] border border-primary/20 overflow-y-auto"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="p-2 sm:p-4">
@@ -86,7 +86,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
                 onClick={onClose}
                 className="text-foreground hover:text-primary text-xl font-bold transition-colors duration-200"
               >
-                ×
+                × 
               </button>
             </div>
             <div className="space-y-2 sm:space-y-3">
