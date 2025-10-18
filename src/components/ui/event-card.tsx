@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import {
   IconCalendar,
   IconMapPin,
-  IconUsers,
   IconStar
 } from '@tabler/icons-react';
 import { cn } from '@/lib/utils';

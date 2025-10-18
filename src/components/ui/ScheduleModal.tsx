@@ -76,7 +76,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
           initial={{ scale: 0.9, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
-          className="bg-background rounded-xl shadow-2xl w-full max-w-sm md:max-w-3xl max-h-[120vh] border border-primary/20 overflow-y-auto scale-[0.7] sm:scale-100"
+          className="bg-background rounded-xl shadow-2xl w-full max-w-sm md:max-w-3xl max-h-[120vh] border border-primary/20 overflow-y-auto max-sm:scale-[0.7] sm:scale-100"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="p-2 sm:p-4">
