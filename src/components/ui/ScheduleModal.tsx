@@ -76,12 +76,12 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
           initial={{ scale: 0.9, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
-          className="bg-background rounded-xl shadow-2xl w-full max-w-sm md:max-w-3xl max-h-[80vh] border border-primary/20 overflow-y-auto max-sm:scale-[0.7] sm:scale-100"
+          className="bg-background rounded-xl shadow-2xl w-full max-w-sm md:max-w-3xl max-h-[93vh] border border-primary/20 overflow-y-auto scrollbar-hide"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="p-1 sm:p-4">
+          <div className="p-2 sm:p-4">
             <div className="flex justify-between items-center mb-2 sm:mb-3">
-              <h2 className="text-base sm:text-xl font-bold text-primary font-industry uppercase tracking-wide max-sm:text-sm">Group Classes Schedule</h2>
+              <h2 className="text-base sm:text-xl font-bold text-primary font-industry uppercase tracking-wide">Group Classes Schedule</h2>
               <button
                 onClick={onClose}
                 className="text-foreground hover:text-primary text-xl font-bold transition-colors duration-200 max-sm:text-lg max-sm:w-8 max-sm:h-8 flex items-center justify-center rounded-full hover:bg-primary/10 p-1"
