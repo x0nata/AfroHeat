@@ -44,15 +44,26 @@ const SignatureClassCard: React.FC<SignatureClassCardProps> = ({ classData, clas
       {/* Glow effect on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
       
-      {/* Image Container */}
+      {/* Image/Video Container */}
       <div className="relative w-full aspect-[4/3] overflow-hidden">
-        <img
-          src={classData.src}
-          alt={classData.title}
-          className="w-full h-full object-cover max-w-full max-h-full group-hover:scale-110 transition-transform duration-500"
-          loading="lazy"
-          decoding="async"
-        />
+        {classData.src.endsWith('.webm') || classData.src.endsWith('.mp4') || classData.src.endsWith('.mov') || classData.src.endsWith('.avi') ? (
+          <video
+            src={classData.src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover max-w-full max-h-full group-hover:scale-110 transition-transform duration-500"
+          />
+        ) : (
+          <img
+            src={classData.src}
+            alt={classData.title}
+            className="w-full h-full object-cover max-w-full max-h-full group-hover:scale-110 transition-transform duration-500"
+            loading="lazy"
+            decoding="async"
+          />
+        )}
         {/* Enhanced Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
       </div>

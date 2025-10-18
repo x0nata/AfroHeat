@@ -295,13 +295,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
                   >
                     <div className="relative bg-black rounded-3xl p-3 sm:p-4 w-24 h-48 sm:w-32 sm:h-56 border-[0.5px] border-gray-800 shadow-lg group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
                       {/* Phone notch */}
-                      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-10 sm:w-12 h-1 bg-gray-700 rounded-full"></div>
+                      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-6 sm:w-12 h-1 bg-gray-700 rounded-full"></div>
                       {/* Screen */}
                       <div className="relative w-full h-full rounded-2xl overflow-hidden">
                         <img
                           src="/images/mini phones/instagram.webp"
                           alt="AfroHeat Instagram frontpage"
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-cover blur-[2px]"
                         />
                         <div className="absolute inset-0 flex items-center justify-center z-10">
                           <IconBrandInstagram className="h-8 w-8 sm:h-10 sm:w-10 text-white drop-shadow-2xl" />
@@ -323,13 +323,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
                   >
                     <div className="relative bg-black rounded-3xl p-3 sm:p-4 w-24 h-48 sm:w-32 sm:h-56 border-[0.5px] border-gray-800 shadow-lg group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
                       {/* Phone notch */}
-                      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-10 sm:w-12 h-1 bg-gray-700 rounded-full"></div>
+                      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-6 sm:w-12 h-1 bg-gray-700 rounded-full"></div>
                       {/* Screen */}
                       <div className="relative w-full h-full rounded-2xl overflow-hidden">
                         <img
                           src="/images/mini phones/tiktok.webp"
                           alt="AfroHeat TikTok frontpage"
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-cover blur-[2px]"
                         />
                         <div className="absolute inset-0 flex items-center justify-center z-10">
                           <IconBrandTiktok className="h-8 w-8 sm:h-10 sm:w-10 text-white drop-shadow-2xl" />
@@ -351,13 +351,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
                   >
                     <div className="relative bg-black rounded-3xl p-3 sm:p-4 w-24 h-48 sm:w-32 sm:h-56 border-[0.5px] border-gray-800 shadow-lg group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
                       {/* Phone notch */}
-                      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-10 sm:w-12 h-1 bg-gray-700 rounded-full"></div>
+                      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-6 sm:w-12 h-1 bg-gray-700 rounded-full"></div>
                       {/* Screen */}
                       <div className="relative w-full h-full rounded-2xl overflow-hidden">
                         <img
                           src="/images/mini phones/linkedin.webp"
                           alt="AfroHeat LinkedIn frontpage"
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-cover blur-[2px]"
                         />
                         <div className="absolute inset-0 flex items-center justify-center z-10">
                           <IconBrandLinkedin className="h-8 w-8 sm:h-10 sm:w-10 text-white drop-shadow-2xl" />

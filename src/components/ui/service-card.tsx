@@ -37,13 +37,24 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className, id, onSig
       {/* Glow effect on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-375 rounded-3xl" />
       
-      {/* Image Container */}
+      {/* Image/Video Container */}
       <div className="relative w-full aspect-video overflow-hidden">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="w-full h-full object-cover max-w-full max-h-full group-hover:scale-110 transition-transform duration-375"
-        />
+        {service.image.endsWith('.webm') || service.image.endsWith('.mp4') || service.image.endsWith('.mov') || service.image.endsWith('.avi') ? (
+          <video
+            src={service.image}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover max-w-full max-h-full group-hover:scale-110 transition-transform duration-375"
+          />
+        ) : (
+          <img
+            src={service.image}
+            alt={service.title}
+            className="w-full h-full object-cover max-w-full max-h-full group-hover:scale-110 transition-transform duration-375"
+          />
+        )}
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
         

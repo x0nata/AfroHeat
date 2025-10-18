@@ -81,7 +81,7 @@ const ServicesSection: React.FC = () => {
       id: 1,
       title: "Bootcamp",
       description: "Whether you are just embarking on your fitness journey or need to spice up your existing routine, try our 2-month life-changing boot camp program!",
-      image: "/images/new/boootcamp.webp",
+      image: "/images/new/bootcampvid.webm",
       status: "Available" as const,
     },
     {
@@ -109,7 +109,7 @@ const ServicesSection: React.FC = () => {
       id: 5,
       title: "Cafe and Meal Service",
       description: "Enjoy healthy, nutritious meals and refreshments at our on-site cafe. We provide accessible meal plans based on your personal health and fitness needs.",
-      image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&h=400&fit=crop",
+      image: "/images/new/meal.webp",
       status: "Available" as const,
     }
   ];

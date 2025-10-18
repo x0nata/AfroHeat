@@ -23,19 +23,6 @@ const Events: React.FC = () => {
   const allEvents = [
     {
       id: 1,
-      title: "Pitch your friend",
-      date: "Coming soon",
-      time: "",
-      location: "Afroheat wello sefer, Addis Ababa",
-      description: "Come and pitch your friend to join our community. Bring them along for a fun experience!",
-      instructor: "All Instructors",
-      price: "",
-      capacity: 50,
-      registered: 0,
-      category: "Social"
-    },
-    {
-      id: 2,
       title: "Sip and Savor",
       date: "2025-11-08",
       time: "",
@@ -47,7 +34,21 @@ const Events: React.FC = () => {
       registered: 23,
       category: "Social",
       image: "/images/about us/event & activities/sip.webp"
+    },
+    {
+      id: 2,
+      title: "Pitch your friend",
+      date: "Coming soon",
+      time: "",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "Come and pitch your friend to join our community. Bring them along for a fun experience!",
+      instructor: "All Instructors",
+      price: "",
+      capacity: 50,
+      registered: 0,
+      category: "Social"
     }
+    
     
   ];
 

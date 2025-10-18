@@ -144,7 +144,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen, onDanceClas
     },
     {
       title: "Bootcamp",
-      src: "/images/new/boootcamp.webp",
+      src: "/images/new/bootcampvid.webm",
       description: "Intensive program combining strength, cardio, and mobility. Transform your fitness with expert guidance in a supportive group setting.",
       ctaText: "Start Bootcamp",
       onClick: onBootcampOpen
