@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
-import { 
-  IconCalendar, 
-  IconMapPin, 
-  IconClock, 
+import {
+  IconCalendar,
+  IconMapPin,
   IconUsers,
   IconStar
 } from '@tabler/icons-react';
@@ -102,31 +101,24 @@ const EventCard: React.FC<EventCardProps> = ({ event, className, isPast, onViewD
 
         {/* Event Details */}
         <div className="space-y-2 mb-4">
-          <div className="flex items-center text-sm text-muted-foreground font-poppins">
-            <IconCalendar className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
-            <span>
-              {new Date(event.date).toLocaleDateString('en-US', {
-                weekday: 'short',
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-              })}
-            </span>
-          </div>
-          
-          <div className="flex items-center text-sm text-muted-foreground font-poppins">
-            <IconClock className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
-            <span>{event.time}</span>
-          </div>
+          {/* Only show date for non-past events */}
+          {!isPast && (
+            <div className="flex items-center text-sm text-muted-foreground font-poppins">
+              <IconCalendar className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
+              <span>
+                {event.date === 'Coming soon' ? 'Coming soon' : new Date(event.date).toLocaleDateString('en-US', {
+                  weekday: 'short',
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                })}
+              </span>
+            </div>
+          )}
           
           <div className="flex items-center text-sm text-muted-foreground font-poppins">
             <IconMapPin className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
             <span className="line-clamp-1">{event.location}</span>
-          </div>
-          
-          <div className="flex items-center text-sm text-muted-foreground font-poppins">
-            <IconUsers className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
-            <span>{event.registered}/{event.capacity} registered</span>
           </div>
         </div>
 

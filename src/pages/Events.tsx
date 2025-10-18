@@ -9,82 +9,84 @@ import { DraggableCardContainer, DraggableCardBody } from '@/components/ui/dragg
 import StudioRentalForm from '@/forms/StudioRentalForm';
 
 const Events: React.FC = () => {
-  const upcomingEvents = [
-    {
-      id: 1,
-      title: "Summercamp",
-      date: "2025-07-15",
-      time: "9:00 AM - 4:00 PM",
-      location: "Main Studio, Addis Ababa",
-      description: "Join our exciting summer camp featuring intensive fitness training, dance workshops, and cultural activities. Perfect for building strength, endurance, and community connections!",
-      instructor: "All Instructors",
-      price: "2,500 ETB",
-      capacity: 30,
-      registered: 8,
-      category: "Camp"
-    },
-    {
-      id: 2,
-      title: "Women's Strength Challenge",
-      date: "2025-02-22", 
-      time: "9:00 AM - 11:00 AM",
-      location: "Main Studio, Addis Ababa",
-      description: "Join us for an empowering strength training challenge. Test your limits and celebrate your progress!",
-      instructor: "Expert Trainer Team",
-      price: "3000 ETB",
-      capacity: 15,
-      registered: 8,
-      category: "Challenge"
-    },
-    {
-      id: 3,
-      title: "Cultural Fitness Festival",
-      date: "2025-03-08",
-      time: "2:00 PM - 6:00 PM", 
-      location: "Main Studio, Addis Ababa",
-      description: "Celebrate International Women's Day with music, dance, fitness, and community building.",
-      instructor: "All Instructors",
-      price: "Free",
-      capacity: 50,
-      registered: 23,
-      category: "Festival"
-    }
-  ];
+  // Helper function to check if an event date is in the past
+  const isEventInPast = (dateString: string): boolean => {
+    if (dateString === 'Coming soon') return false; // "Coming soon" events are not in the past
+    const eventDate = new Date(dateString);
+    const today = new Date();
+    // Set time to end of day for proper comparison (consider events as happening on the whole day)
+    today.setHours(23, 59, 59, 999);
+    return eventDate < today;
+  };
 
-  const pastEvents = [
+  // All events data combined
+  const allEvents = [
     {
       id: 1,
-      title: "New Year Kickboxing Bootcamp",
-      date: "2025-01-15",
+      title: "Pitch your friend",
+      date: "Coming soon",
       time: "",
-      location: "Main Studio, Addis Ababa",
-      description: "High-energy kickboxing session to start the year strong with rhythms and intense cardio workout",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "Come and pitch your friend to join our community. Bring them along for a fun experience!",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
-      registered: 25,
-      category: "Workshop",
-      image: "/images/about us/event & activities/IMG_2467.webp",
+      registered: 0,
+      category: "Social"
+    },
+    {
+      id: 2,
+      title: "Sip and Savor",
+      date: "2025-11-08",
+      time: "",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "An evening to enjoy rich flavors and fine wines in a relaxed atmosphere. Come unwind, taste, and discover your new favorite pour.",
+      instructor: "All Instructors",
+      price: "",
+      capacity: 50,
+      registered: 23,
+      category: "Social",
+      image: "/images/about us/event & activities/sip.webp"
+    }
+    
+  ];
+
+  // Past events data (these will be filtered based on date)
+  const pastEventsData = [
+    // Social and Networking Events
+    {
+      id: 1,
+      title: "Afroheat Escape",
+      date: "2024-09-15",
+      time: "",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "An event to connect with like-minded individuals in a relaxed atmosphere.",
+      instructor: "All Instructors",
+      price: "",
+      capacity: 50,
+      registered: 45,
+      category: "Social",
+      image: "",
       images: [
         "/images/about us/event & activities/IMG_2467.webp",
         "/images/about us/event & activities/IMG_5760.webp",
-        "/images/about us/event & activities/IMG_5833.webp",
+        "/images/about us/event & activities/IMG_583.webp",
         "/images/about us/event & activities/IMG_5834.webp"
       ]
     },
     {
       id: 2,
-      title: "Holiday Dance Party",
-      date: "2024-12-20",
+      title: "Wine Tasting",
+      date: "2024-08-20",
       time: "",
-      location: "Main Studio, Addis Ababa",
-      description: "Festive AfroHeat dance celebration featuring traditional music and cultural dance styles",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "An elegant wine tasting experience with carefully selected varieties.",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
-      registered: 35,
-      category: "Festival",
-      image: "/images/about us/event & activities/IMG_5835.webp",
+      registered: 38,
+      category: "Social",
+      image: "",
       images: [
         "/images/about us/event & activities/IMG_5835.webp",
         "/images/about us/event & activities/IMG_5837.webp",
@@ -94,17 +96,17 @@ const Events: React.FC = () => {
     },
     {
       id: 3,
-      title: "Summer Strength Festival",
-      date: "2024-08-10",
+      title: "Annual Award Ceremony",
+      date: "2024-06-10",
       time: "",
-      location: "Main Studio, Addis Ababa",
-      description: "Outdoor strength training event with drumming and community fitness challenges",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "Celebrating our community's achievements and recognizing outstanding members.",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
-      registered: 42,
-      category: "Festival",
-      image: "/images/about us/event & activities/IMG_5840.webp",
+      registered: 50,
+      category: "Social",
+      image: "",
       images: [
         "/images/about us/event & activities/IMG_5840.webp",
         "/images/about us/event & activities/IMG_5843.webp",
@@ -112,19 +114,20 @@ const Events: React.FC = () => {
         "/images/about us/event & activities/IMG_6570.webp"
       ]
     },
+    // Creative Wellness Events
     {
       id: 4,
-      title: "Women's Empowerment Workshop",
-      date: "2024-07-20",
+      title: "shape of me: a sculpting experience",
+      date: "2024-07-22",
       time: "",
-      location: "Main Studio, Addis Ababa",
-      description: "Special workshop focusing on strength, confidence, and cultural fitness for women",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "A unique sculpting experience.",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
-      registered: 28,
-      category: "Workshop",
-      image: "/images/about us/event & activities/IMG_6649.webp",
+      registered: 30,
+      category: "Wellness",
+      image: "",
       images: [
         "/images/about us/event & activities/IMG_6649.webp",
         "/images/about us/event & activities/IMG_7017.webp",
@@ -134,17 +137,17 @@ const Events: React.FC = () => {
     },
     {
       id: 5,
-      title: "AfroBeat Dance Marathon",
-      date: "2024-06-15",
+      title: "Glow Painting in the Dark",
+      date: "2024-05-18",
       time: "",
-      location: "Main Studio, Addis Ababa",
-      description: "Non-stop dance marathon featuring Afrobeat, Amapiano, and traditional dance styles",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "Experience the fun of glow painting.",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
-      registered: 50,
-      category: "Challenge",
-      image: "/images/about us/event & activities/IMG_7022.webp",
+      registered: 40,
+      category: "Wellness",
+      image: "",
       images: [
         "/images/about us/event & activities/IMG_7022.webp",
         "/images/about us/event & activities/IMG_7023.webp",
@@ -154,17 +157,17 @@ const Events: React.FC = () => {
     },
     {
       id: 6,
-      title: "Cultural Fitness Symposium",
-      date: "2024-05-05",
+      title: "Make your own Jebena",
+      date: "2024-04-05",
       time: "",
-      location: "Main Studio, Addis Ababa",
-      description: "Educational event exploring the intersection of cultural traditions and modern fitness practices",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "Learn to craft your own traditional Jebena coffee pot in this hands-on workshop.",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
-      registered: 18,
-      category: "Conference",
-      image: "/images/about us/event & activities/IMG_7029.webp",
+      registered: 35,
+      category: "Wellness",
+      image: "",
       images: [
         "/images/about us/event & activities/IMG_7029.webp",
         "/images/about us/event & activities/IMG_7030.webp",
@@ -174,36 +177,94 @@ const Events: React.FC = () => {
     },
     {
       id: 7,
-      title: "Spring Fitness Challenge",
-      date: "2024-04-12",
+      title: "Puppy Therapy Day",
+      date: "2024-03-12",
       time: "",
-      location: "Main Studio, Addis Ababa",
-      description: "Seasonal fitness challenge with culture-inspired workouts and team competitions",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "A heartwarming day with therapy puppies to reduce stress and boost mood.",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
-      registered: 32,
-      category: "Challenge",
-      image: "/images/about us/event & activities/IMG_9497.webp",
+      registered: 42,
+      category: "Wellness",
+      image: "",
       images: [
         "/images/about us/event & activities/IMG_9497.webp",
         "/images/about us/event & activities/IMG_9498.webp",
         "/images/about us/event & activities/IMG_9503.webp"
       ]
     },
+    // Pop-up Markets
     {
       id: 8,
-      title: "Traditional Dance Workshop",
-      date: "2024-03-08",
+      title: "Bake Sale",
+      date: "2024-02-14",
       time: "",
-      location: "Main Studio, Addis Ababa",
-      description: "Learn traditional dances from various regions with certified instructors",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "Delicious homemade baked goods available for purchase to support our community.",
       instructor: "All Instructors",
       price: "",
       capacity: 50,
-      registered: 40,
-      category: "Workshop",
-      image: "/images/about us/event & activities/IMG_5833.webp",
+      registered: 48,
+      category: "Market",
+      image: "",
+      images: [
+        "/images/about us/event & activities/IMG_5833.webp",
+        "/images/about us/event & activities/IMG_5834.webp",
+        "/images/about us/event & activities/IMG_5835.webp"
+      ]
+    },
+    {
+      id: 9,
+      title: "The Fitting Room",
+      date: "2024-01-20",
+      time: "",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "Pop-up fashion event where you can try on and purchase unique clothing items.",
+      instructor: "All Instructors",
+      price: "",
+      capacity: 50,
+      registered: 36,
+      category: "Market",
+      image: "",
+      images: [
+        "/images/about us/event & activities/IMG_5833.webp",
+        "/images/about us/event & activities/IMG_5834.webp",
+        "/images/about us/event & activities/IMG_5835.webp"
+      ]
+    },
+    {
+      id: 10,
+      title: "Grand opening and pop-up",
+      date: "2023-12-01",
+      time: "",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "Celebrating our grand opening with a special pop-up event featuring various vendors.",
+      instructor: "All Instructors",
+      price: "",
+      capacity: 50,
+      registered: 50,
+      category: "Market",
+      image: "",
+      images: [
+        "/images/about us/event & activities/IMG_5833.webp",
+        "/images/about us/event & activities/IMG_5834.webp",
+        "/images/about us/event & activities/IMG_5835.webp"
+      ]
+    },
+    {
+      id: 11,
+      title: "Homecoming Bazaar",
+      date: "2023-11-15",
+      time: "",
+      location: "Afroheat wello sefer, Addis Ababa",
+      description: "A festive bazaar to welcome back community members with local crafts and goods.",
+      instructor: "All Instructors",
+      price: "",
+      capacity: 50,
+      registered: 44,
+      category: "Market",
+      image: "",
       images: [
         "/images/about us/event & activities/IMG_5833.webp",
         "/images/about us/event & activities/IMG_5834.webp",
@@ -212,9 +273,40 @@ const Events: React.FC = () => {
     }
   ];
  
-  const [selectedPastEvent, setSelectedPastEvent] = useState<typeof pastEvents[0] | null>(null);
+  // Combine all events and filter them based on date
+  const allEventsCombined = [...allEvents, ...pastEventsData];
+  const upcomingEvents = allEventsCombined.filter(event => !isEventInPast(event.date));
+  const pastEvents = allEventsCombined.filter(event => isEventInPast(event.date));
+
+  const [selectedPastEvent, setSelectedPastEvent] = useState<{
+    id: number;
+    title: string;
+    date: string;
+    time: string;
+    location: string;
+    description: string;
+    instructor: string;
+    price: string;
+    capacity: number;
+    registered: number;
+    category: string;
+    image?: string;
+    images?: string[];
+  } | null>(null);
   const [isGalleryLoading, setIsGalleryLoading] = useState(true);
   const [isStudioRentalModalOpen, setIsStudioRentalModalOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+
+  const categories = [
+    'All',
+    'Social',
+    'Wellness',
+    'Market'
+  ];
+
+  const filteredPastEvents = selectedCategory === 'All'
+    ? pastEvents
+    : pastEvents.filter(event => event.category === selectedCategory);
 
   const modalContainerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -328,10 +420,27 @@ const Events: React.FC = () => {
             transition={{ duration: 0.45 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-center mb-12 font-industry">Past Events</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 font-industry">Past Events</h2>
+            
+            {/* Category Filter Buttons */}
+            <div className="flex flex-wrap justify-center gap-3 mb-10">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+                    selectedCategory === category
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                  }`}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {pastEvents.slice(0, 5).map((event) => (
+              {filteredPastEvents.map((event) => (
                 <EventCard
                   key={event.id}
                   event={event}
@@ -368,7 +477,9 @@ const Events: React.FC = () => {
               <h2 className="text-3xl font-bold mb-2 font-industry">{selectedPastEvent.title}</h2>
               <p className="text-muted-foreground mb-1 font-poppins">
                 <IconCalendar className="inline mr-2 h-4 w-4" />
-                {new Date(selectedPastEvent.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                {selectedPastEvent.date === 'Coming soon'
+                  ? 'Coming soon'
+                  : new Date(selectedPastEvent.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
               <p className="text-muted-foreground mb-4 font-poppins">
                 <IconUsers className="inline mr-2 h-4 w-4" />
@@ -377,7 +488,7 @@ const Events: React.FC = () => {
               <p className="text-foreground font-poppins leading-relaxed">{selectedPastEvent.description}</p>
             </div>
             <DraggableCardContainer className="mx-auto max-w-4xl">
-              {selectedPastEvent.images.slice(0, 7).map((image, index) => {
+              {(selectedPastEvent.images || []).slice(0, 7).map((image: string, index: number) => {
                 const positions = [
                                   "absolute top-5 left-[5%] sm:left-[20%] rotate-[-5deg]",
                                   "absolute top-20 left-[10%] sm:left-[25%] rotate-[-7deg]",
