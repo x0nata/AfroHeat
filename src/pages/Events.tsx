@@ -156,10 +156,7 @@ const Events: React.FC = () => {
       category: "Wellness",
       image: "/images/events/jebena/1.webp",
       images: [
-        "/images/about us/event & activities/IMG_7029.webp",
-        "/images/about us/event & activities/IMG_7030.webp",
-        "/images/about us/event & activities/IMG_7031.webp",
-        "/images/about us/event & activities/IMG_7033.webp"
+        "/images/events/jebena/pic1.webp"
       ]
     },
     {
@@ -174,8 +171,15 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 42,
       category: "Wellness",
-      image: "",
+      image: "/images/events/pup/pic1.webp",
       images: [
+         "/images/events/pup/pic2.webp",
+         "/images/events/pup/pic3.webp",
+         "/images/events/pup/pic4.webp",
+         "/images/events/pup/pic5.webp",
+         "/images/events/pup/pic6.webp",
+         "/images/events/pup/pic7.webp"
+  
   
       ]
     },
