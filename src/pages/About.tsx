@@ -36,7 +36,10 @@ const About: React.FC = () => {
       { id: 1, image: "/images/about us/Transformation/IMG_0381.webp", title: "" },
       { id: 2, image: "/images/about us/Transformation/IMG_9104.webp", title: "" },
       { id: 3, image: "/images/about us/Transformation/IMG_20251002_114409_421.webp", title: "" },
-      { id: 4, image: "/images/about us/Transformation/IMG_20251002_114431_613.webp", title: "" }
+      { id: 4, image: "/images/about us/Transformation/IMG_20251002_114431_613.webp", title: "" },
+      { id: 5, image: "/images/about us/Transformation/c1.webp", title: "" },
+      { id: 6, image: "/images/about us/Transformation/c2.webp", title: "" }
+     
     ],
     community: [
       { id: 1, image: "/images/about us/community engagement/IMG_4898.webp", title: "" },

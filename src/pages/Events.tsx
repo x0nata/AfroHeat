@@ -69,10 +69,7 @@ const Events: React.FC = () => {
       category: "Social",
       image: "",
       images: [
-        "/images/about us/event & activities/IMG_2467.webp",
-        "/images/about us/event & activities/IMG_5760.webp",
-        "/images/about us/event & activities/IMG_583.webp",
-        "/images/about us/event & activities/IMG_5834.webp"
+     
       ]
     },
     {
@@ -89,10 +86,7 @@ const Events: React.FC = () => {
       category: "Social",
       image: "",
       images: [
-        "/images/about us/event & activities/IMG_5835.webp",
-        "/images/about us/event & activities/IMG_5837.webp",
-        "/images/about us/event & activities/IMG_5838.webp",
-        "/images/about us/event & activities/IMG_5839.webp"
+      
       ]
     },
     {
@@ -109,10 +103,7 @@ const Events: React.FC = () => {
       category: "Social",
       image: "",
       images: [
-        "/images/about us/event & activities/IMG_5840.webp",
-        "/images/about us/event & activities/IMG_5843.webp",
-        "/images/about us/event & activities/IMG_6499.webp",
-        "/images/about us/event & activities/IMG_6570.webp"
+      
       ]
     },
     // Creative Wellness Events
@@ -130,10 +121,7 @@ const Events: React.FC = () => {
       category: "Wellness",
       image: "",
       images: [
-        "/images/about us/event & activities/IMG_6649.webp",
-        "/images/about us/event & activities/IMG_7017.webp",
-        "/images/about us/event & activities/IMG_7019.webp",
-        "/images/about us/event & activities/IMG_7021.webp"
+       
       ]
     },
     {
@@ -150,10 +138,8 @@ const Events: React.FC = () => {
       category: "Wellness",
       image: "",
       images: [
-        "/images/about us/event & activities/IMG_7022.webp",
-        "/images/about us/event & activities/IMG_7023.webp",
-        "/images/about us/event & activities/IMG_7025.webp",
-        "/images/about us/event & activities/IMG_7027.webp"
+
+        
       ]
     },
     {
@@ -168,7 +154,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 35,
       category: "Wellness",
-      image: "",
+      image: "/images/events/jebena/1.webp",
       images: [
         "/images/about us/event & activities/IMG_7029.webp",
         "/images/about us/event & activities/IMG_7030.webp",
@@ -190,9 +176,7 @@ const Events: React.FC = () => {
       category: "Wellness",
       image: "",
       images: [
-        "/images/about us/event & activities/IMG_9497.webp",
-        "/images/about us/event & activities/IMG_9498.webp",
-        "/images/about us/event & activities/IMG_9503.webp"
+  
       ]
     },
     // Pop-up Markets
@@ -210,9 +194,7 @@ const Events: React.FC = () => {
       category: "Market",
       image: "",
       images: [
-        "/images/about us/event & activities/IMG_5833.webp",
-        "/images/about us/event & activities/IMG_5834.webp",
-        "/images/about us/event & activities/IMG_5835.webp"
+     
       ]
     },
     {
@@ -229,9 +211,7 @@ const Events: React.FC = () => {
       category: "Market",
       image: "",
       images: [
-        "/images/about us/event & activities/IMG_5833.webp",
-        "/images/about us/event & activities/IMG_5834.webp",
-        "/images/about us/event & activities/IMG_5835.webp"
+ 
       ]
     },
     {
@@ -248,9 +228,7 @@ const Events: React.FC = () => {
       category: "Market",
       image: "",
       images: [
-        "/images/about us/event & activities/IMG_5833.webp",
-        "/images/about us/event & activities/IMG_5834.webp",
-        "/images/about us/event & activities/IMG_5835.webp"
+     
       ]
     },
     {
@@ -267,9 +245,7 @@ const Events: React.FC = () => {
       category: "Market",
       image: "",
       images: [
-        "/images/about us/event & activities/IMG_5833.webp",
-        "/images/about us/event & activities/IMG_5834.webp",
-        "/images/about us/event & activities/IMG_5835.webp"
+      
       ]
     }
   ];
