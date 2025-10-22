@@ -462,10 +462,7 @@ const Events: React.FC = () => {
                   ? 'Coming soon'
                   : new Date(selectedPastEvent.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
-              <p className="text-muted-foreground mb-4 font-poppins">
-                <IconUsers className="inline mr-2 h-4 w-4" />
-                {selectedPastEvent.registered} participants
-              </p>
+            
               <p className="text-foreground font-poppins leading-relaxed">{selectedPastEvent.description}</p>
             </div>
             <DraggableCardContainer className="mx-auto max-w-4xl">

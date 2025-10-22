@@ -20,11 +20,11 @@ const HeroSection = () => {
       {/* Text overlay at bottom center */}
       <div className="relative z-10 flex h-full items-end justify-center sm:mb-10 pb-[130px] px-4">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-white font-bold text-3xl  sm:text-4xl md:text-5xl lg:text-5xl mb-3 font-poppins leading-tight">
-            More than your average fitness center
+          <h1 className="text-white font-bold text-3xl sm:text-4xl md:text-5xl lg:text-5xl mb-3 font-poppins leading-tight">
+            MORE THAN YOUR AVARGE FITNESS CENTER
           </h1>
           <p className="text-white/90 text-lg sm:text-xl md:text-1xl mb-6 font-poppins max-w-2xl mx-auto leading-relaxed">
-            A Vibrant
+            A vibrant
 community and creative hub for wellness and meaningful connections
           </p>
           <motion.button

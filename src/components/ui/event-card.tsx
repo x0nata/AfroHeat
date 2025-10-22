@@ -137,9 +137,9 @@ const EventCard: React.FC<EventCardProps> = ({ event, className, isPast, onViewD
               "transition-all duration-200 transform hover:scale-105 focus:scale-105",
               "disabled:opacity-50 disabled:cursor-not-allowed"
             )}
-            aria-label={isPast ? `View details for ${event.title}` : `Register for ${event.title}`}
+            aria-label={isPast ? `View gallery for ${event.title}` : `Register for ${event.title}`}
           >
-            {isPast ? 'View Details' : 'Register Now'}
+            {isPast ? 'Gallery' : 'Register Now'}
           </button>
         </div>
       </div>
