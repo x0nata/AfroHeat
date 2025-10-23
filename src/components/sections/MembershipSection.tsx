@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { CardSpotlight } from '../ui/card-spotlight';
 import { motion } from 'framer-motion';
 import { useApp } from '@/context/AppContext';
