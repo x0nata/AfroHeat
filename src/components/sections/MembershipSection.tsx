@@ -16,7 +16,7 @@ import {
 
 const MembershipSection: React.FC = () => {
   const { } = useApp(); // Removed selectMembership as it's not being used
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
+  const [billingCycle, setBillingCycle] = useState<'monthly'>('monthly');
   const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
 
   const membershipPlans = [
@@ -30,16 +30,12 @@ const MembershipSection: React.FC = () => {
       popular: false,
       color: 'from-primary to-primary/80',
       features: [
-        'Strength & Conditioning (Mon-Fri)',
         '1 Free Kickboxing session',
         'Sauna access included',
-        'Women-only environment',
-        'Cultural music celebration'
+        'Women-only environment'
       ],
-      kickboxingPrice: 10000,
-      bothClassesPrice: 20000,
+      kickboxingPrice: 100,
       notIncluded: [
-        'Extended class packages',
         'Pause options'
       ]
     },
@@ -54,16 +50,12 @@ const MembershipSection: React.FC = () => {
       color: 'from-primary to-secondary',
       features: [
         'Everything in 1 Month',
-        'Extended class access',
         'Max 2 weeks pause option',
         'Better value per month',
         'Consistent routine building'
       ],
       kickboxingPrice: 23000,
-      bothClassesPrice: 43000,
-      notIncluded: [
-        'Extended pause options'
-      ]
+      notIncluded: []
     },
     {
       id: 'elite',
@@ -77,13 +69,12 @@ const MembershipSection: React.FC = () => {
       features: [
         'Everything in 3 Months',
         '2 Free Kickboxing sessions',
-        '2 Free S&C sessions',
+        '2 Free sessions',
         'Max 1 month pause option',
         'Best value pricing',
         'Long-term transformation'
       ],
       kickboxingPrice: 38000,
-      bothClassesPrice: 72000,
       notIncluded: []
     }
   ];
@@ -110,34 +101,14 @@ const MembershipSection: React.FC = () => {
               Package
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 font-poppins">
-            Flexible packages designed to fit your lifestyle and fitness goals.
-            Join our AfroHeat community and start your transformation today.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-poppins">
+           Strength and conditioning (S&C) improve physical performance through exercises that build strength, power, speed, endurance, flexibility, and overall athletic ability.
+          </p>
+           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 font-poppins">
+           Our Kickboxing class  combines techniques practiced both as a competitive sport and a form of physical fitness or self-defense.
           </p>
 
-          {/* Class Type Toggle */}
-          <div className="inline-flex items-center bg-muted rounded-full p-1 mb-8">
-            <button
-              onClick={() => setBillingCycle('monthly')}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
-                billingCycle === 'monthly'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              S&C Classes
-            </button>
-            <button
-              onClick={() => setBillingCycle('annual')}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
-                billingCycle === 'annual'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              Both Classes
-            </button>
-          </div>
+          {/* Class Type Toggle - Removed S&C and Both Classes */}
         </motion.div>
 
         {/* Membership Cards */}
@@ -177,25 +148,13 @@ const MembershipSection: React.FC = () => {
                   <div className="text-center mb-8">
                     <div className="flex items-baseline justify-center">
                       <span className="text-4xl font-bold text-foreground font-poppins">
-                        {billingCycle === 'monthly' 
-                          ? `${plan.price.monthly.toLocaleString()} ETB`
-                          : billingCycle === 'annual' && plan.bothClassesPrice
-                          ? `${plan.bothClassesPrice.toLocaleString()} ETB`
-                          : `${plan.price.monthly.toLocaleString()} ETB`
-                        }
+                        {plan.price.monthly.toLocaleString()} ETB
                       </span>
                     </div>
                     <div className="mt-2 text-sm text-muted-foreground font-poppins">
                       {billingCycle === 'monthly' && (
                         <div>
-                          <div className="mb-1">S&C: {plan.price.monthly.toLocaleString()} ETB</div>
                           <div className="mb-1">Kickboxing: {plan.kickboxingPrice?.toLocaleString()} ETB</div>
-                          <div>Both Classes: {plan.bothClassesPrice?.toLocaleString()} ETB</div>
-                        </div>
-                      )}
-                      {billingCycle === 'annual' && (
-                        <div className="text-secondary font-medium">
-                          Both S&C + Kickboxing Included
                         </div>
                       )}
                     </div>
@@ -264,7 +223,7 @@ const MembershipSection: React.FC = () => {
             {[
               { icon: <IconUsers className="h-10 w-10 text-primary mx-auto" />, label: 'Women-Only Environment' },
               { icon: <IconCalendar className="h-10 w-10 text-primary mx-auto" />, label: 'Flexible Scheduling' },
-              { icon: <IconBarbell className="h-10 w-10 text-primary mx-auto" />, label: 'Modern Equipment' },
+              { icon: <IconBarbell className="h-10 w-10 text-primary mx-auto" />, label: 'Useful Equipment' },
               { icon: <IconAward className="h-10 w-10 text-primary mx-auto" />, label: 'Certified Trainers' }
             ].map((benefit, index) => (
               <div key={index} className="text-center py-4">

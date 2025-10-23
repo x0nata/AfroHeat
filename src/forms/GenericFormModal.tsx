@@ -87,7 +87,14 @@ const GenericFormModal: React.FC<GenericFormModalProps> = ({
             </div>
 
             {/* Google Form Embed */}
-            <div className="flex-grow overflow-hidden">
+            <div
+              className="flex-grow overflow-y-auto overflow-x-hidden"
+              style={{
+                maxHeight: 'calc(95vh - 150px)',
+                overflow: 'auto',
+                WebkitOverflowScrolling: 'touch' // For iOS Safari
+              }}
+            >
               <iframe
                 src={formUrl}
                 width="100%"
@@ -95,10 +102,14 @@ const GenericFormModal: React.FC<GenericFormModalProps> = ({
                 frameBorder="0"
                 marginHeight={0}
                 marginWidth={0}
-                className="w-full h-full min-h-[500px]"
+                className="w-full min-h-[500px]"
                 title={title}
                 scrolling={scrolling}
-                style={{ height: 'calc(95vh - 150px)' }}
+                style={{
+                  minHeight: '500px',
+                  width: '100%',
+                  border: 'none'
+                }}
                 onLoad={() => console.log('Iframe loaded successfully for form:', formUrl)}
                 onError={(e) => console.error('Iframe error for form:', formUrl, e)}
               >

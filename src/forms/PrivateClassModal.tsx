@@ -7,7 +7,7 @@ interface PrivateClassModalProps {
 }
 
 const PrivateClassModal: React.FC<PrivateClassModalProps> = ({ isOpen, onClose }) => {
-  const privateClassFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdYumH-e7Y9kIVgkixZ2ucqo1s5bkIYj74Z1tysyij36I0K_Q/viewform";
+  const privateClassFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSetuiI54Wl7PPxQ3v0a3IZFK90_Un-gmravR-N8NMyLsfQVAQ/viewform?embedded=true";
 
   return (
     <GenericFormModal
@@ -16,7 +16,7 @@ const PrivateClassModal: React.FC<PrivateClassModalProps> = ({ isOpen, onClose }
       formUrl={privateClassFormUrl}
       title="Private Class Registration"
       description="Fill out the form below to register for our private class"
-      scrolling="no"
+      scrolling="yes"
     />
   );
 };

@@ -15,6 +15,7 @@ import {
 } from '@tabler/icons-react';
 import InstructorModal from '@/forms/InstructorModal';
 import ContactInfoModal from '@/components/ui/ContactInfoModal';
+import PrivateClassModal from '@/forms/PrivateClassModal';
 
 interface ContactInfo {
   icon: React.ReactNode;
@@ -33,6 +34,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
   const { state } = useApp();
   const [isInstructorModalOpen, setIsInstructorModalOpen] = useState(false);
   const [isContactInfoModalOpen, setIsContactInfoModalOpen] = useState(false);
+  const [isPrivateClassModalOpen, setIsPrivateClassModalOpen] = useState(false);
 
   useEffect(() => {
     console.log('ContactSection theme:', state.isDarkMode ? 'dark' : 'light');
@@ -89,7 +91,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
       icon: <IconUsers className="h-8 w-8" />,
       title: "Request Private Class",
       description: "Book personalized one-on-one training",
-      action: "Request Session"
+      action: "Request Session",
+      onClick: () => setIsPrivateClassModalOpen(true)
     },
     {
       icon: <IconMessageCircle className="h-8 w-8" />,
@@ -378,6 +381,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
       <ContactInfoModal
         isOpen={isContactInfoModalOpen}
         onClose={() => setIsContactInfoModalOpen(false)}
+      />
+      <PrivateClassModal
+        isOpen={isPrivateClassModalOpen}
+        onClose={() => setIsPrivateClassModalOpen(false)}
       />
     </>
   );

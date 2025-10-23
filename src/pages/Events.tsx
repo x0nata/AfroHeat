@@ -109,7 +109,7 @@ const Events: React.FC = () => {
     // Creative Wellness Events
     {
       id: 4,
-      title: "shape of me: a sculpting experience",
+      title: "Shape of me: a sculpting experience",
       date: "2024-07-22",
       time: "",
       location: "AfroHeat wello sefer, Addis Ababa",
