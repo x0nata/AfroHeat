@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import {
-  IconCalendar,
-  IconUsers
+  IconCalendar
 } from '@tabler/icons-react';
 import EventCard from '@/components/ui/event-card';
 import { DraggableCardContainer, DraggableCardBody } from '@/components/ui/draggable-card';

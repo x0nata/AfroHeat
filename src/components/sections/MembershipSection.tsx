@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CardSpotlight } from '../ui/card-spotlight';
 import { motion } from 'framer-motion';
 import { useApp } from '@/context/AppContext';
@@ -16,7 +16,7 @@ import {
 
 const MembershipSection: React.FC = () => {
   const { } = useApp(); // Removed selectMembership as it's not being used
-  const [billingCycle, setBillingCycle] = useState<'monthly'>('monthly');
+  const [billingCycle] = useState<'monthly'>('monthly');
   const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
 
   const membershipPlans = [
