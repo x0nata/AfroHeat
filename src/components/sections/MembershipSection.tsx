@@ -24,8 +24,8 @@ const MembershipSection: React.FC = () => {
       id: 'basic',
       name: '1 Month',
       icon: <IconHeart className="h-6 w-6" />,
-      price: { monthly: 15000, annual: 15000 },
-      originalPrice: { monthly: 15000, annual: 15000 },
+      price: { monthly: 10000 },
+      originalPrice: { monthly: 10000},
       description: 'Perfect for getting started with AfroHeat',
       popular: false,
       color: 'from-primary to-primary/80',
@@ -34,7 +34,7 @@ const MembershipSection: React.FC = () => {
         'Sauna access included',
         'Women-only environment'
       ],
-      kickboxingPrice: 100,
+      kickboxingPrice: ,
       notIncluded: [
         'Pause options'
       ]
@@ -247,5 +247,6 @@ const MembershipSection: React.FC = () => {
     </section>
   );
 };
+
 
 export default MembershipSection;
