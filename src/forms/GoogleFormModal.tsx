@@ -54,7 +54,7 @@ const GoogleFormModal: React.FC<GoogleFormModalProps> = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.24 }}
-            className="relative bg-background rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[95vh] overflow-y-auto"
+            className="relative bg-background rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[100vh] overflow-hidden"
           >
             {/* Header */}
             <div className="sticky top-0 bg-background border-b border-border p-6 rounded-t-2xl z-10">
@@ -85,19 +85,19 @@ const GoogleFormModal: React.FC<GoogleFormModalProps> = ({
             </div>
 
             {/* Google Form Embed */}
-            <div className="p-6 overflow-y-auto max-h-[calc(95vh-150px)]">
-              <div className="w-full h-[2000px] rounded-lg overflow-auto border border-border bg-muted/20">
+            <div className="p-6 overflow-y-auto max-h-[calc(100vh-150px)] scrollbar-hide">
+              <div className="w-full min-h-[500px] rounded-lg overflow-hidden border border-border bg-muted/20">
                 <iframe
                   src={formUrl}
                   width="100%"
-                  height="2000"
+                  height="100%"
                   frameBorder="0"
                   marginHeight={0}
                   marginWidth={0}
-                  className="w-full h-[2000px] rounded-lg"
+                  className="w-full min-h-[500px] scrollbar-hide"
                   title={title}
                   scrolling="yes"
-                  style={{ border: 'none' }}
+                  style={{ minHeight: '500px', border: 'none' }}
                   onLoad={() => console.log('Iframe loaded successfully for form:', formUrl)}
                   onError={(e) => console.error('Iframe error for form:', formUrl, e)}
                 >

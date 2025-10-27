@@ -15,7 +15,7 @@ import {
 } from '@tabler/icons-react';
 
 const MembershipSection: React.FC = () => {
-  const { } = useApp(); // Removed selectMembership as it's not being used
+  const { } = useApp(); 
   const [billingCycle] = useState<'monthly'>('monthly');
   const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
 
@@ -37,7 +37,7 @@ const MembershipSection: React.FC = () => {
       kickboxingPrice: ,
       notIncluded: [
         'Pause options'
-      ]
+      ],
     },
     {
       id: 'premium',

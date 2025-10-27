@@ -56,7 +56,7 @@ const GenericFormModal: React.FC<GenericFormModalProps> = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.24 }}
-            className="relative bg-background rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[95vh] overflow-hidden flex flex-col"
+            className="relative bg-background rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[100vh] overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="sticky top-0 bg-background border-b border-border p-6 rounded-t-2xl z-10">
@@ -88,9 +88,9 @@ const GenericFormModal: React.FC<GenericFormModalProps> = ({
 
             {/* Google Form Embed */}
             <div
-              className="flex-grow overflow-y-auto overflow-x-hidden"
+              className="flex-grow overflow-y-auto overflow-x-hidden scrollbar-hide"
               style={{
-                maxHeight: 'calc(95vh - 150px)',
+                maxHeight: 'calc(100vh - 150px)',
                 overflow: 'auto',
                 WebkitOverflowScrolling: 'touch' // For iOS Safari
               }}
@@ -102,7 +102,7 @@ const GenericFormModal: React.FC<GenericFormModalProps> = ({
                 frameBorder="0"
                 marginHeight={0}
                 marginWidth={0}
-                className="w-full min-h-[500px]"
+                className="w-full min-h-[500px] scrollbar-hide"
                 title={title}
                 scrolling={scrolling}
                 style={{

@@ -30,7 +30,9 @@ const About: React.FC = () => {
   // Picture collections for each category (with labels) - converted to WebP for better performance
   const pictureCollections = useMemo(() => ({
     outcommunity: [
-      { id: 1, image: "/images/about us/our space/IMG_4295.webp", title: "" }
+      { id: 1, image: "/images/about us/our space/1.webp", title: "" },
+      { id: 2, image: "/images/about us/our space/2.webp", title: "" },
+      { id: 3, image: "/images/about us/our space/3.webp", title: "" }
     ],
     transformation: [
       { id: 1, image: "/images/about us/Transformation/IMG_0381.webp", title: "" },

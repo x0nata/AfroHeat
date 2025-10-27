@@ -135,10 +135,14 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 40,
       category: "Wellness",
-      image: "",
+      image: "/images/events/glowpaint/1.webm",
       images: [
-
-        
+         "/images/events/glowpaint/2.webp",
+         "/images/events/glowpaint/3.webp",
+         "/images/events/glowpaint/4.webp",
+         "/images/events/glowpaint/5.webp",
+         "/images/events/glowpaint/6.webp",
+         "/images/events/glowpaint/7.webp"
       ]
     },
     {
@@ -178,8 +182,6 @@ const Events: React.FC = () => {
          "/images/events/pup/pic5.webp",
          "/images/events/pup/pic6.webp",
          "/images/events/pup/pic7.webp"
-  
-  
       ]
     },
     // Pop-up Markets
