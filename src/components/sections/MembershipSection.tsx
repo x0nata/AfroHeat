@@ -34,7 +34,7 @@ const MembershipSection: React.FC = () => {
         'Sauna access included',
         'Women-only environment'
       ],
-      kickboxingPrice: ,
+      kickboxingPrice: 15000,
       notIncluded: [
         'Pause options'
       ],
