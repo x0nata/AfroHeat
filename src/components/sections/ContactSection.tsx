@@ -304,7 +304,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
                         <img
                           src="/images/mini phones/instagram.webp"
                           alt="AfroHeat Instagram frontpage"
-                          className="w-full h-full object-cover blur-[2px]"
+                          className="w-full h-full object-cover "
                         />
                         <div className="absolute inset-0 flex items-center justify-center z-10">
                           <IconBrandInstagram className="h-8 w-8 sm:h-10 sm:w-10 text-white drop-shadow-2xl" />
@@ -332,7 +332,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
                         <img
                           src="/images/mini phones/tiktok.webp"
                           alt="AfroHeat TikTok frontpage"
-                          className="w-full h-full object-cover blur-[2px]"
+                          className="w-full h-full object-cover "
                         />
                         <div className="absolute inset-0 flex items-center justify-center z-10">
                           <IconBrandTiktok className="h-8 w-8 sm:h-10 sm:w-10 text-white drop-shadow-2xl" />
@@ -360,7 +360,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onScheduleOpen }) => {
                         <img
                           src="/images/mini phones/linkedin.webp"
                           alt="AfroHeat LinkedIn frontpage"
-                          className="w-full h-full object-cover blur-[2px]"
+                          className="w-full h-full object-cover "
                         />
                         <div className="absolute inset-0 flex items-center justify-center z-10">
                           <IconBrandLinkedin className="h-8 w-8 sm:h-10 sm:w-10 text-white drop-shadow-2xl" />
