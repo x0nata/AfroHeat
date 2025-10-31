@@ -7,6 +7,7 @@ import {
 } from '@tabler/icons-react';
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="relative w-full bg-background dark:bg-[hsla(300, 94%, 6%, 1.00)] text-neutral-800 dark:text-neutral-400 py-2 px-4 sm:py-3 sm:px-12 lg:px-12">
@@ -80,7 +81,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-0.5 sm:pt-1 pb-0 sm:pb-0.5 text-center">
           <p className="text-[0.6rem] sm:text-xs font-poppins text-neutral-700 dark:text-neutral-400">
-            Copyright © 2025 AfroHeat Fitness. All Rights Reserved.
+            Copyright © {new Date().getFullYear()} AfroHeat Fitness. All Rights Reserved.
           </p>
         </div>
       </div>

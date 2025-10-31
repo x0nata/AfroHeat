@@ -32,7 +32,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 23,
       category: "Social",
-      image: "/images/about us/event & activities/sip.webp"
+      image: "/images/events/sip/1.webp"
     },
     {
       id: 2,
@@ -66,7 +66,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 45,
       category: "Social",
-      image: "",
+      image: "/images/about us/event & activities/IMG_2467.webp",
       images: [
      
       ]
@@ -83,7 +83,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 38,
       category: "Social",
-      image: "",
+      image: "/images/events/sip/sip.webp",
       images: [
       
       ]
@@ -100,7 +100,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 50,
       category: "Social",
-      image: "",
+      image: "/images/about us/community engagement/IMG_5841.webp",
       images: [
       
       ]
@@ -118,7 +118,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 30,
       category: "Wellness",
-      image: "",
+      image: "/images/about us/event & activities/IMG_7022.webp",
       images: [
        
       ]
@@ -135,7 +135,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 40,
       category: "Wellness",
-      image: "/images/events/glowpaint/1.webm",
+      image: "/images/events/glowpaint/3.webp",
       images: [
          "/images/events/glowpaint/2.webp",
          "/images/events/glowpaint/3.webp",
@@ -197,7 +197,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 48,
       category: "Market",
-      image: "",
+      image: "/images/events/bakesale/1.webp",
       images: [
      
       ]
@@ -214,7 +214,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 36,
       category: "Market",
-      image: "",
+      image: "/images/events/fittingroom/1.webp",
       images: [
  
       ]
@@ -231,7 +231,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 50,
       category: "Market",
-      image: "",
+      image: "/images/about us/event & activities/IMG_7021.webp",
       images: [
      
       ]
@@ -248,7 +248,7 @@ const Events: React.FC = () => {
       capacity: 50,
       registered: 44,
       category: "Market",
-      image: "",
+      image: "/images/about us/event & activities/IMG_7023.webp",
       images: [
       
       ]

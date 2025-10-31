@@ -151,10 +151,10 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen, onDanceClas
     },
     {
       title: "Student Pass",
-      src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&h=400&fit=crop",
+      src: "/images/new/student.webp",
       description: "Affordable and flexible access plans tailored for students. Balance fitness with your study schedule and join our vibrant community.",
       ctaText: "Get Student Pass",
-      onClick: onDanceClassOpen  // Same as Dance Fitness - opens ContactInfoModal
+      onClick: onDanceClassOpen  
     },
   ];
 

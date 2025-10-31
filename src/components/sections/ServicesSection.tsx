@@ -88,7 +88,7 @@ const ServicesSection: React.FC = () => {
       id: 2,
       title: "Studentpass",
       description: "flexible access plans tailored specifically for students to balance fitness with busy study schedules, with budget-friendly pricing support.",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&h=400&fit=crop",
+      image: "/images/new/student.webp",
       status: "Available" as const,
     },
     {
