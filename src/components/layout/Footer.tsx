@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-0.5 sm:pt-1 pb-0 sm:pb-0.5 text-center">
           <p className="text-[0.6rem] sm:text-xs font-poppins text-neutral-700 dark:text-neutral-400">
-            Copyright © {new Date().getFullYear()} AfroHeat Fitness. All Rights Reserved.
+            Copyright © {currentYear} AfroHeat Fitness. All Rights Reserved.
           </p>
         </div>
       </div>
