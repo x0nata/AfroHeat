@@ -108,7 +108,7 @@ const MembershipSection: React.FC = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 font-poppins">
             Strength and conditioning (S&C) improve physical performance through exercises that build strength, power, speed, endurance, flexibility, and overall athletic ability.
 
-Our Kickboxing class combines techniques practiced both as a competitive sport and a form of physical fitness or self-defense.
+&  Our Kickboxing class combines techniques practiced both as a competitive sport and a form of physical fitness or self-defense.
           </p>
 
           {/* Class Type Toggle */}
