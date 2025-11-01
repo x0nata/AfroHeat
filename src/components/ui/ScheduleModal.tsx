@@ -103,7 +103,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4">
                       <div className="space-y-0.5 sm:space-y-1">
-                        <h4 className="font-semibold text-primary text-[10px] sm:text-xs uppercase tracking-wide">Strength & Conditioning</h4>
+                        <h4 className="font-semibold text-primary text-[10px] sm:text-xs uppercase tracking-wide">Group Classes</h4>
                         <div className="flex flex-wrap gap-0.5 sm:gap-1">
                           {scheduleData[day as keyof typeof scheduleData].strength.map((time, timeIndex) => {
                             const Icon = getIcon(time);
