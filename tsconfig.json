@@ -27,7 +27,6 @@
       "@/*": ["./src/*"]
     },
 
-    /* Type resolution */
     "types": ["node"]
   },
   "include": ["src"],

@@ -31,16 +31,6 @@ Thumbs.db
 .cache
 *.log
 
-# Byterover and other AI tools
-.clinerules/
-.kilocode/
-.roo/
-.windsurf/
-.cursor/
-.kiro/
-.qoder/
-.augment/
-
 # Scripts
 scripts/convert-images.js
 .clinerules/byterover-rules.md

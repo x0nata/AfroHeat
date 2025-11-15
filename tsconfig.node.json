@@ -8,4 +8,4 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["vite.config.ts"]
-}
+} //s
