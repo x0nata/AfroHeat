@@ -8,17 +8,15 @@ import { DraggableCardContainer, DraggableCardBody } from '@/components/ui/dragg
 import StudioRentalForm from '@/forms/StudioRentalForm';
 
 const Events: React.FC = () => {
-  // Helper function to check if an event date is in the past
   const isEventInPast = (dateString: string): boolean => {
     if (dateString === 'Coming soon') return false; // "Coming soon" events are not in the past
     const eventDate = new Date(dateString);
     const today = new Date();
-    // Set time to end of day for proper comparison (consider events as happening on the whole day)
+    today.setHours(23, 59, 59, 999);
     today.setHours(23, 59, 59, 999);
     return eventDate < today;
   };
 
-  // All events data combined
   const allEvents = [
     {
       id: 1,
@@ -51,9 +49,7 @@ const Events: React.FC = () => {
     
   ];
 
-  // Past events data (these will be filtered based on date)
   const pastEventsData = [
-    // Social and Networking Events
     {
       id: 1,
       title: "AfroHeat Escape",
@@ -105,7 +101,6 @@ const Events: React.FC = () => {
       
       ]
     },
-    // Creative Wellness Events
     {
       id: 4,
       title: "Shape of me: a sculpting experience",
@@ -184,7 +179,6 @@ const Events: React.FC = () => {
          "/images/events/pup/pic7.webp"
       ]
     },
-    // Pop-up Markets
     {
       id: 8,
       title: "Bake Sale",
@@ -255,7 +249,6 @@ const Events: React.FC = () => {
     }
   ];
  
-  // Combine all events and filter them based on date
   const allEventsCombined = [...allEvents, ...pastEventsData];
   const upcomingEvents = allEventsCombined.filter(event => !isEventInPast(event.date));
   const pastEvents = allEventsCombined.filter(event => isEventInPast(event.date));
@@ -295,10 +288,8 @@ const Events: React.FC = () => {
 
   useEffect(() => {
     if (selectedPastEvent && modalContainerRef.current) {
-      // Existing logs...
 
-      // New: Log actual card positions after render
-      setTimeout(() => { // Delay for render
+      setTimeout(() => {
         cardRefs.current.forEach((card, i) => {
           if (card) {
             const rect = card.getBoundingClientRect();
@@ -325,12 +316,11 @@ const Events: React.FC = () => {
         top: rect.top
       });
 
-      // Simulate card positions
       const offsets = [
         { x: 0, y: 0 }, { x: -20, y: -10 }, { x: 20, y: -10 },
         { x: -30, y: 0 }, { x: 30, y: 0 }, { x: -10, y: 20 }, { x: 10, y: 20 }
       ];
-      const cardSize = 256; // h-64 w-64
+      const cardSize = 256;
       offsets.forEach((offset, i) => {
         const cardLeft = rect.left + rect.width / 2 + offset.x - cardSize / 2;
         const cardRight = cardLeft + cardSize;

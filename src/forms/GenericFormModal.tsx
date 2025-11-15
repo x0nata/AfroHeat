@@ -31,7 +31,6 @@ const GenericFormModal: React.FC<GenericFormModalProps> = ({
       unlockScroll();
     }
 
-    // Cleanup function to ensure scroll is unlocked when component unmounts
     return () => {
       unlockScroll();
     };
@@ -92,7 +91,7 @@ const GenericFormModal: React.FC<GenericFormModalProps> = ({
               style={{
                 maxHeight: 'calc(100vh - 150px)',
                 overflow: 'auto',
-                WebkitOverflowScrolling: 'touch' // For iOS Safari
+                WebkitOverflowScrolling: 'touch'
               }}
             >
               <iframe

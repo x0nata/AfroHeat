@@ -1,7 +1,6 @@
 import { createContext, useContext, useReducer, ReactNode, useEffect } from 'react';
 import { lockScroll, unlockScroll } from '../lib/overflowManager';
 
-// Types
 export interface User {
   id: string;
   name: string;
@@ -26,7 +25,6 @@ export interface AppState {
   isNavigationOpen: boolean;
 }
 
-// Actions
 type AppAction =
   | { type: 'LOGIN'; payload: User }
   | { type: 'LOGOUT' }
@@ -38,17 +36,15 @@ type AppAction =
   | { type: 'TOGGLE_NAVIGATION' }
   | { type: 'SET_NAVIGATION'; payload: boolean };
 
-// Initial state
 const initialState: AppState = {
   user: null,
   isLoggedIn: false,
  bookings: [],
   selectedMembership: null,
-  isDarkMode: false, // Light theme as default
+  isDarkMode: false,
   isNavigationOpen: false,
 };
 
-// Reducer
 function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
     case 'LOGIN':
@@ -113,7 +109,6 @@ function appReducer(state: AppState, action: AppAction): AppState {
   }
 }
 
-// Context
 interface AppContextType {
   state: AppState;
   dispatch: React.Dispatch<AppAction>;
@@ -129,11 +124,9 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-// Provider component
 export function AppProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
-  // Load theme preference from localStorage on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem('afroheat-theme');
     if (savedTheme === 'dark') {
@@ -141,7 +134,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  // Apply theme class to body and persist theme preference
   useEffect(() => {
     if (state.isDarkMode) {
       document.body.classList.add('dark');
@@ -162,7 +154,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
     }
   }, [state.isDarkMode]);
 
-  // Prevent body scroll when mobile navigation is open
   useEffect(() => {
     if (state.isNavigationOpen) {
       lockScroll();
@@ -223,7 +214,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
   );
 }
 
-// Hook to use the context
 export function useApp() {
   const context = useContext(AppContext);
   if (context === undefined) {

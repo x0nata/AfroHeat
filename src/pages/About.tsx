@@ -20,14 +20,12 @@ const About: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('outcommunity');
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
-  // Memoize categories to prevent unnecessary re-renders
   const categories = useMemo<Category[]>(() => [
     { id: 'outcommunity', name: 'Our Space', icon: <IconHeart className="h-5 w-5" /> },
     { id: 'transformation', name: 'Transformation', icon: <IconTransform className="h-5 w-5" /> },
     { id: 'community', name: 'Community Engagement', icon: <IconUsers className="h-5 w-5" /> }
   ], []);
 
-  // Picture collections for each category (with labels) - converted to WebP for better performance
   const pictureCollections = useMemo(() => ({
     outcommunity: [
       { id: 1, image: "/images/about us/our space/1.webp", title: "" },
@@ -79,7 +77,7 @@ const About: React.FC = () => {
                 {/* Founder Image */}
                 <div
                   className="w-full lg:w-2/5 flex-shrink-0 relative group mb-8 lg:mb-0 z-0"
-                  style={{ minHeight: '256px' }} // min-h-64 equivalent
+                  style={{ minHeight: '256px' }}
                 >
                   {/* Container for square */}
                   <div
@@ -89,7 +87,7 @@ const About: React.FC = () => {
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       backgroundRepeat: 'no-repeat',
-                      minHeight: '256px' // min-h-64 equivalent
+                      minHeight: '256px'
                     }}
                   >
                     {/* Optional overlay for hover effect */}

@@ -29,7 +29,6 @@ const GoogleFormModal: React.FC<GoogleFormModalProps> = ({
       unlockScroll();
     }
 
-    // Cleanup function to ensure scroll is unlocked when component unmounts
     return () => {
       unlockScroll();
     };

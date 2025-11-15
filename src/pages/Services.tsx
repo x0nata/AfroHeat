@@ -5,27 +5,22 @@ import { motion } from 'framer-motion';
 
 const Services: React.FC = () => {
   useEffect(() => {
-    // Check if there's a hash in the URL when the component mounts
     if (window.location.hash === '#studio-rental') {
-      // Wait a bit for the ServicesSection to render, then scroll
       setTimeout(() => {
         const element = document.getElementById('studio-rental');
         if (element) {
-          // Scroll to the element with smooth behavior
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-      }, 300); // Small delay to ensure ServicesSection has rendered
+      }, 300);
     } else if (window.location.hash === '#membership') {
-      // Wait a bit for the MembershipSection to render, then scroll
       setTimeout(() => {
         const element = document.getElementById('membership');
         if (element) {
-          // Scroll to the element with smooth behavior
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-      }, 300); // Small delay to ensure MembershipSection has rendered
+      }, 300);
     }
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
    return (
     <div className="min-h-screen bg-transparent relative">
