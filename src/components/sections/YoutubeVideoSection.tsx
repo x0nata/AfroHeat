@@ -1,5 +1,3 @@
-import React from 'react';
-
 const YoutubeVideoSection = () => {
   return (
     <section className="py-16 px-4 bg-background">
