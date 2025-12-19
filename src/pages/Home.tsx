@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import HeroSection from '../components/sections/HeroSection';
 import AboutSection from '../components/sections/AboutSection';
 import NewHomeSection from '../components/sections/new-home-section';
+import YoutubeVideoSection from '../components/sections/YoutubeVideoSection';
 import ScheduleModal from '../components/ui/ScheduleModal';
 import BootcampModal from '@/forms/BootcampModal';
 import ContactInfoModal from '@/components/ui/ContactInfoModal';
@@ -14,22 +15,25 @@ const Home: React.FC = () => {
   return (
     <>
       <div className="min-h-screen">
-      <HeroSection />
-      <NewHomeSection onScheduleOpen={() => setIsScheduleOpen(true)} />
-      <AboutSection 
-        onBootcampOpen={() => setIsBootcampModalOpen(true)}
-        onDanceClassOpen={() => setIsContactInfoModalOpen(true)}
+        <HeroSection />
+       
+        <NewHomeSection onScheduleOpen={() => setIsScheduleOpen(true)} />
+            <YoutubeVideoSection />
+        <AboutSection
+          onBootcampOpen={() => setIsBootcampModalOpen(true)}
+          onDanceClassOpen={() => setIsContactInfoModalOpen(true)}
+        />
+      </div>
+      <ScheduleModal isOpen={isScheduleOpen} onClose={() => setIsScheduleOpen(false)} />
+       
+      <BootcampModal
+        isOpen={isBootcampModalOpen}
+        onClose={() => setIsBootcampModalOpen(false)}
       />
-    </div>
-    <ScheduleModal isOpen={isScheduleOpen} onClose={() => setIsScheduleOpen(false)} />
-    <BootcampModal
-      isOpen={isBootcampModalOpen}
-      onClose={() => setIsBootcampModalOpen(false)}
-    />
-    <ContactInfoModal
-      isOpen={isContactInfoModalOpen}
-      onClose={() => setIsContactInfoModalOpen(false)}
-    />
+      <ContactInfoModal
+        isOpen={isContactInfoModalOpen}
+        onClose={() => setIsContactInfoModalOpen(false)}
+      />
     </>
   );
 };

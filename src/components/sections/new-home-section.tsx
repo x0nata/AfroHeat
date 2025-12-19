@@ -42,7 +42,7 @@ const NewHomeSection: React.FC<NewHomeSectionProps> = ({ onScheduleOpen }) => {
   ];
 
   return (
-    <section className="pt-12 pb-8 px-4 sm:px-6 lg:px-8 bg-background relative overflow-visible mt-10">
+    <section className="pt-12 pb-8 px-4 sm:px-6 lg:px-8 bg-background relative overflow-visible ">
       <motion.div
         className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start"
         initial={{ opacity: 0, y: 20 }}
