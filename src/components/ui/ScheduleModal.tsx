@@ -15,7 +15,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
       kickboxing: ['6:00 PM']
     },
     tuesday: {
-      strength: ['7:00 AM', '8:00 AM', '9:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
+      strength: ['7:00 AM', '8:00 AM', '9:00 AM', '6:00 PM', '7:00 PM'],
       kickboxing: ['8:00 AM']
     },
     wednesday: {
@@ -23,7 +23,7 @@ const ScheduleModal: React.FC<ScheduleModalProps> = ({ isOpen, onClose }) => {
       kickboxing: ['6:00 PM']
     },
     thursday: {
-      strength: ['7:00 AM', '8:00 AM', '9:00 AM', '5:00 PM', '6:00 PM', '7:00 PM'],
+      strength: ['7:00 AM', '8:00 AM', '9:00 AM',  '6:00 PM', '7:00 PM'],
       kickboxing: ['8:00 AM']
     },
     friday: {
