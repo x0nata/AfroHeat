@@ -78,7 +78,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className, id, onSig
           {service.title}
         </h3>
         
-        <p className="text-muted-foreground text-base mb-6 font-poppins line-clamp-3 leading-relaxed">
+        <p className="text-muted-foreground text-sm mb-6 font-poppins line-clamp-3 leading-relaxed">
           {service.description}
         </p>
 

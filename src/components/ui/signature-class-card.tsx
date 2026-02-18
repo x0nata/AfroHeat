@@ -74,7 +74,7 @@ const SignatureClassCard: React.FC<SignatureClassCardProps> = ({ classData, clas
           {classData.title}
         </h3>
         
-        <p className="text-muted-foreground text-base mb-6 font-poppins leading-relaxed">
+        <p className="text-muted-foreground text-sm mb-6 font-poppins leading-relaxed">
           {classData.description}
         </p>
 
