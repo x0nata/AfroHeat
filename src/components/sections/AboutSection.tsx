@@ -136,18 +136,18 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onBootcampOpen, onDanceClas
 
   const services = [
     {
-      title: "Dance Fitness",
-      src: "/images/new/dance.webp",
-      description: "High-energy dance workouts. Burn calories while in a fun, supportive environment.",
-      ctaText: "Join Dance Class",
-      onClick: onDanceClassOpen
-    },
-    {
       title: "Bootcamp",
       src: "/images/new/bootcampvid.webm",
       description: "Intensive program combining strength, cardio, and mobility. Transform your fitness with expert guidance in a supportive group setting.",
       ctaText: "Start Bootcamp",
       onClick: onBootcampOpen
+    },
+    {
+      title: "AfroHeat Studio",
+      src: "/images/new/dance.webp",
+      description: "Join our other classes like pilates, yoga & more.",
+      ctaText: "More Info",
+      onClick: onDanceClassOpen
     },
     {
       title: "Student Pass",

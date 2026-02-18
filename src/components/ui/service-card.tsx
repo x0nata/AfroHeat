@@ -100,12 +100,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className, id, onSig
               "transition-all duration-300 transform hover:scale-105 focus:scale-105",
               "shadow-lg hover:shadow-xl relative overflow-hidden group"
             )}
-            aria-label={service.title === 'Studentpass' || service.title === 'Dance Fitness' || service.title === 'Cafe and Meal Service' ? `Get more info about ${service.title}` : `Sign up for ${service.title}`}
+            aria-label={service.title === 'Studentpass' || service.title === 'AfroHeat Studio' || service.title === 'Cafe and Meal Service' ? `Get more info about ${service.title}` : `Sign up for ${service.title}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={onSignUp}
           >
-            <span className="relative z-10">{service.title === 'Studentpass' || service.title === 'Dance Fitness' || service.title === 'Cafe and Meal Service' ? 'More Info' : 'Sign Up Now'}</span>
+            <span className="relative z-10">{service.title === 'Studentpass' || service.title === 'AfroHeat Studio' || service.title === 'Cafe and Meal Service' ? 'More Info' : 'Sign Up Now'}</span>
             <motion.div
               className="absolute inset-0 bg-white/20"
               initial={{ x: '-100%' }}

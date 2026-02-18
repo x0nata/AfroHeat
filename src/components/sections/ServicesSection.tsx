@@ -4,6 +4,7 @@ import BootcampModal from '@/forms/BootcampModal';
 import StudentPassModal from '@/forms/StudentPassModal';
 import StudioRentalForm from '@/forms/StudioRentalForm';
 import ContactInfoModal from '@/components/ui/ContactInfoModal';
+import DanceClassesModal from '@/components/ui/DanceClassesModal';
 import { motion } from 'framer-motion';
 
 const ServicesSection: React.FC = () => {
@@ -11,6 +12,7 @@ const ServicesSection: React.FC = () => {
   const [isStudentPassModalOpen, setIsStudentPassModalOpen] = useState(false);
   const [isStudioRentalModalOpen, setIsStudioRentalModalOpen] = useState(false);
   const [isContactInfoModalOpen, setIsContactInfoModalOpen] = useState(false);
+  const [isDanceClassesModalOpen, setIsDanceClassesModalOpen] = useState(false);
   const highlightTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -93,8 +95,8 @@ const ServicesSection: React.FC = () => {
     },
     {
       id: 3,
-      title: "Dance Fitness",
-      description: "Come sweat with us to some Afrobeats, Amapiano, Dancehall, and more in our women-only Dance Fitness classes. Be part of an amazing community with inspiring women, and learn some moves!",
+      title: "AfroHeat Studio",
+      description: "Join our other classes like pilates, yoga & more.",
       image: "/images/new/dance.webp",
       status: "Available" as const,
     },
@@ -130,14 +132,14 @@ const ServicesSection: React.FC = () => {
               <ServiceCard
                 key={service.id}
                 service={service}
-                id={service.title === "Space/Studio Rental" ? "studio-rental" : service.title === "Dance Fitness" ? "dance" : service.title === "Studentpass" ? "studentpass" : undefined}
+                id={service.title === "Space/Studio Rental" ? "studio-rental" : service.title === "AfroHeat Studio" ? "dance" : service.title === "Studentpass" ? "studentpass" : undefined}
                 onSignUp={() => {
                   if (service.title === "Bootcamp") {
                     setIsBootcampModalOpen(true);
-                  } else if (service.title === "Studentpass" || service.title === "Dance Fitness" || service.title === "Cafe and Meal Service") {
+                  } else if (service.title === "Studentpass" || service.title === "Cafe and Meal Service") {
                     setIsContactInfoModalOpen(true);
-                  } else if (service.title === "Space/Studio Rental") {
-                    setIsStudioRentalModalOpen(true);
+                  } else if (service.title === "AfroHeat Studio") {
+                    setIsDanceClassesModalOpen(true);
                   }
                   // All other services do nothing for now
                 }}
@@ -163,6 +165,10 @@ const ServicesSection: React.FC = () => {
       <ContactInfoModal
         isOpen={isContactInfoModalOpen}
         onClose={() => setIsContactInfoModalOpen(false)}
+      />
+      <DanceClassesModal
+        isOpen={isDanceClassesModalOpen}
+        onClose={() => setIsDanceClassesModalOpen(false)}
       />
     </section>
   );

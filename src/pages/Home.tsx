@@ -5,12 +5,12 @@ import NewHomeSection from '../components/sections/new-home-section';
 import YoutubeVideoSection from '../components/sections/YoutubeVideoSection';
 import ScheduleModal from '../components/ui/ScheduleModal';
 import BootcampModal from '@/forms/BootcampModal';
-import ContactInfoModal from '@/components/ui/ContactInfoModal';
+import DanceClassesModal from '@/components/ui/DanceClassesModal';
 
 const Home: React.FC = () => {
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   const [isBootcampModalOpen, setIsBootcampModalOpen] = useState(false);
-  const [isContactInfoModalOpen, setIsContactInfoModalOpen] = useState(false);
+  const [isDanceClassesModalOpen, setIsDanceClassesModalOpen] = useState(false);
   
   return (
     <>
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
             <YoutubeVideoSection />
         <AboutSection
           onBootcampOpen={() => setIsBootcampModalOpen(true)}
-          onDanceClassOpen={() => setIsContactInfoModalOpen(true)}
+          onDanceClassOpen={() => setIsDanceClassesModalOpen(true)}
         />
       </div>
       <ScheduleModal isOpen={isScheduleOpen} onClose={() => setIsScheduleOpen(false)} />
@@ -30,9 +30,9 @@ const Home: React.FC = () => {
         isOpen={isBootcampModalOpen}
         onClose={() => setIsBootcampModalOpen(false)}
       />
-      <ContactInfoModal
-        isOpen={isContactInfoModalOpen}
-        onClose={() => setIsContactInfoModalOpen(false)}
+      <DanceClassesModal
+        isOpen={isDanceClassesModalOpen}
+        onClose={() => setIsDanceClassesModalOpen(false)}
       />
     </>
   );

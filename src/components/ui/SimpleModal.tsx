@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IconX } from '@tabler/icons-react';
+import { cn } from '@/lib/utils';
 import { lockScroll, unlockScroll } from '@/lib/overflowManager';
 
 interface SimpleModalProps {
@@ -9,6 +10,7 @@ interface SimpleModalProps {
   title: string;
   description?: string;
   children: React.ReactNode;
+  className?: string;
 }
 
 const SimpleModal: React.FC<SimpleModalProps> = ({
@@ -16,7 +18,8 @@ const SimpleModal: React.FC<SimpleModalProps> = ({
   onClose,
   title,
   description,
-  children
+  children,
+  className
 }) => {
   useEffect(() => {
     if (isOpen) {
@@ -50,7 +53,7 @@ const SimpleModal: React.FC<SimpleModalProps> = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.24 }}
-            className="relative bg-background rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[95vh] overflow-hidden flex flex-col"
+            className={cn("relative bg-background rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[95vh] overflow-hidden flex flex-col", className)}
           >
             {/* Header */}
             <div className="sticky top-0 bg-background border-b border-border p-6 rounded-t-2xl z-10">
@@ -75,7 +78,7 @@ const SimpleModal: React.FC<SimpleModalProps> = ({
             </div>
 
             {/* Content */}
-            <div className="flex-grow overflow-hidden p-6">
+            <div className="flex-grow overflow-y-auto p-6">
               {children}
             </div>
           </motion.div>
