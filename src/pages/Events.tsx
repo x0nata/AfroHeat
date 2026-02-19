@@ -20,20 +20,6 @@ const Events: React.FC = () => {
   const allEvents = [
     {
       id: 1,
-      title: "Velvet by AfroHeat",
-      date: "2025-11-08",
-      time: "",
-      location: "AfroHeat wello sefer, Addis Ababa",
-      description: "An evening to enjoy rich flavors and fine wines in a relaxed atmosphere. Come unwind, taste, and discover your new favorite pour.",
-      instructor: "All Instructors",
-      price: "",
-      capacity: 50,
-      registered: 23,
-      category: "Social",
-      image: "/images/events/sip/1.webp"
-    },
-    {
-      id: 2,
       title: "Pitch your friend",
       date: "Coming soon",
       time: "",
@@ -45,11 +31,24 @@ const Events: React.FC = () => {
       registered: 0,
       category: "Social"
     }
-    
-    
   ];
 
   const pastEventsData = [
+    {
+      id: 100,
+      title: "Velvet by AfroHeat",
+      date: "2025-11-08",
+      time: "",
+      location: "AfroHeat wello sefer, Addis Ababa",
+      description: "An evening to enjoy rich flavors and fine wines in a relaxed atmosphere. Come unwind, taste, and discover your new favorite pour.",
+      instructor: "All Instructors",
+      price: "",
+      capacity: 50,
+      registered: 23,
+      category: "Social",
+      image: "/images/events/sip/1.webp",
+      images: []
+    },
     {
       id: 1,
       title: "AfroHeat Escape",
