@@ -71,13 +71,6 @@ const AboutTrainersSection: React.FC = () => {
       role: 'KIKBOXING & STRENGTH',
       description: 'Kickboxing instructor and Level 2 health-related physical fitness coach who has successfully completed First Aid training at the Tikur Anbessa Specialized Hospital Training Center.',
       image: '/images/Trainers/selam-ayele-kikboxing-strength-trainer.webp'
-    },
-    {
-      id: '3',
-      name: 'LINA TESFAYE',
-      role: 'STRENGTH TRAINER',
-      description: 'Group exercise instructor, Level 1 health-related physical fitness coach who has successfully completed the Sports Injury Treatment and Physiotherapy Training organized by CPID and SPHMMC, in collaboration with the Addis Ababa Youth and Sport Bureau.',
-      image: '/images/Trainers/lina-tesfayee-strength-trainer.webp'
     }
   ];
 
